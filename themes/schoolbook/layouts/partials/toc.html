@@ -1,0 +1,11 @@
+    <nav class="toc">
+        <h2>{{ .Site.Title }}</h2>
+        {{ range $.Site.Pages.GroupBy "Section"}}
+        {{ if .Key }}<h3 class="toc-section-name"><a href="/{{ .Key }}">{{ .Key }}</a></h3>{{ end }}
+        <ul class="toc-section-list" {{ if .Key }}data-section-name="{{ .Key }}"{{ end }}>
+            {{ range .Pages.ByWeight }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </nav>

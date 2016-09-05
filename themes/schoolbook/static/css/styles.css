@@ -1,0 +1,203 @@
+/*****
+ * Styles for Hugo theme "Schoolbook"
+ * @author Petri Salmela <pesasa@iki.fi>
+ *****/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, Arial, sans-serif;
+    background-color: #eee;
+}
+
+header {
+    background-color: #0084c8;
+    border-top: 1px solid #0084c8;
+    box-shadow: 0 0px 10px 3px rgba(0,0,0,0.5);
+    padding: 0.1em 2em;
+    margin: 0;
+}
+
+header h1.sitetitle {
+    margin: 0;
+}
+
+header h1.sitetitle a {
+    color: white;
+    text-decoration: none;
+}
+
+.main {
+    margin: 0;
+    padding: 0.1em 2em;
+}
+
+nav.toc {
+    width: 12em;
+    margin: 0 auto;
+    float: left;
+}
+
+nav.toc a {
+    color: #2d2d2d;
+}
+
+nav.toc a:visited {
+    color: #555;
+}
+
+nav.toc h2 {
+    font-size: 120%;
+    color: #2d2d2d;
+    border-bottom: 3px double #2d2d2d;
+}
+
+nav.toc h3.toc-section-name {
+    font-size: 100%;
+    color: #2d2d2d;
+    border-bottom: 1px solid #2d2d2d;
+    text-transform: capitalize;
+}
+
+.content {
+    margin: 0;
+    margin-left: 13em;
+}
+
+article {
+    background-color: white;
+    color: #111;
+    flex-grow: 1;
+    margin: 1em auto;
+    padding: 0.1em 1em;
+    max-width: 60em;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
+article::after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+article h1.page-title {
+    font-size: 200%;
+    color: #2d2d2d;
+    border-bottom: 3px solid #ff4141;
+    margin-top: 0.5em;
+}
+
+article h1 {
+    color: #2d2d2d;
+    font-size: 150%;
+    clear: right;
+    margin-top: 2em;
+    border-bottom: 1px solid #0084c8;
+}
+
+article blockquote {
+    background-color: #CFE9F6;
+    padding: 0.2em 1em;
+    border-left: 5px solid #ff4141;
+    font-style: italic;
+    font-family: serif;
+}
+
+article figure {
+}
+
+article figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+article figure figcaption {
+    font-size: 80%;
+}
+
+article figure figcaption h4 {
+    margin: 0;
+}
+
+article figure figcaption p {
+    margin: 0.2em 0;
+}
+
+article figure.floatimage {
+    max-width: 250px;
+}
+
+article figure.floatimage img[src$=".svg"] {
+    width: 250px;
+    height: auto;
+}
+
+article .floatright {
+    float: right;
+}
+
+article .floatleft {
+    float: left;
+}
+
+article .centerimage {
+    margin: 0.1em auto;
+    text-align: center;
+}
+
+article .centerimage figcaption {
+    text-align: left;
+}
+
+article a {
+    color: #005c94;
+}
+
+article a:visited {
+    color: #0084c8;
+}
+
+article em {
+    color: #ff4141;
+}
+
+article table {
+    border-collapse: collapse;
+    border: 1px solid #2d2d2d;
+}
+
+article table td,
+article table th {
+    padding: 0.1em 0.3em;
+}
+
+article table th {
+    background-color: #0084c8;
+    color: white;
+    border: 1px solid #2d2d2d;
+}
+
+article table tr:nth-child(even) {
+    background-color: #cfe9f6;
+}
+
+article table tr:nth-child(odd) {
+    background-color: white;
+}
+
+article table td {
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    vertical-align: top;
+}
+
+footer {
+    background-color: #0084c8;
+    padding: 0.1em 2em;
+    margin: 0;
+}
+
+footer a {
+    color: #eee;
+}

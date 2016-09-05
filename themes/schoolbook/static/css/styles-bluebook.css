@@ -1,0 +1,265 @@
+/*****
+ * Styles for Hugo theme "Schoolbook"
+ * cssstyle = "bluebook"
+ * @author Petri Salmela <pesasa@iki.fi>
+ *****/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, Arial, sans-serif;
+    background-color: #eee;
+    overflow-y: scroll;
+}
+
+header {
+    background-color: #0084c8;
+    border-top: 1px solid #0084c8;
+    box-shadow: 0 0px 10px 3px rgba(0,0,0,0.5);
+    padding: 0 2em;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+}
+
+header h1.sitetitle {
+    margin: 0 auto;
+    padding-left: 120px;
+    max-width: 27em;
+}
+
+header h1.sitetitle a {
+    color: white;
+    text-decoration: none;
+}
+
+header .sitelogo {
+    background-color: #0084c8;
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    padding: 5px 15px;
+    border-radius: 0 0 10px 10px;
+    /*border: 1px solid red;*/
+    /*border-top: none;*/
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    border-radius: 0 0 60px 60px;
+}
+
+header .sitelogo img {
+    width: 80px;
+    padding: 3px;
+    border-radius: 50%;
+    background-color: white;
+    height: auto;
+    margin-top: -45px;
+}
+
+.main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.1em 2em;
+}
+
+nav#TableOfContents {
+    float: right;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    max-width: 250px;
+    margin-right: -240px;
+}
+
+nav.toc {
+    width: 12em;
+    margin: 0 auto;
+    margin-top: 120px;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+nav.toc a {
+    color: #2d2d2d;
+}
+
+nav.toc a:visited {
+    color: #555;
+}
+
+nav.toc h2 {
+    font-size: 120%;
+    color: #2d2d2d;
+    border-bottom: 3px double #2d2d2d;
+}
+
+nav.toc h3.toc-section-name {
+    font-size: 100%;
+    color: #2d2d2d;
+    border-bottom: 1px solid #2d2d2d;
+    text-transform: capitalize;
+}
+
+.content {
+    margin: 0;
+    margin-left: 13em;
+    min-width: 50em;
+}
+
+article {
+    background-color: white;
+    color: #111;
+    flex-grow: 1;
+    margin: 0 auto;
+    padding: 0.1em 1em;
+    padding-top: 60px;
+    padding-right: 260px;
+    max-width: 45em;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
+article::after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+article h1.page-title {
+    font-size: 200%;
+    color: #2d2d2d;
+    border-bottom: 3px solid #ff4141;
+    margin-top: 0.5em;
+}
+
+article h1 {
+    color: #2d2d2d;
+    font-size: 150%;
+    /*clear: right;*/
+    margin-top: -60px;
+    padding-top: 80px;
+    border-bottom: 1px solid #0084c8;
+}
+
+article h1.page-title {
+    font-size: 200%;
+    color: #2d2d2d;
+    border-bottom: 3px solid #ff4141;
+    margin-top: 0.5em;
+    padding: 0;
+}
+
+article blockquote {
+    background-color: #CFE9F6;
+    padding: 0.2em 1em;
+    border-left: 5px solid #ff4141;
+    font-style: italic;
+    font-family: serif;
+}
+
+article figure {
+}
+
+article figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+article figure figcaption {
+    font-size: 80%;
+}
+
+article figure figcaption h4 {
+    margin: 0;
+}
+
+article figure figcaption p {
+    margin: 0.2em 0;
+}
+
+article figure.floatimage {
+    max-width: 250px;
+    clear: both;
+    background-color: #eee;
+    padding: 0.5em;
+}
+
+article figure.floatimage img[src$=".svg"] {
+    width: 250px;
+    height: auto;
+}
+
+article .floatright {
+    float: right;
+    margin-right: -240px;
+}
+
+article .floatleft {
+    float: left;
+}
+
+article .centerimage {
+    margin: 0.1em auto;
+    text-align: center;
+}
+
+article .centerimage figcaption {
+    text-align: left;
+}
+
+article a {
+    color: #005c94;
+}
+
+article a:visited {
+    color: #0084c8;
+}
+
+article em {
+    color: #ff4141;
+}
+
+article table {
+    border-collapse: collapse;
+    border: 1px solid #2d2d2d;
+}
+
+article table td,
+article table th {
+    padding: 0.1em 0.3em;
+}
+
+article table th {
+    background-color: #0084c8;
+    color: white;
+    border: 1px solid #2d2d2d;
+}
+
+article table tr:nth-child(even) {
+    background-color: #cfe9f6;
+}
+
+article table tr:nth-child(odd) {
+    background-color: white;
+}
+
+article table td {
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    vertical-align: top;
+}
+
+footer {
+    background-color: #0084c8;
+    padding: 0.1em 2em;
+    margin: 0;
+}
+
+footer a {
+    color: #eee;
+}

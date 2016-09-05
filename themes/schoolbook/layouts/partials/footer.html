@@ -1,0 +1,21 @@
+    <footer id="footer">
+        <div class="footer-link">
+            {{ with .Site.Params.email }}<span><a href="mailto:{{ . }}" target="_blank">Email</a></span>{{ end }}
+            {{ with .Site.Params.twitter }}<span><a href="{{ . }}" target="_blank">Twitter</a></span>{{ end }}
+            {{ with .Site.Params.facebook }}<span><a href="{{ . }}" target="_blank">Facebook</a></span>{{ end }}
+            {{ with .Site.Params.github }}<span><a href="{{ . }}" target="_blank">GitHub</a></span>{{ end }}
+        </div>
+        <div class="copyright inner">
+            <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fi"><img alt="Creative Commons Lisenssi" style="border-width:0" src="//i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+                <br />Sisällön käyttöoikeutta koskee <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fi">Creative Commons Nimeä-Tarttuva 4.0 Suomi-lisenssi</a>.
+            </p>
+            <!--Copyright &copy; {{ .Site.Params.copyright }}-->
+        </div>
+    </footer>
+    
+    <script src="{{ .Site.BaseURL}}/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
