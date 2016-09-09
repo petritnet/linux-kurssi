@@ -59,7 +59,7 @@ header .sitelogo img {
 }
 
 .main {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0.1em 2em;
 }
@@ -74,14 +74,16 @@ nav#TableOfContents {
 }
 
 nav.toc {
-    width: 12em;
+    width: 13em;
     margin: 0 auto;
     margin-top: 120px;
     float: left;
     position: fixed;
     top: 0;
     bottom: 0;
+    margin-bottom: 1em;
     overflow-y: auto;
+    font-size: 90%;
 }
 
 nav.toc a {
@@ -107,7 +109,7 @@ nav.toc h3.toc-section-name {
 
 .content {
     margin: 0;
-    margin-left: 13em;
+    margin-left: 14em;
     min-width: 50em;
 }
 
@@ -160,6 +162,19 @@ article blockquote {
     border-left: 5px solid #ff4141;
     font-style: italic;
     font-family: serif;
+}
+
+article code {
+    background-color: #f7f7f7;
+    color: #004;
+}
+
+article pre code {
+    overflow-x: auto;
+}
+
+article dl dt {
+    font-weight: bold;
 }
 
 article figure {
@@ -258,6 +273,7 @@ footer {
     background-color: #0084c8;
     padding: 0.1em 2em;
     margin: 0;
+    position: relative;
 }
 
 footer a {
