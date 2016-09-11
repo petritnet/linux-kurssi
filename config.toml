@@ -4,6 +4,8 @@ languageCode = "fi-fi"
 title = "Linux-kurssi"
 theme = "schoolbook"
 
+pluralizeListTitles = false
+#SectionPagesMenu = "main"
 canonifyurls = true
 [blackfriday]
     sourceRelativeLinksEval = true

@@ -1,6 +1,6 @@
 +++
 date = "2016-09-04T19:26:39+03:00"
-title = "Jakelut"
+title = "Linux-jakelut"
 weight = 3
 +++
 

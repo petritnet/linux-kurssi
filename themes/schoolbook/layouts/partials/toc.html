@@ -1,11 +1,20 @@
     <nav class="toc">
-        <h2>{{ .Site.Title }}</h2>
-        {{ range $.Site.Pages.GroupBy "Section"}}
-        {{ if .Key }}<h3 class="toc-section-name"><a href="/{{ .Key }}">{{ .Key }}</a></h3>{{ end }}
-        <ul class="toc-section-list" {{ if .Key }}data-section-name="{{ .Key }}"{{ end }}>
-            {{ range .Pages.ByWeight }}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ $section := .Section }}
+        {{ $title := .Title | lower }}
+        {{ $ispage := .IsPage }}
+        {{ $isnode := .IsNode }}
+        {{ $ishome := (eq .URL "/") }}
+        {{ if .IsPage }}
+        <h2 class="toc-section">{{ .Section }}</h2>
+        {{ else }}
+        <h2 class="toc-section">{{ .Title }}</h2>
+        {{ end }}
+        {{ $currentNode := . }}
+        <ul class="toc-section-list">
+            {{ range .Site.Pages.ByWeight }}
+                {{ if and $ispage (eq $section .Section) }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+                {{ if and $isnode (eq $title .Section) }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+                {{ if and $ishome (eq "" .Section) }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
             {{ end }}
         </ul>
-        {{ end }}
     </nav>

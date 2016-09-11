@@ -4,12 +4,18 @@
  * @author Petri Salmela <pesasa@iki.fi>
  *****/
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: helvetica, Arial, sans-serif;
     background-color: #eee;
     overflow-y: scroll;
+    min-height: 100%;
+    position: relative;
 }
 
 header {
@@ -19,15 +25,17 @@ header {
     padding: 0 2em;
     margin: 0;
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
-    height: 50px;
+    /*height: 50px;*/
 }
 
 header h1.sitetitle {
     margin: 0 auto;
     padding-left: 120px;
+    font-size: 200%;
     max-width: 27em;
 }
 
@@ -36,10 +44,39 @@ header h1.sitetitle a {
     text-decoration: none;
 }
 
+header .section-menu {
+    margin: 0 auto 0.3em auto;
+    padding: 0px;
+    padding-left: 120px;
+    max-width: 54em;
+    list-style: outside none none;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+header .section-menu .section-menu-item {
+    padding: 0 0.5em;
+    /*border-top: 1px solid rgba(255,255,255,0.5);*/
+}
+
+header .section-menu-item a {
+    color: #eee;
+    text-decoration: none;
+}
+
+header .section-menu-item.active a {
+    /*font-weight: bold;*/
+    text-decoration: underline;
+}
+
+header .section-menu-item a:hover {
+    color: white;
+}
+
 header .sitelogo {
     background-color: #0084c8;
     position: absolute;
-    top: 50px;
+    bottom: -50px;
     left: 40px;
     padding: 5px 15px;
     border-radius: 0 0 10px 10px;
@@ -60,14 +97,16 @@ header .sitelogo img {
 
 .main {
     max-width: 1200px;
+    min-height: 100%;
     margin: 0 auto;
     padding: 0.1em 2em;
+    padding-bottom: 7em;
 }
 
 nav#TableOfContents {
     float: right;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid #0084c8;
     padding: 0.5em;
     max-width: 250px;
     margin-right: -240px;
@@ -77,27 +116,35 @@ nav.toc {
     width: 13em;
     margin: 0 auto;
     margin-top: 120px;
+    margin-bottom: 120px;
     float: left;
     position: fixed;
     top: 0;
     bottom: 0;
-    margin-bottom: 1em;
     overflow-y: auto;
     font-size: 90%;
+    color: #0084C8;
+}
+
+nav.toc h2.toc-section {
+    text-transform: capitalize;
+    font-size: 120%;
+    /*color: #2d2d2d;*/
+    border-bottom: 3px solid #0084C8;
+}
+
+nav.toc .toc-section-list {
+    padding-left: 1.5em;
 }
 
 nav.toc a {
     color: #2d2d2d;
+    color: #0084C8;
 }
 
 nav.toc a:visited {
     color: #555;
-}
-
-nav.toc h2 {
-    font-size: 120%;
-    color: #2d2d2d;
-    border-bottom: 3px double #2d2d2d;
+    color: #0084C8;
 }
 
 nav.toc h3.toc-section-name {
@@ -111,16 +158,16 @@ nav.toc h3.toc-section-name {
     margin: 0;
     margin-left: 14em;
     min-width: 50em;
+    min-height: 100%;
 }
 
 article {
     background-color: white;
+    min-height: 30em;
     color: #111;
     flex-grow: 1;
     margin: 0 auto;
-    padding: 0.1em 1em;
-    padding-top: 60px;
-    padding-right: 260px;
+    padding: 6em 260px 3em 1em;
     max-width: 45em;
     border-left: 2px solid #ddd;
     border-right: 2px solid #ddd;
@@ -154,6 +201,12 @@ article h1.page-title {
     border-bottom: 3px solid #ff4141;
     margin-top: 0.5em;
     padding: 0;
+}
+
+article .page-prevnext {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 
 article blockquote {
@@ -273,7 +326,10 @@ footer {
     background-color: #0084c8;
     padding: 0.1em 2em;
     margin: 0;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 footer a {

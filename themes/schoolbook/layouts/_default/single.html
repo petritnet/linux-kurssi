@@ -2,12 +2,20 @@
 
     <div class="main">
 
-{{ partial "toc.html" . }}
+{{ partial "toc-pages.html" . }}
         <div class="content">
             <article>
+                <div class="page-prevnext">
+                    {{ if .NextInSection }}<a class="previousinsection" href="{{ .NextInSection.RelPermalink }}">&lt; {{ .NextInSection.Title }}</a>{{ else }}<span></span>{{ end }}
+                    {{ if .PrevInSection }}<a class="nextinsection" href="{{ .PrevInSection.RelPermalink }}">{{ .PrevInSection.Title }} &gt;</a>{{ else }}<span></span>{{ end }}
+                </div>
                 {{ .TableOfContents }}
                 <h1 class="page-title">{{ .Title }}</h1>
                 {{ .Content }}
+                <div class="page-prevnext">
+                    {{ if .NextInSection }}<a class="previousinsection" href="{{ .NextInSection.RelPermalink }}">&lt; {{ .NextInSection.Title }}</a>{{ else }}<span></span>{{ end }}
+                    {{ if .PrevInSection }}<a class="nextinsection" href="{{ .PrevInSection.RelPermalink }}">{{ .PrevInSection.Title }} &gt;</a>{{ else }}<span></span>{{ end }}
+                </div>
             </article>
         </div>
     </div>

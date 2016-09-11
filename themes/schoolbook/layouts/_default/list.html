@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+
+    <div class="main">
+
+{{ partial "toc-sections.html" . }}
+
+        <div class="content">
+            <article>
+            {{ $section := (lower .Title) }}
+            {{ range where .Data.Pages "Section" $section }}
+                <h1 class="page-title">{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}</h1>
+                {{ .Content }}
+            {{ end }}
+            </article>
+        </div>
+    </div>
+
+{{ partial "footer.html" . }}

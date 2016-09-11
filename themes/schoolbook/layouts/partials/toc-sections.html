@@ -1,0 +1,8 @@
+    <nav class="toc">
+        <h2 class="toc-section">{{ .Title }}</h2>
+        <ul class="toc-section-list">
+            {{ range .Data.Pages.ByWeight }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>

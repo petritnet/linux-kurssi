@@ -19,9 +19,16 @@
 
     <header id="header">
         <h1 class="sitetitle"><a href="{{ .Site.BaseURL }}"><span>{{ .Site.Title }}</span></a></h1>
+        
+        {{ $currentNode := . }}
+        <ul class="section-menu">
+        {{ range .Site.Menus.main }}
+            <li class="section-menu-item{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} active{{end}}"><a href="{{.URL}}">{{ .Name }}</a></li>
+        {{ end }}
+        </ul>
         {{ if .Site.Params.logo }}
         <div class="sitelogo">
-            <img src="{{ .Site.Params.logo }}" alt=".Site.Title">
+            <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
         </div>
         {{ end }}
     </header>

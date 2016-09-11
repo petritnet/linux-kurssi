@@ -1,7 +1,7 @@
 +++
 date = "2016-09-06T22:06:10+03:00"
 title = "Tiedosto-oikeudet"
-weight = 7
+weight = 8
 +++
 
 Tiedostojen oikeudet

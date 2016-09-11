@@ -1,7 +1,7 @@
 +++
 date = "2016-09-08T20:38:27+03:00"
 title = "Ohjelmia"
-weight = 9
+weight = 13
 +++
 
 Ohjelmia Linuxiin
