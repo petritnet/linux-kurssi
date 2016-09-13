@@ -1,7 +1,7 @@
 +++
 date = "2016-09-02T21:28:22+03:00"
 title = "Historiaa"
-weight = 1
+weight = 10
 +++
 
 Mikä on Linux?

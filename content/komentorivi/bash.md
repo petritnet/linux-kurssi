@@ -1,7 +1,7 @@
 +++
 date = "2016-09-09T20:38:14+03:00"
 title = "Bash-ohjelmointi"
-weight = 15
+weight = 440
 +++
 
 Komentotulkit

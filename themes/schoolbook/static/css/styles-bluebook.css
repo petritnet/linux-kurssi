@@ -4,6 +4,91 @@
  * @author Petri Salmela <pesasa@iki.fi>
  *****/
 
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/JosefinSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal; 
+    font-weight: bold;
+    src: url('fonts/JosefinSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: italic; 
+    font-weight: normal;
+    src: url('fonts/JosefinSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: italic; 
+    font-weight: bold;
+    src: url('fonts/JosefinSans-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HankenBook';
+    src: url('fonts/Hanken-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HankenLight';
+    src: url('fonts/Hanken-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AveriaSans';
+    src: url('fonts/AveriaSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AveriaSans';
+    src: url('fonts/AveriaSans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AveriaSans';
+    src: url('fonts/AveriaSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AveriaSansLight';
+    src: url('fonts/AveriaSans-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AveriaSansLight';
+    src: url('fonts/AveriaSans-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AveriaSans';
+    src: url('fonts/AveriaSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 html {
     height: 100%;
 }
@@ -16,6 +101,8 @@ body {
     overflow-y: scroll;
     min-height: 100%;
     position: relative;
+    font-family: "Josefin Sans", "AveriaSans", "HankenBook", sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 header {
@@ -37,6 +124,7 @@ header h1.sitetitle {
     padding-left: 120px;
     font-size: 200%;
     max-width: 27em;
+    font-family: AveriaSans, helvetica, Arial, sans-serif;
 }
 
 header h1.sitetitle a {
@@ -131,6 +219,7 @@ nav.toc h2.toc-section {
     font-size: 120%;
     /*color: #2d2d2d;*/
     border-bottom: 3px solid #0084C8;
+    font-family: AveriaSans, helvetica, Arial, sans-serif;
 }
 
 nav.toc .toc-section-list {
@@ -145,6 +234,12 @@ nav.toc a {
 nav.toc a:visited {
     color: #555;
     color: #0084C8;
+}
+
+nav.toc .active a {
+    color: #FF4141;
+    color: black;
+    text-decoration: none;
 }
 
 nav.toc h3.toc-section-name {
@@ -184,6 +279,7 @@ article h1.page-title {
     color: #2d2d2d;
     border-bottom: 3px solid #ff4141;
     margin-top: 0.5em;
+    font-family: AveriaSans, helvetica, Arial, sans-serif;
 }
 
 article h1 {
@@ -193,6 +289,7 @@ article h1 {
     margin-top: -60px;
     padding-top: 80px;
     border-bottom: 1px solid #0084c8;
+    font-family: AveriaSans, helvetica, Arial, sans-serif;
 }
 
 article h1.page-title {

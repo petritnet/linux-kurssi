@@ -1,7 +1,7 @@
 +++
 date = "2016-09-11T21:19:57+03:00"
 title = "Työpöytä"
-weight = 7
+weight = 200
 type = "index"
 menu = ["main"]
 +++

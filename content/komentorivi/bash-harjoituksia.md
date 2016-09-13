@@ -1,7 +1,7 @@
 +++
 date = "2016-09-11T20:16:20+03:00"
 title = "Bash-harjoituksia"
-weight = 16
+weight = 450
 +++
 
 [Harjoitusten esimerkkiratkaisut](/files/harjoitukset.tar.gz)

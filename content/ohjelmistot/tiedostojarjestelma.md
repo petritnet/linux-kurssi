@@ -1,7 +1,7 @@
 +++
 date = "2016-09-05T23:03:48+03:00"
 title = "Tiedostojärjestelmä"
-weight = 12
+weight = 320
 +++
 
 Tiedostojärjestelmä

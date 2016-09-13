@@ -1,7 +1,7 @@
 +++
 date = "2016-09-05T23:03:37+03:00"
 title = "Paketinhallinta"
-weight = 11
+weight = 310
 +++
 
 Paketinhallinta

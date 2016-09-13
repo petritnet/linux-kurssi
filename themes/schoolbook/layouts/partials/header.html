@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     {{ .Hugo.Generator }}
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}/favicon.png" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles{{ if .Site.Params.cssstyle }}-{{ .Site.Params.cssstyle }}{{ end }}.css">
@@ -15,8 +16,7 @@
     <!--<script src="{{ .Site.BaseURL }}/scripts/vvalo.js"></script>-->
     <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
 </head>
-<body>
-
+<body id="{{ .Title | urlize }}">
     <header id="header">
         <h1 class="sitetitle"><a href="{{ .Site.BaseURL }}"><span>{{ .Site.Title }}</span></a></h1>
         
@@ -28,7 +28,7 @@
         </ul>
         {{ if .Site.Params.logo }}
         <div class="sitelogo">
-            <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
+            <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
         </div>
         {{ end }}
     </header>

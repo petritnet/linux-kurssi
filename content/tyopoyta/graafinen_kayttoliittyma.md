@@ -1,7 +1,7 @@
 +++
 date = "2016-09-06T22:42:04+03:00"
 title = "Graafinen käyttöliittymä"
-weight = 8
+weight = 210
 +++
 
 Modulaarisuus

@@ -1,7 +1,7 @@
 +++
 date = "2016-09-08T21:08:16+03:00"
 title = "Komentoja"
-weight = 12
+weight = 410
 +++
 
 Seuraavassa luetellaan joitakin usein tarvittuja komentoja. Yhteistä näille on,
@@ -18,11 +18,11 @@ ja josta käsiteltäviä tiedostoja etsitään, ellei käyttäjä erikseen toisi
 Usein sanotaan, että "käyttäjä on hakemistossa xyz", ja sillä tarkoitetaan, että
 hänen sen hetkisenä työhakemistona on hakemisto xyz.
 
-* `pwd` tulostaa nykyisen työhakemiston
+* `pwd` tulostaa nykyisen työhakemiston absoluuttisen polun.
 * `cd` vaihtaa työhakemistoksi pyydettyyn hakemistoon.
 * Hakemisto voidaan antaa `cd`-komennolle:
-   * absoluuttisena juuresta alkaen (`/`-merkillä alkaen): `/usr/share`
-   * suhteellisena nykyisen työhakemiston suhteen: `Documents`, `../../usr`
+   * *absoluuttisena* juuresta alkaen (`/`-merkillä alkaen): `/usr/share`
+   * *suhteellisena* nykyisen työhakemiston suhteen: `Documents`, `../../usr`
 * Erikoishakemistonimet: `.` ja `..`:
    * `.` on "tämä hakemisto". Esim. `/home/./pesasa` on sama kuin `/home/pesasa`
    * `..` yksi hakemisto juuren suuntaan. "Isä hakemisto"
@@ -33,7 +33,7 @@ hänen sen hetkisenä työhakemistona on hakemisto xyz.
 pwd ja cd (kokeillaan)
 ------------------------------
 
-```
+```no-highlight
 pesasa@box:~ $ pwd
 /home/pesasa
 pesasa@box:~ $ cd /etc/cups
@@ -57,7 +57,7 @@ Hakemiston luonti: `mkdir`
 
 `mkdir` luo uuden hakemiston (make directory).
 
-```bash
+```no-highlight
 pesasa@box:~ $ mkdir Documents/uusihakemisto
 pesasa@box:~ $ mkdir /Documents/tmp/toinenhakemisto
 ```
@@ -89,7 +89,7 @@ Oletuksena, ellei muuta määrätä, tulostetaan nykyisen työhakemiston sisält
 
 Esimerkkitulosteita:
 
-```bash
+```no-highlight
 pesasa@box:~ $ ls Documents/
 Awesome-Tux.svg  komentoja.md  Kurssi.txt  penguin.png  uusihakemisto
 pesasa@box:~ $ cd Documents/
@@ -119,87 +119,6 @@ ls (kokeillaan)
 1. Montako piilotiedostoa kotihakemistossasi on? Moniko niistä on hakemisto?
 2. Mikä on tiedoston `/bin/bash` koko tavuina? Entä ihmisen luettavassa muodossa?
 3. Mikä on tiedoston `/etc/profile` muutosaika?
-
-
-
-Tekstin tulostus `echo`
-===============================
-
-`echo` on komento, joka tulostaa annetun tekstin. 
-
-```bash
-pesasa@box:~ $ echo Moikka, maailma
-Moikka, maailma
-pesasa@box:~ $ echo "Heippa vaan"
-Heippa vaan
-pesasa@box:~ $ echo 'Linux on pop'
-Linux on pop
-```
-
-Voidaan tulostaa myös muuttujien arvoja:
-
-```bash
-pesasa@box:~ $ echo $HOME
-/home/pesasa
-```
-
-Lisäoptio `-n` jättää pois rivinvaihdon tulostuksen lopusta:
-
-```bash
-pesasa@box:~ $ echo -n "Ei rivinvaihtoa"
-Ei rivinvaihtoapesasa@kurssibuntu:~ $
-```
-
-Lisäoptio `-e` mahdollistaa erikoismerkkien käytön:
-
-```bash
-pesasa@box:~ $ echo -e '1:\tyksi\n2:\tkaksi'
-1:    yksi
-2:    kaksi
-```
-
-
-
-
-echo ja lainausmerkit
-------------------------------
-
-`echo`-komennolla ja yleisestikin bashissa suoritettavilla komennoilla ja ohjelmilla on eroa yksinkertaisilla
-ja kaksinkertaisilla lainausmerkeillä (`'`) ja (`"`).
-
-* Yksinkertaisilla lainausmerkeillä merkityt merkkijonot käsitellään sellaisinaan.
-* Kaksinkertaisilla lainausmerkeillä merkittujen merkkijonojen sisällä olevat muuttujanimet korvataan niiden arvoilla.
-
-```
- echo 'Kotihakemisto: $HOME'
- Kotihakemisto: $HOME
-```
-
-mutta
-
-```
- echo "Kotihakemisto: $HOME"
- Kotihakemisto: /home/pesasa
-```
-
-* Yksinkertaisten lainausmerkkien sisällä voidaan käyttää esim. erikoismerkkejä: `\n`
-  (rivinvaihto),
-  `\t` (vaakasarkain), `\v` (pystysarkain)
-* Kaksinkertaisten lainausmerkkien sisällä erikoismerkit täytyy kirjoittaa kahdella
-  kenoviivalla: `\\n`, `\\t`, `\\v`
-
-
-
-
-echo (kokeillaan)
------------------------------------
-
-1. Tulosta teksti: *Linux on ykkönen*
-2. Tulosta peräkkäisille riveille tekstit *Ubuntu ja Unity* ja *komentorivi ja Bash*
-3. Tulosta muuttujan `$PATH` arvo.
-
-
-
 
 
 
@@ -282,9 +201,9 @@ Linkki
 Symbolinen linkki
 :   "vain" viittaus johonkin toiseen, "oikeaan" tiedostoon.
 
-```
- $ ls -l /etc/printcap
- lrwxrwxrwx 1 root root 22 Sep 24 21:30 /etc/printcap -> /var/run/cups/printcap
+```no-highlight
+pesasa$box:~ $ ls -l /etc/printcap
+lrwxrwxrwx 1 root root 22 Sep 24 21:30 /etc/printcap -> /var/run/cups/printcap
 ```
 
 * `ln -s /usr/share/doc/emacs/copyright`
@@ -300,19 +219,103 @@ tiedostoakin.
 
 
 
+
+
+Tekstin tulostus `echo`
+===============================
+
+`echo` on komento, joka tulostaa annetun tekstin. 
+
+```no-highlight
+pesasa@box:~ $ echo Moikka, maailma
+Moikka, maailma
+pesasa@box:~ $ echo "Heippa vaan"
+Heippa vaan
+pesasa@box:~ $ echo 'Linux on pop'
+Linux on pop
+```
+
+Voidaan tulostaa myös muuttujien arvoja:
+
+```no-highlight
+pesasa@box:~ $ echo $HOME
+/home/pesasa
+```
+
+Lisäoptio `-n` jättää pois rivinvaihdon tulostuksen lopusta:
+
+```no-highlight
+pesasa@box:~ $ echo -n "Ei rivinvaihtoa"
+Ei rivinvaihtoapesasa@kurssibuntu:~ $
+```
+
+Lisäoptio `-e` mahdollistaa erikoismerkkien käytön:
+
+```no-highlight
+pesasa@box:~ $ echo -e '1:\tyksi\n2:\tkaksi'
+1:    yksi
+2:    kaksi
+```
+
+
+
+
+echo ja lainausmerkit
+------------------------------
+
+`echo`-komennolla ja yleisestikin bashissa suoritettavilla komennoilla ja ohjelmilla on eroa yksinkertaisilla
+ja kaksinkertaisilla lainausmerkeillä (`'`) ja (`"`).
+
+* Yksinkertaisilla lainausmerkeillä merkityt merkkijonot käsitellään sellaisinaan.
+* Kaksinkertaisilla lainausmerkeillä merkittujen merkkijonojen sisällä olevat muuttujanimet korvataan niiden arvoilla.
+
+```no-highlight
+pesasa$box:~ $ echo 'Kotihakemisto: $HOME'
+Kotihakemisto: $HOME
+```
+
+mutta
+
+```no-highlight
+pesasa$box:~ $ echo "Kotihakemisto: $HOME"
+Kotihakemisto: /home/pesasa
+```
+
+* Yksinkertaisten lainausmerkkien sisällä voidaan käyttää esim. erikoismerkkejä: `\n`
+  (rivinvaihto),
+  `\t` (vaakasarkain), `\v` (pystysarkain)
+* Kaksinkertaisten lainausmerkkien sisällä erikoismerkit täytyy kirjoittaa kahdella
+  kenoviivalla: `\\n`, `\\t`, `\\v`
+
+
+
+
+echo (kokeillaan)
+-----------------------------------
+
+1. Tulosta teksti: *Linux on ykkönen*
+2. Tulosta peräkkäisille riveille tekstit *Ubuntu ja Unity* ja *komentorivi ja Bash*
+3. Tulosta muuttujan `$PATH` arvo.
+
+
+
+
+
+
+
 Tekstitiedoston tulostus: `cat`
 ===============================
 
 Tekstitiedoston sisällön voi tulostaa terminaaliin `cat`-ohjelma.
 
-```
- cat /etc/passwd
+```no-highlight
+pesasa$box:~ $ cat /etc/passwd
  ...
- cat /etc/hosts
+pesasa$box:~ $ cat /etc/hosts
  ...
- cat /etc/lsb-release
+pesasa$box:~ $ cat /etc/lsb-release
  ...
- cat .bash_history
+pesasa$box:~ $ cat .bash_history
 ```
 
 Kokeile!
@@ -364,7 +367,7 @@ Tekstitiedoston koon voi tarkistaa komennolla `wc`. (word count)
 * Jos kysytään useamman tiedoston kokoja, ne kerrotaan omilla riveillään sekä lisäksi
   kokonaiskoko.
   
-```
+```no-highlight
 pesasa@box:~ $ wc /var/log/syslog
 555  6339 42655 /var/log/syslog
 pesasa@box:~ $ wc -l /var/log/syslog

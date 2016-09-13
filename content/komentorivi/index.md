@@ -1,7 +1,7 @@
 +++
 date = "2016-09-11T17:24:38+03:00"
 title = "Komentorivi"
-weight = 11
+weight = 400
 type = "index"
 menu = ["main"]
 +++
@@ -11,28 +11,29 @@ rutiininomaisia tehtäviä. Komentoriviksi sanotaan tekstipohjaista käyttöliit
 eli komentotulkkia. Siitä käytetään myös nimitystä *shell* (kuori).
 
 * Linux- ja Unix-ympäristöissä yleisimmin käytetty komentotulkki on
-  `bash` (Bourne again shell)
-    * Aiemman Bourne shellin (`sh`) jälkeläinen
+  `bash` (Bourne again shell), joka on aiemman Bourne shellin (`sh`) jälkeläinen.
 * Komentotulkissa on käytettävissä sen sisäisiä komentoja sekä erillisiä ohjelmia.
-    * Näyttävät käyttäjälle samanlaisilta
+  Käyttäjälle ne näyttävät samanlaisilta.
 
-Linuxissa komentorivin voi saada eteensä useammalla tavalla. Helpoimmin sen saa
-käyttöönsä avaamalla (valikosta) jonkin tarjolla olevista terminaaliohjelmista.
-Terminaali aukeaa tyypillisesti omaan ikkunaansa.
+Linuxissa komentorivin voi saada käyttöönsä useammalla tavalla. Helpoimmin sen saa
+esiin avaamalla (valikosta) jonkin tarjolla olevista niin sanotuista terminaaliohjelmista,
+jotka aukeavat omaan ikkunaansa.
 
 Komentorivin saa käyttöönsä myös, jos tietokonetta käyttää tekstitilassa ilman
 graafista ikkunointia tai jos siihen ottaa komentorivietäyhteyden (ssh) joltain
 toiselta koneelta esimerkiksi Putty-ohjelmalla.
 
-Esimerkiksi terminaaliohjelmassa on käynnissä Bash-ohjelma, joka oletuksena näyttää
-käyttäjälle suurin piirtein tältä:
+Terminaaliohjelmaan varsinaiseksi komentotulkiksi käynnistyy Bash-ohjelma ja
+oletuksena se näyttää käyttäjälle suurin piirtein tältä:
 
-```bash
+```no-highlight
+
+
 pesasa@box:~ $ _
 ```
 
 Tätä sanotaan *komentorivikehotteeksi* (prompt) ja se tarkoittaa sitä, että Bash kehottaa
-käyttäjää antamaan jonkin komennon. Kehotteen sisältämä tekstisisältö on käyttäjän
+käyttäjää antamaan jonkin komennon. Kehotteessa näkyvä teksti on käyttäjän
 muokattavissa, mutta oletuksena se näyttää useimmiten yllä olevan kaltaiselta.
 Yllä oleva kehote koostuu seuraavista osista:
 

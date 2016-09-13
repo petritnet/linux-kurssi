@@ -1,7 +1,7 @@
 +++
 date = "2016-09-09T20:31:21+03:00"
 title = "Clmystery"
-weight = 14
+weight = 430
 +++
 
 Clmystery on komentorivin käytön harjoitteluun tarkoitettu murhamysteeri.
