@@ -1,45 +1,60 @@
 +++
 date = "2016-09-04T19:26:39+03:00"
 title = "Linux-jakelut"
-weight = 30
+weight = 20
 +++
 
 
 
-Linux-jakelu
+Koska Linux on "vain" käyttöjärjestelmäydin, se tarvitsee seurakseen kokoelman
+erilaisia, yleensä avointa lähdekoodia olevia, järjestelmäsovelluksia, käyttöliittymän sekä sovelluksia.
+Linuxin ympärille on koottu useita *Linux-jakeluiksi* kutsuttuja ohjelmistokokoelmia.
+
+
+Jakelut koostuvat Linux-ytimestä, järjestelmälle oleellisista ohjelmista, jostain (tai useammista) työpöytäjärjestelmistä
+sekä käyttäjän käytettävissä olevista sovelluksista. Tyypillisesti jakelussa on kyse laitteelle asennuksen yhteydessä
+järjestelmän ohella oletuksena asentuvasta kokoelmasta sovelluksia sekä tarjolla olevasta pakettivarastosta, josta
+voidaan tarvittaessa asentaa muita avoimen lähdekoodin ohjelmia.
+
+Tunnettuja jakeluita ovat esimerkiksi:
+
+- Red Hat Enterprise Linux
+- Debian
+- Ubuntu
+- Fedora
+- CentOS
+- OpenSUSE
+- Linux Mint
+- Elementary OS
+
+Avoimuutensa ansiosta jakelut ovat usein jakautuneet jollain tavalla erikoistuneisiin versioihin aiemmista
+jakeluista ja siksi ne muodostavat usein sukupuita.
+
+* Debianista periytyy esimerkiksi Ubuntu. Ubuntusta on useita rinnakkaisia versioita (Kubuntu, Xubuntu, Lubuntu,...).
+  Ubuntusta puolestaan periytyvät muun muassa Linux Mint ja ElementaryOS
+* RedHatista periytyviä ovat OpenSUSE, Fedora, CentOS, Mageia
+
+
+
+
+Live-CD / Live-DVD / Live-USB
 ==================================
-* Useita erilaisia jakelupaketteja
-* Koostuvat Linux-ytimestä, järjestelmälle oleellisista ohjelmista, jostain (tai useammista) työpöytäjärjestelmistä sekä sovelluksista
-* Muodostavat usein sukupuita:
-    * Debianista periytyy mm. Ubuntu. Ubuntusta useita versioita (Kubuntu, Xubuntu, Lubuntu,...). Ubuntusta periytyy mm. Linux Mint ja ElementaryOS
-    * RedHatista periytyviä OpenSUSE, Fedora, CentOS, Mandriva,...
+
+Linux-jakeluiden asennusmediat ovat yleensä ladattavissa kunkin jakelun verkkosivujen kautta
+`.iso`-päätteisenä levykuvatiedostona. Levykuva on suora kopio CD- tai DVD-levyn tiedostojärjestelmästä
+yhtenä tiedostona ja sen voi kirjoittaa CD- tai DVD-levylle taikka USB-muistitikulle.
+
+Levykuvasta luotu asennusmedia on tyypillisesti niin kutsuttu Live-levy, jolta voi käynnistää
+toimivan Linux-järjestelmän työpöytineen. Järjestelmää voi käyttää suoraaln Live-levyltä
+taikka asentaa sen tietokoneen kiintolevylle vakituista käyttöä varten.
+Live-tilassa käynnistetty järjestelmä ei tee muutoksia tietokoneelle, ellei sitä erikseen
+tahdo. Näin eri Linux-jakeluita ja niiden käyttöliittymien käyttötuntumaa on helppo kokeilla
+asentamatta niitä pysyvästi.
+
+Asennuslevyjen lisäksi on myös erityisesti Live-käyttöön tarkoitettuja jakeluita, jotka ovat
+käteviä esimerkiksi vioittuneet tietokoneen korjaamiseen ja tietojen pelastamiseen.
 
 
-
-
-Live-CD / Live-DVD
-==================================
-* CD- tai DVD-levy, jolta voi käynnistää toimivan Linux-järjestelmän
-* Käytettävissä kuin kiintolevyltä paitsi:
-    * Tallennukset eivät säily, ellei erikseen siirrä esim. usb-tikulle
-    * Asennetut ohjelmat eivät säily
-* Voidaan tehdä myös live-usb-tikkuja
-
-
-
-DVD-levyltä löytyvät jakelut
-==================================
-* Linux Mint 17.1 (Cinnamon-työpöytä)
-* Ubuntu 14.10 (Unity-käyttöliittymä)
-* Kubuntu 14.10 (KDE-työpöytä)
-* Lubuntu 14.10 (LXDE-työpöytä)
-* ElementaryOS Luna
-* Fedora 21
-* Damn Small Linux
-* System Rescue CD
-* Clonezilla
-* TinyCore
-Kaikki levyllä olevat jakelut ovat 64-bittisiä versioita.
 
 
 
