@@ -5,12 +5,22 @@ weight = 30
 +++
 
 
-
 Linux-jakelu
 ==================================
 
 Linux-järjestelmiä on tarjolla useina erilaisina jakelupaketteina.
 Ne koostuvat Linux-ytimestä, järjestelmälle oleellisista ohjelmista, jostain (tai useammista) työpöytäjärjestelmistä sekä sovelluksista
+
+Tunnettuja jakeluita ovat esimerkiksi:
+
+- Red Hat Enterprise Linux
+- Debian
+- Ubuntu
+- Fedora
+- CentOS
+- OpenSUSE
+- Linux Mint
+- Elementary OS
 
 Jakeluista muodostuu sukupuita, koska ne ovat yleensä muunnoksia jostain aiemmasta jakelusta.
 
@@ -24,10 +34,28 @@ Jakeluista muodostuu sukupuita, koska ne ovat yleensä muunnoksia jostain aiemma
 
 Live-CD / Live-DVD / Live-USB
 ==================================
+* CD- tai DVD-levy, jolta voi käynnistää toimivan Linux-järjestelmän
+* Käytettävissä kuin kiintolevyltä paitsi:
+    * Tallennukset eivät säily, ellei erikseen siirrä esim. usb-tikulle
+    * Asennetut ohjelmat eivät säily
+* Voidaan tehdä myös live-usb-tikkuja
 
-Live-levy on CD- tai DVD-levy taikka USB-tikku, jolta voi käynnistää toimivan Linux-järjestelmän kokeilemista tai asentamista varten.
+Linux-jakeluiden asennusmediat ovat yleensä ladattavissa kunkin jakelun verkkosivujen kautta
+`.iso`-päätteisenä levykuvatiedostona. Levykuva on suora kopio CD- tai DVD-levyn tiedostojärjestelmästä
+yhtenä tiedostona ja sen voi kirjoittaa CD- tai DVD-levylle taikka USB-muistitikulle.
+
+Levykuvasta luotu asennusmedia on tyypillisesti niin kutsuttu Live-levy, jolta voi käynnistää
+toimivan Linux-järjestelmän työpöytineen. Järjestelmää voi käyttää suoraaln Live-levyltä
+taikka asentaa sen tietokoneen kiintolevylle vakituista käyttöä varten.
+Live-tilassa käynnistetty järjestelmä ei tee muutoksia tietokoneelle, ellei sitä erikseen
+tahdo. Näin eri Linux-jakeluita ja niiden käyttöliittymien käyttötuntumaa on helppo kokeilla
+asentamatta niitä pysyvästi.
+
+Asennuslevyjen lisäksi on myös erityisesti Live-käyttöön tarkoitettuja jakeluita, jotka ovat
+käteviä esimerkiksi vioittuneet tietokoneen korjaamiseen ja tietojen pelastamiseen.
 
 Live-levyltä järjestelmä on käytettävissä kuin kiintolevyltä paitsi:
+
 
 * Tallennukset eivät säily, ellei erikseen siirrä esim. USB-tikulle tai ellei Live-USB:hen ole lisätty tehtyjä muutoksia muistava *persistent*-ominaisuus.
 * Asennetut ohjelmat eivät säily

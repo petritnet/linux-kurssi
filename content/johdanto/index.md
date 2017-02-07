@@ -10,10 +10,21 @@ Tämä Linux-kurssin materiaali on tehty Turun [Kerttulin lukion][Kerttuli] vuod
 tarpeisiin ja perustuu aiempina vuosina pidettyjen kurssien vastaavaan materiaaliin.
 Kurssin materiaali on vapaasti käytettävissä [CC-by-sa-lisenssin][CC-by-sa-lisenssi] ehtojen mukaisesti.
 
+Linux on Unix-tyyppinen käyttäjärjestelmäydin, jolla varustetut järjestelmät
+ovat valloittaneet laitteet pienistä sulautetuista tuotteista suuriin
+supertietokoneisiin saakka.
+
 Kurssilla tutustutaan Linuxin historiaan sekä Linux-pohjaisten järjestelmien käyttöön niin työpöytäkäytössä
 kuin komentorivilläkin. Kurssilla käydään läpi tarvittavaa peruskäsitteistöä sekä opitaan, miten
 käyttäjien ja oikeuksien hallinta on toteutettu Linuxissa ja Unixeissa yleensä. Kurssin myötä
 tutustutaan yksinkertaisiin ylläpitotoimintoihin, kuten ohjelmien asentamiseen eri Linux-jakeluihin.
+
+Kurssilla käydään läpi muun muassa Linuxin tiedostojärjestelmien, käyttäjähallinnan,
+työpöytäympäristöjen sekä komentorivin erityispiirteitä. Ensin tutustutaan järjestelmän
+peruskäyttöön graafisessa työpöytäympäristössä ja sen jälkeen toimintaan tekstipohjaisella
+komentorivillä.
+
+Lisäksi tutustutaan joihinkin Linuxin kanssa käytettäviin palvelinohjelmistoihin.
 
 {{< figure src="/images/usb-memory.svg" class="floatright floatimage" title="USB-muistitikkuja" >}}
 

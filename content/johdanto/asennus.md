@@ -1,7 +1,7 @@
 +++
 date = "2016-09-02T21:28:37+03:00"
 title = "Asennus"
-weight = 20
+weight = 30
 +++
 
 Asennetaan Linux. Käytetään esimerkkinä Ubuntua.
