@@ -131,6 +131,7 @@ Linuxissa (ja Unixeissa) ei ole levyasematunnuksia, kuten Windowsissa (c:\, d:\,
 
 
 
+{{% wrapper class="exercises" %}}
 Tehtäviä
 ========================
 Käynnistä jokin dvd-levyn työpöytä-Linux ja tee tehtävät siinä.
@@ -143,3 +144,5 @@ Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä. Tiedostot voit tallentaa
 4. Selvitä tiedostosta `/proc/cpuinfo` käyttämäsi koneen prosessorin merkki/malli.
 5. Tiedostossa `/etc/passwd` luetellaan järjestelmässä olevat käyttäjätunnukset. Etsi rivi, jolla on tunnus nimeltä `nobody`.
    Mikä on nobodyn käyttäjänumero? (Rivin ensimmäinen numero kahden `:`-merkin välissä.)
+
+{{% /wrapper %}}

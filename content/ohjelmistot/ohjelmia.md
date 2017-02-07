@@ -182,6 +182,7 @@ Muunnos
 
 
 
+{{% wrapper class="exercises" %}}
 Tehtäviä
 ===============================
 
@@ -198,3 +199,4 @@ Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä.
    negatiiviksi. Mitä selainta ja kuvankäsittelyohjelmaa käytit? Tallenna kuva.
 5. Paketoi tekstitiedosto ja nämä kolme kuvaa tiedostoon, jonka nimenä on vastaus-7.zip ja palauta.
 
+{{% /wrapper %}}

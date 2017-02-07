@@ -602,6 +602,7 @@ Hakuja voi tehdä myös monipuolisemmin käyttämällä niin sanottuja säännö
 
 
 
+{{% wrapper class="exercises" %}}
 Tehtäviä
 ===============================
 
@@ -615,3 +616,5 @@ suoritit tehtävän.
 5. Tulosta tiedostosta kuusi ensimmäistä ja neljä viimeistä riviä.
 6. Miten kuuluu kokonaisuudessaan rivi, jolla esiintyy teksti: *Kuningas vapisi ilosta*?
 7. Järjestä tiedoston rivit aakkosjärjestykseen. Miten kuuluu viimeinen rivi?
+
+{{% /wrapper %}}

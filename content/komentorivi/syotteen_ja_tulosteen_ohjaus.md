@@ -233,6 +233,7 @@ Nämä tulosteet tulevat virhetulostevirrasta ja niistä pääsee eroon mm. ohja
 
 
 
+{{% wrapper class="exercises" %}}
 Tehtäviä
 =========================
 
@@ -253,3 +254,5 @@ Suorita tehtävät komentorivillä ja kirjoita vastaukset tiedostoon {{{vastaus-
    * Tiedosto alkaa annetun tiedoston riveillä 9-13.
    * Näiden jälkeen tiedostossa on rivi, jolla on kolme pistettä (...).
    * Tämän jälkeen tiedostossa on vielä annetun tiedoston neljä viimeistä riviä.
+
+{{% /wrapper %}}

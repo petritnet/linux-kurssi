@@ -540,6 +540,7 @@ Kirjoita seuraava tiedostoon `toisto.sh`, anna sille suoritusoikeudet ja aja se.
 
 
 
+{{% wrapper class="exercises" %}}
 Tehtäviä
 ============================
 
@@ -563,6 +564,7 @@ Kerro jokaisessa kohdassa käyttämäsi komento tai komennot sekä niiden tulost
    * Selvitä, mitä `alias`-komento tekee ja miten se toimii sivulta <http://linux.fi/wiki/Alias>
    * Miten määrittelet aliaksen `ltxt`, joka luettelee kaikki tässä hakemistossa olevat `.txt`-päätteiset tiedostot?
 
+{{% /wrapper %}}
 
 
 Linkkejä:

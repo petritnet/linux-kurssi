@@ -4,5 +4,5 @@ title = "Etusivu"
 type = "index"
 +++
 
-{{< figure src="/images/penguin.png" title="Pingviini" class="centerimage" >}}
+{{< figure src="/images/penguin.png" title="Pingviiniä käytetään yleisesti Linuxin maskottina." class="centerimage" >}}
 

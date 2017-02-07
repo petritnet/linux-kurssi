@@ -110,6 +110,7 @@ Oikeuksien muuttaminen komentorivillä
 
 
 
+{{% wrapper class="exercises" %}}
 Tehtävät
 =========================================
 
@@ -124,3 +125,5 @@ Palautus tiedostona `vastaus-5.odt`.
    ryhmällä lukuoikeus ja muilla ei mitään. Miten teit tämän?
 6. Ota tiedostohallintaan näkyviin tiedostojen oikeudet niin, että vastaustiedoston tiedot näkyvät,
    ja ota ikkunasta kuvakaappaus. Liitä kuvakaappaus vastaustiedostoosi.
+
+{{% /wrapper %}}

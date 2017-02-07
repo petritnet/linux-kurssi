@@ -297,13 +297,15 @@ Käytettävissä olevat värit:
 
 
 
+{{% wrapper class="exercises" %}}
 Tehtäviä
 ======================
 
-Tehtävät voi tehdä yksin taikka kahden tai kolmen opiskelijan ryhmissä.
-
 Tee edellä luetelluista harjoitustehtävistä ainakin kolme.
 
+Tehtävät voi tehdä yksin taikka kahden tai kolmen opiskelijan ryhmissä.
+
+{{% /wrapper %}}
 
 Linkkejä:
 

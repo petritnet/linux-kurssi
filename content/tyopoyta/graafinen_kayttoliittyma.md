@@ -136,6 +136,7 @@ Uudet vaihtoehdot X:lle
 
 
 
+{{% wrapper class="exercises" %}}
 Tehtävät
 ==============================
 
@@ -154,3 +155,5 @@ Palauta vastaukset Moodleen tiedostona `vastaus-6.odt`.
 8. Käynnistä näkyviin tulevassa terminaali-ikkunassa Fluxbox komennolla: `fluxbox &`
 9. Mistä löytyy Fluxboxin valikko? Saatko vaihdettua valikon kautta ikkunamanageriksi Wmakerin, Icewm:n tai Openboxin?
    (Minkä asensitkin aiemmassa kohdassa.)
+
+{{% /wrapper %}}

@@ -308,15 +308,17 @@ On yleinen harhaluulo, että Linux olisi yhtä kuin musta ruutu, vaaleaa teksti�
 {{< youtube WVTWCPoUt8w >}}
 
 
+{{% wrapper class="exercises" %}}
 Tehtäviä
 ========
 
-Kuvakaappauksen voi ottaa PrintScreen-näppäimellä.
+Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä. Palauta vastauksesi annettuun sähköpostiosoitteeseen.
 
-- Käynnistä DVD:ltä tai usb-tikulta jokin seuraavista: Ubuntu, Kubuntu, Lubuntu, Linux Mint, ElementaryOS tai Fedora.
+- Käynnistä DVD:ltä tai USB-tikulta jokin seuraavista: Ubuntu, Kubuntu, Lubuntu, Linux Mint, ElementaryOS tai Fedora.
 - Tutki, minkä niminen tekstinkäsittelyohjelma löytyy.
 - Entä mikä on nimeltään oletuksena tarjolla oleva www-selain?
-
+- Kirjoita vastaus tekstinkäsittelyohjelmalla ja tallenna nimellä `tehtava-1.*`. (Missä pääte `*` on ohjelman oletustallennusmuoto.)
+{{% /wrapper %}}
 
 
 

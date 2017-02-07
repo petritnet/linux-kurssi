@@ -260,7 +260,7 @@ article {
     background-color: white;
     min-height: 30em;
     color: #111;
-    flex-grow: 1;
+    /*flex-grow: 1;*/
     margin: 0 auto;
     padding: 6em 260px 3em 1em;
     max-width: 45em;
@@ -419,6 +419,27 @@ article table td {
     vertical-align: top;
 }
 
+article .exercises {
+    margin: 3em 0 1em 0;
+    border: 1px solid #999;
+    background-color: rgba(200,200,200,0.5);
+    box-shadow: 3px 3px 5px rgba(150,150,150,0.5);
+}
+
+article .exercises h1,
+article .exercises h2,
+article .exercises h3,
+article .exercises h4,
+article .exercises h5,
+article .exercises h6 {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+article .exercises p {
+    margin: 0.5em 0.5em;
+}
+
 footer {
     background-color: #0084c8;
     padding: 0.1em 2em;
@@ -431,4 +452,100 @@ footer {
 
 footer a {
     color: #eee;
+}
+
+
+
+/*******************************************
+ * Mobile devices 
+ *******************************************/
+/* #### Mobile Phones Portrait #### */
+
+@media screen and (max-device-width:480px) and (orientation:portrait){
+}
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width:640px) and (orientation:landscape){
+  
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-width:1024px){
+    header {
+        position: relative;
+        padding: 0 0.5em;
+    }
+    
+    header h1.sitetitle {
+        font-size: 180%;
+        max-width: none;
+    }
+    
+    header .section-menu {
+        flex-flow: row wrap;
+    }
+    
+    header .section-menu .section-menu-item {
+        padding: 0.2em 0.5em;
+    }
+    
+    header .sitelogo {
+        left: 5px;
+    }
+    
+    .main {
+        padding: 0.1em 0.2em;
+    }
+    
+    nav.toc {
+        position: relative;
+        float: none;
+        width: auto;
+        margin: 0 0 0 120px;
+    }
+    
+    nav#TableOfContents {
+        float: none;
+        max-width: none;
+        margin: 0;
+        margin-top: 0.8em;
+        padding: 0.2em;
+        background-color: rgba(230,250,256,0.5);
+    }
+    
+    nav#TableOfContents ul {
+        margin: 0.2em;
+        padding: 0;
+        padding-left: 2em;
+    }
+    
+    .content {
+        margin: 0;
+        min-width: 0;
+    }
+    
+    article {
+        padding: 0 0.5em;
+    }
+    
+    article h1 {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+    
+    article .floatright,
+    article .floatleft {
+        float: none;
+        margin: 0.1em auto;
+        text-align: center;
+    }
+    
+    article .floatright figcaption,
+    article .floatleft figcaption {
+        text-align: left;
+    }
+    
+    footer {
+        position: relative;
+    }
 }

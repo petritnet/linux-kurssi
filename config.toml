@@ -1,5 +1,5 @@
-#baseurl = "http://petrit.net/Linux-kurssi"
-baseurl = "http://localhost:1313/"
+baseurl = "http://petrit.net/Linux-kurssi"
+#baseurl = "http://localhost:1313/"
 languageCode = "fi-fi"
 title = "Linux-kurssi"
 theme = "schoolbook"
