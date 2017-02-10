@@ -14,8 +14,10 @@ asentaminen voi vaatia jonkin toisen paketin asentamisen riippuvuuden takia. Nä
 silloin, jos ohjelma tarvitsee toimiakseen jotain jaettua kirjastoa, eli jotain ohjelmistokomponenttia,
 joka on yhteinen muiden ohjelmien kanssa. Riippuvuutena olevan kirjaston poistaminen poistaa myös
 siitä riippuvan ohjelmiston. Pakettien joukossa voi olla myös *meta-paketteja*, eli sellaisia
-paketteja, jotka eivät itse sisällä mitään muuta kuin riippuvuuksia muihin paketteihin.
-Tällaisen asentamalla voi asentaa suurempia ohjelmistokokonaisuuksia kerralla. Esimerkiksi `kubuntu-desktop`.
+paketteja, jotka eivät itse sisällä mitään tiedostoja vaan ainoastaan riippuvuuksia muihin paketteihin.
+Tällaisen asentamalla voi asentaa suurempia ohjelmistokokonaisuuksia kerralla.
+Tällainen on esimerkiksi `kubuntu-desktop`-paketti, jonka asentamalla Ubuntuun voi asentaa kaikki
+KDE-työpöytäympäristön käyttämiseen tarvittavat paketit.
 
 Paketinhallintaan käytettävät graafiset ohjelmat ovat tyypillisesti kuin joistain muista järjestelmistä
 tutut sovelluskaupat, joista voi valita asennettavat ohjelmat. Paketinhallinta on käytettävissä myös
@@ -40,11 +42,12 @@ oleva kokoelma ohjelmapaketteja. Varastossa on lisäksi luettelo tarjolla olevis
 * http://fi.archive.ubuntu.com/ubuntu/
 * Pakettilista: http://fi.archive.ubuntu.com/ubuntu/dists/saucy/main/binary-amd64/
 * Paketit: http://fi.archive.ubuntu.com/ubuntu/pool/
-* Paketit jaoteltu jakelun version mukaan (saucy) ja sen alla muutamaan "tärkeysluokkaan" (main, universe, multiverse, restricted)
-    * main: jakelut itse ylläpitämät, universe: yhteisön ylläpitämät, restricted: suljettuja ajureita yms., multiverse: tekijänoikeuksien, patenttien yms. takia rajoitettuja paketteja
-* Partnerien ohjelmia: `deb http://archive.canonical.com/ubuntu/ saucy partner`
-    * acroreader, flash-plugin, skype, sun-java, ...
-* Muita extroja: `deb http://extras.ubuntu.com/ubuntu/ saucy main`
+* Paketit on jaoteltu jakelun version mukaan (saucy) ja sen alla muutamaan "tärkeysluokkaan"
+  (main, universe, multiverse, restricted)
+    * main: jakelut itse ylläpitämät,
+    * universe: yhteisön ylläpitämät,
+    * restricted: suljettuja ajureita yms.,
+    * multiverse: tekijänoikeuksien, patenttien yms. takia rajoitettuja paketteja
 * Käyttäjien / kehittäjien omia repositoryja: Personal Package Archives - PPA
     * https://launchpad.net/ubuntu/+ppas
     * http://ppa.launchpad.net/
@@ -56,9 +59,13 @@ oleva kokoelma ohjelmapaketteja. Varastossa on lisäksi luettelo tarjolla olevis
 Paketti
 ========================
 
+Ohjelmistopaketti on käytännössä:
+
 * Kokoelma tiedostoja
-* pre-install -skripti
-* post-install -skripti
+* pre-install -skripti, joka suoritetaan ennen paketin asennusta
+* post-install -skripti, joka suoritetaan paketin asennuksen jälkeen
+* pre-rm -skripti, joka suoritetaan ennen paketin poistoa
+* post-rm -skripti, joka suoritetaan paketin poiston jälkeen
 * riippuvuudet
 * Paketin kuvausteksti
 * mahdollisesti paketoijan allekirjoitus, jonka paketinhallinta voi tarkistaa
@@ -66,7 +73,8 @@ Paketti
 
 
 
-Paketin sisältö
+Esimerkkinä `abiword`-paketin sisältö:
+
 ```bash
 $ dpkg -L abiword
 /.
@@ -150,14 +158,14 @@ $ dpkg -L abiword
 Paketinhallintajärjestelmät
 ========================
 
-.deb
-:    Peräisin Debianista. (Debian, Ubuntu, Mint, ...)
+Eri Linux-järjestelmissä käytetään elilaisessa muodossa olevia paketteja. Tyypillisimmät
+paketointimuodot ovat:
 
-.rpm
-:    Peräisin Red Hat Linuxista. (Red Hat/Fedora, Mandriva, openSUSE,...)
-
-.tar.gz / .tgz
-:    Pelkkä paketti, kuten zip, ilman paketinhallinnan rakenteita.
+|Tiedoston pääte |    |
+|--------------|----|
+|.deb |    Peräisin Debianista. (Debian, Ubuntu, Mint, ...) |
+|.rpm |    Peräisin Red Hat Linuxista. (Red Hat/Fedora, Mandriva, openSUSE,...)|
+|.tar.gz / .tgz |   Pelkkä paketti ilman paketinhallinnan rakenteita. (kuten zip)|
 
 
 
@@ -166,30 +174,36 @@ Paketinhallintajärjestelmät
 Graafinen paketinhallinta
 ========================
 
-Vaatii ylläpito-oikeudellisen käyttäjän salasanan ennen pakettien asentamista.
+{{< figure src="/images/ubuntu-software.png" link="/images/ubuntu-software.png" class="floatright floatimage" title="Ohjelmistovalikoima" caption="Ubuntun Software centerillä voi selata ohjelmistotarjontaa." >}}
 
-* Kategoriat
-* Haku
-* Suositellut
-* Asentaminen ja poistaminen
-* Päivitykset
-* Ohjelmalähteet eli pakettivarastojen hallinta
+Vaatii ylläpito-oikeudellisen käyttäjän salasanan ennen pakettien asentamista. Graafiset
+paketinhallintaohjelmat on tarkoitettu helppokäyttöisiksi ja niillä voidaan helpohkosti:
+
+* Selata ohjelmia *kategorioina*
+* Hakea *hakusanalla*
+* Selata *suositeltuja ohjelmia*
+* *Asentaa* ja *poistaa* ohjelmia
+* Päivittää ohjelmia
+* Hallita ohjelmalähteitä eli pakettivarastoja (repository)
 * Ubuntun *Software Center* sisältää myös joitain maksullisia ohjelmia ja lehtiä, jotka tulevat eri reittiä.
 
 
 
 
-Pakettien hallintaa komentorivillä
+Matalan tason pakettien hallintaa komentorivillä
 ========================
 
-"Matalan tason" paketinhallintaohjelma:
-* `dpkg` Debianin ja kumppaneiden .deb-paketeille
-* `rpm` ~RedHat-pohjaisille .rpm-paketeille
-* Voi asentaa jostain saadun tiedoston:
-    * `dpkg -i paketti.deb`
-    * `rpm  -i paketti.rpm`
-* tai poistaa paketin, luetteloida paketin sisällön, näyttää siitä tietoa jne.
-Koska asentaminen (ja poistaminen) vaatii pääkäyttäjän oikeudet, pitää komennon eteen lisätä `sudo`, eli:
+"Matalan tason" paketinhallintaohjelma hoitaa ohjelmistopakettien todellisen
+asentamisen. Debianissa ja sen jälkeläisissä (Ubuntu, Mint, ElementaryOS, jne.) matalan tason
+paketinhallintaohjelma on `dpkg` ja RedHat-pohjaisissa järjestelmissä puolestaan `rpm`.
+
+Näistä `dpkg`-ohjelmalla asennetaan `.deb`-päätteisiä ohjelmistopaketteja ja
+`rpm`-ohjelmalla `.rpm`-päätteisiä paketteja. Paketinhallintaohjelmaa voi käyttää joko suoraan
+komentoriviltä tai jollain korkeamman tason paketinhallintaohjelmalla.
+
+Paketin asentaminen ja poistaminen vaativat ylläpito-oikeudet, eli esimerkiksi Ubuntussa
+`dpkg`-ohjelman käyttäminen komentoriviltä vaatii `sudo`-komentoa. Esimerkit paketin asentamisesta
+(install), poistamisesta (remove) ja poistamisesta myös asetustiedostot poistaen (purge):
 
 ```
 sudo dpkg -i paketti.deb
@@ -197,27 +211,23 @@ sudo dpkg -r paketti
 sudo dpkg -P paketti
 ```
 
-Tällöin *sudo* kysyy käyttäjän salasanan.
-
-* `-i` (install) - asennus
-* `-r` (remove) - poisto, jättää asetustiedostot talteen, eli jos asentaa uudelleen, asetukset säilyvät
-* `-P` (purge) - poisto, poistaa myös asetustiedostot
+Näiden lisäksi paketista voidaan esimerkiksi luetteloida paketin sisältö ja näyttää siitä tietoja.
 
 
 
-
-Pakettien hallintaa komentorivillä
+Korkean tason pakettien hallintaa komentorivillä
 ========================
 
-"Korkeamman tason" paketinhallintaohjelmat:
+"Korkeamman tason" paketinhallintaohjelmat osaavat käsitellä paketteja monipuolisemmin.
 
 * .deb-paketeille `apt-get` ja `aptitude`
 * .rpm-paketeille `yum` ja `zypper`
 * esim. `apt-get install inkscape`
 * Tunnistavat paketin sen nimellä, ei tiedostonimellä
-* Osaavat hakea paketin pakettivarastosta
-* Osaa selvittää tarvittavat riippuvuudet ja riippuvuuksien riippuvuudet
-* Osaavat ratkoa konflikteja, jos esimerkiksi paketin asentaminen vaatii toisen paketin poistamisen
+* Osaavat hakea paketin pakettivarastosta verkosta.
+* Osaa selvittää tarvittavat riippuvuudet ja riippuvuuksien riippuvuudet, eli mitä muita
+  paketteja on asennettava ja missä järjestyksessä.
+* Osaavat ratkoa konflikteja, jos esimerkiksi paketin asentaminen vaatii toisen paketin poistamisen.
 * Lisäksi: pakettien poistaminen, tietojen ja statuksen selaaminen, päivittäminen
     * Pakettilistan päivitys: `apt-get update`
     * Haetaan ja asennetaan paketit, joista on pakettivarastossa pakettilistan mukaan uudempi versio: `apt-get upgrade`
@@ -230,21 +240,24 @@ sudo apt-get install inkscape
 sudo apt-get remove inkscape
 ```
 
+Sekä graafiset paketinhallintaohjelmat että komentoriviltä suoritettavat korkeamman tason paketinhallintaohjelmat
+ovat helppokäyttöisempiä käyttäliittymiä matalan tason paketinhallintaohjelmille.
 
 
 Ero muihin käyttöjärjestelmiin
 ========================
 
 * Windows
-    * Ohjelmat asentuvat *c:\Program Files\&lt;ohjelman nimi&gt;* -kansioon
+    * Ohjelmat asentuvat *c:\Program Files\\&lt;ohjelman nimi&gt;* -kansioon
     * Osa asennuspaketeista itse ajettavia .exe-tiedostoja, ei vain paketteja.
 * Mac OS X
     * Ohjelmapaketit levykuvina
-    * Ohjelmat asentuvat hakemistoon * /Applications/ohjelma.app/ *
+    * Ohjelmat asentuvat hakemistoon */Applications/ohjelma.app/* tai käyttäjän kotihakemistossa
+      olevaan vastaavaan hakemistoon.
 * Linux
     * Paketin tiedostot asentuvat eri puolille tiedostojärjestelmää
     * Paketinhallinta pitää kirjaa paketeista ja niihin liittyvistä tiedostoista
-    * Tiedostojen paikat ei paketin vaan merkityksensä mukaan.
+    * Tiedostojen paikat eivät määräydy paketin vaan merkityksensä mukaan.
 
     
     
@@ -273,4 +286,23 @@ Isä, äiti ja teinitytär asuvat asunnossa. Miltä jääkaappi näyttää?
 * Kolmannella hyllyllä leivontamargariinia, kananmunia, ...
 Kuten Linux-jakeluissa: Ainekset lajiteltu tyypin mukaan, ei omistajan/käyttäjän.
 
+
+Tehtäviä
+========================
+
+{{% wrapper class="exercises" %}}
+Tehtävät 4
+===========
+
+Käynnistä jokin työpöytä-Linux ja tee tehtävät siinä.
+Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä.
+Palautus tiedostona `tehtava-4.odt`.
+
+1. Asenna peli nimeltä *Frozen-Bubble*, käynnistä se ja ota käynnissä olevasta pelistä kuvakaappaus.
+2. Löytyvätkö valitsemastasi jakelusta ohjelmat Geary, Marble, Clementine ja Hugin? Mitä ohjelmia ne ovat?
+3. Selvitä pakettien dokumentaatiohakemistosta, montako tekijää (author) on merkitty ohjelmalle
+   *eog* (Eye of Gnome). Mistä löysit tiedon?
+    Jos ohjelmaa *eog* ei ole asennettuna, tutki sen sijaan ohjelmaa *wget*.
+
+{{% /wrapper %}}
 

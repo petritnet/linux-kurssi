@@ -308,9 +308,12 @@ On yleinen harhaluulo, että Linux olisi yhtä kuin musta ruutu, vaaleaa teksti�
 {{< youtube WVTWCPoUt8w >}}
 
 
-{{% wrapper class="exercises" %}}
 Tehtäviä
-========
+===========
+
+{{% wrapper class="exercises" %}}
+Tehtävät 1
+===========
 
 Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä. Palauta vastauksesi annettuun sähköpostiosoitteeseen.
 

@@ -34,6 +34,7 @@ Jakeluista muodostuu sukupuita, koska ne ovat yleensä muunnoksia jostain aiemma
 
 Live-CD / Live-DVD / Live-USB
 ==================================
+
 * CD- tai DVD-levy, jolta voi käynnistää toimivan Linux-järjestelmän
 * Käytettävissä kuin kiintolevyltä paitsi:
     * Tallennukset eivät säily, ellei erikseen siirrä esim. usb-tikulle
@@ -64,6 +65,9 @@ Live-levyltä järjestelmä on käytettävissä kuin kiintolevyltä paitsi:
 
 Kurssin Live-USB -levyltä löytyvät jakelut
 ==================================
+
+{{< figure src="/images/usb-memory.svg" class="floatright floatimage" >}}
+
 * Ubuntu 16.04 (Unity-käyttöliittymä)
 * Kubuntu 16.10 (KDE-työpöytä)
 * Xubuntu 16.10 (XFCE-työpöytä)
@@ -191,26 +195,31 @@ ICT1-luokan koneissa:
 Huom! SystemRescueCD ja Clonezilla ovat ylläpito- ja pelastustyökaluja, joita tarkastellaan myöhemmin kurssilla
 
 
-{{% wrapper class="exercises" %}}
 Tehtäviä
 ==================================
-Tehtävät ovat vastattavissa kurssin Moodle-sivuilla.
+
+{{% wrapper class="exercises" %}}
+Tehtävät 2
+==================================
 
 Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä. Tiedostot voit tallentaa/kopioida erilliselle USB-tikulle tai lähettää ne itsellesi sähköpostilla.
 
-1. Mikä ero on Mintin Cinnamonin ja Elementary OS:n tavoilla käsitellä virtuaalityöpöytiä?
-1. Minkä nimiset tiedostonhallintaohjelmat ovat käytössä seuraavista työpöytäympäristöissä?
+Palauta tekstinkäsittelyohjelmalla tehty tiedosto `tehtava-2.odt`, jossa ovat seuraavat vastaukset ja kuva.
+
+1. Nimesi ja päivämäärä
+2. Mikä ero on Mintin Cinnamonin ja Elementary OS:n tavoilla käsitellä virtuaalityöpöytiä?
+3. Minkä nimiset tiedostonhallintaohjelmat ovat käytössä seuraavista työpöytäympäristöissä?
     1. Unity (Ubuntu)
-    1. Cinnamon (Linux Mint)
-    1. KDE (Kubuntu)
-    1. LXDE (Lubuntu)
-    1. Pantheon (Elementary OS)
-1. Ota kuvakaappaus seuraavien ohjeiden mukaan:
+    2. Cinnamon (Linux Mint)
+    3. KDE (Kubuntu)
+    4. LXDE (Lubuntu)
+    5. Pantheon (Elementary OS)
+4. Ota kuvakaappaus seuraavien ohjeiden mukaan:
     1. Vaihda Ubuntun taustakuvaksi valitsemasi kuva ja ota työpöydästä kuvakaappaus.
-    1. Tallenna kuvakaappaus muistitikulle.
-    1. Käynnistä jokin toinen Linux-jakelu, vaihda taustakuva, avaa muistitikulta äskeinen kuvakaappaus näkymään ikkunaan ja ota kuvakaappaus.
-    1. Tallenna uusi kuvakaappaus myös tikulle.
-    1. Käynnistä vielä kolmas Linux-jakelu ja tee sama.
-    1. Palauta tämä kolmas kuvakaappaus, jossa näkyvät kaikki kolme työpöytää.
+    2. Tallenna kuvakaappaus muistitikulle.
+    3. Käynnistä jokin toinen Linux-jakelu, vaihda taustakuva, avaa muistitikulta äskeinen kuvakaappaus näkymään ikkunaan ja ota kuvakaappaus.
+    4. Tallenna uusi kuvakaappaus myös tikulle.
+    5. Käynnistä vielä kolmas Linux-jakelu ja tee sama.
+    6. Palauta tämä kolmas kuvakaappaus, jossa näkyvät kaikki kolme työpöytää.
 
 {{% /wrapper %}}

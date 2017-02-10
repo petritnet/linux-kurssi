@@ -110,17 +110,27 @@ Oikeuksien muuttaminen komentorivillä
 
 
 
-Tehtävät
+Tehtäviä
 =========================================
 
-Käynnistä jokin dvd-levyn työpöytä-Linux ja tee tehtävät siinä.
-Palautus tiedostona `vastaus-5.odt`.
+{{% wrapper class="exercises" %}}
+Tehtävät 3
+===========
 
-1. Mikä on käyttäjätunnuksesi uid?
+
+Käynnistä jokin live-levyn työpöytä-Linux ja tee tehtävät siinä.
+Palautus tiedostona `tehtava-3.odt`.
+
+1. Selvitä tiedostosta `/proc/cpuinfo` käyttämäsi koneen prosessorin merkki/malli.
+2. Mikä on käyttäjätunnuksesi uid?
 2. Mitkä omistaja ja ryhmä ovat tiedostoilla `/etc/passwd` ja `/etc/shadow`?
 3. Mitkä ovat näiden tiedostojen oikeudet omistajalle, ryhmälle ja muille?
 4. Kopioi terminaalissa annetun komennon `ls -l /etc/passwd /etc/shadow` tulostus vastaustiedostoosi.
-5. Tallenna vastaustiedostosi ja aseta sen oikeudet niin, että käyttäjällä ovat luku- ja kirjoitusoikeudet,
+5. Tiedostossa `/etc/passwd` luetellaan järjestelmässä olevat käyttäjätunnukset.
+   Etsi rivi, jolla on tunnus nimeltä `nobody`.
+   Mikä on nobodyn käyttäjänumero? (Rivin ensimmäinen numero kahden `:`-merkin välissä.)
+6. Tallenna vastaustiedostosi ja aseta sen oikeudet niin, että käyttäjällä ovat luku- ja kirjoitusoikeudet,
    ryhmällä lukuoikeus ja muilla ei mitään. Miten teit tämän?
-6. Ota tiedostohallintaan näkyviin tiedostojen oikeudet niin, että vastaustiedoston tiedot näkyvät,
+7. Ota tiedostohallintaan näkyviin tiedostojen oikeudet niin, että vastaustiedoston tiedot näkyvät,
    ja ota ikkunasta kuvakaappaus. Liitä kuvakaappaus vastaustiedostoosi.
+{{% /wrapper %}}

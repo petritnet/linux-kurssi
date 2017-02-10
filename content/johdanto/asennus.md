@@ -37,7 +37,7 @@ tietokoneen BIOS- tai UEFI-asetuksissa, joihin pääseminen riippuu käytetystä
   suostuu käynnitymään USB-tikulta.
 
 Kun tietokone on saatu käynnistettyä asennusmedialta, on loppu asennus lähinnä muutamaan kysymykseen vastaamista.
-Varovainen kannattaa olla lähinnä kohdissa, joissa kysytään, mille levylle asennetaan ja asennetaanko
+Varovainen kannattaa olla erityisesti kohdissa, joissa kysytään, mille levylle asennetaan ja asennetaanko
 Linux-jakelu tietokoneessa jo mahdollisesti olevan muun käyttöjärjestelmän rinnalle vai korvataanko se.
 
 Vaihtoehtoisesti Linuxin voi asentaa myös virtuaalikoneeseen. Tätä varten koneella täytyy olla jokin virtuaalikoneiden
@@ -59,6 +59,10 @@ vapaista ohjelmista monia omaan käyttöönsä ja mieltymyksiinsä sopivia koost
 *jakelupaketeiksi* tai vain *Linux-jakeluiksi*. Ne sisältävät tyypillisesti Linux-ytimen lisäksi yhden
 tai useamman työpöytäympäristön sekä varsin laajan koosteen erilaisia sovellusohjelmia toimisto-ohjelmista
 ja webbiselaimista ohjelmointiympäristöihin.
+
+{{< figure src="/images/ubuntu-desktop.png" link="/images/ubuntu-desktop.png" class="floatright floatimage" title="Ubuntun Unity-työpöytä" >}}
+{{< figure src="/images/kde-plasma-desktop.png" link="/images/kde-plasma-desktop.png" class="floatright floatimage" title="Kbuntun KDE Plasma -työpöytä" >}}
+{{< figure src="/images/elementary-desktop.png" link="/images/elementary-desktop.png" class="floatright floatimage" title="ElementaryOS ja Pantheon-työpöytä" >}}
 
 Tunnettuja Linux-jakeluita ovat muun muassa:
 
@@ -92,10 +96,11 @@ Ubuntu pohjautuu Debian GNU/Linux -jakeluun.
 Ubuntun taustaa
 ==========================
 
-* Perustaja: [Mark Shuttleworth](http://en.wikipedia.org/wiki/Mark_Shuttleworth)
-* *Ubuntu* on bantunkielinen sana, joka voidaan suomentaa: "ihmiseltä ihmiselle". Sen voidaan ymmärtää tarkoittavan myös "inhimillisyyttä toisia kohtaan".
-* Ubuntu-jakelua tekevät yhdessä Canonical-yhtiö sekä Ubuntu-yhteisö. Canonical tarjoaa kaupallista tukea yrityksille sekä ohjaa Ubuntu kehityksen suuntaa.
-* Canonicalin perusti eteläafrikkalainen Mark Shuttleworth rikastuttuaan myymällä aiemman yrityksensä 575 miljoonalla Yhdysvaltojen dollarilla.
+{{< figure src="/images/Mark-Shuttleworth.jpg" class="floatright floatimage" title="Mark Shuttleworth" link="https://en.wikipedia.org/wiki/Mark_Shuttleworth" attrlink="https://en.wikipedia.org/wiki/File:Mark-Shuttleworth-Ubuntu-fr-Karmic.jpg" attr="Wikipedia, Nitot (CC-by-sa)" >}}
+
+* **Ubuntu** on bantunkielinen sana, joka voidaan suomentaa: *"ihmiseltä ihmiselle"*. Sen voidaan ymmärtää tarkoittavan myös *"inhimillisyyttä toisia kohtaan"*.
+* Ubuntu-jakelua tekevät yhdessä **Canonical-yhtiö** sekä **Ubuntu-yhteisö**. Canonical tarjoaa kaupallista tukea yrityksille sekä ohjaa Ubuntu kehityksen suuntaa.
+* Canonicalin ja Ubuntun perusti eteläafrikkalainen [Mark Shuttleworth](http://en.wikipedia.org/wiki/Mark_Shuttleworth) rikastuttuaan myymällä aiemman yrityksensä 575 miljoonalla Yhdysvaltojen dollarilla.
 
 Ubuntusta julkaistaan uusi päivitetty versio aina noin kuuden kuukauden välein, yleensä huhti- ja lokakuussa. Tuki näillä versioilla on vähintään yhdeksän kuukautta.
 Kahden vuoden välein julkaistaan pidempään tuettu niin kutsuttu LTS-versio (Long Term Support). Näiden, yleensä
@@ -135,6 +140,8 @@ USB-tikkua tehtäessä voidaan käyttää esimerkiksi UNetbootin-työkalua
 
 Virtuaalikone
 ==========================
+
+{{< figure src="/images/virtualbox.png" link="/images/virtualbox.png" class="floatright floatimage" title="VirtualBox" caption="Linux-järjestelmiä voi käyttää myös virtuaalikoneeseen asennettuna, esimerkiksi VirtualBoxilla." >}}
 
 Asennus on mahdollista myös virtuaalikoneeseen, jolla on helppo kokeilla asentamista ja asennettua järjestelmää muuttamatta oman koneen levyosiointia.
 
@@ -232,20 +239,6 @@ Ubuntu käyttää omaa muista Linux-jakeluista poikkeavaa Unity-työpöytää. S
 
 
 
-{{% wrapper class="exercises" %}}
-Tehtäviä
-==========================
-
-Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä. Tiedostot voit tallentaa/kopioida erilliselle USB-tikulle tai lähettää ne itsellesi sähköpostilla.
-
-1. Käynnistä Linux Mint
-2. Käynnistä tiedostonhallinta ja tekstinkäsittelyohjelma
-3. Kirjoita tekstinkäsittelyohjelmaan nimesi ja päivämäärä.
-4. Ota kuvakaappaus, kun molemmat ikkunat ovat näkyvillä.
-5. Etsi kuva ja liitä se tekstinkäsittelyohjelmaan.
-6. Tallenna tiedosto nimellä `tehtävä-2.odt` ja palauta tiedosto.
-
-{{% /wrapper %}}
 
 
 
