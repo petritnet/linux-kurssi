@@ -2,7 +2,8 @@
         {{ $section := .Section }}
         {{ $title := .Title | lower }}
         {{ $permalink := .Permalink }}
-        {{ with .Section }}<h2 class="toc-section">{{ . }}</h2>{{ end }}
+        {{ $sectiontitle := or .Params.sectiontitle .Section }}
+        {{ with .Section }}<h2 class="toc-section">{{ $sectiontitle }}</h2>{{ end }}
         <ul class="toc-section-list">
             {{ range .Site.Pages.ByWeight }}
                 {{ if eq $section .Section }}<li class="{{ if eq .Permalink $permalink }}active{{ end }}"><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}

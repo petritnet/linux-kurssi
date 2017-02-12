@@ -1,6 +1,7 @@
 +++
 date = "2016-09-05T23:03:48+03:00"
 title = "Tiedostojärjestelmä"
+sectiontitle = "Järjestelmä"
 weight = 105
 +++
 
@@ -134,3 +135,29 @@ on olemassa myös vähemmän kullattu selitys hakemistorakenteelle:
 * Jälkikäteen keksittiin selitykset, että `/bin`, `/lib`, `/sbin` jne. sisältävät ensin tarvittavat osat ja `/usr`:n alla ovat vähemmän kriittiset jutut.
 
 
+Tehtäviä
+==================================
+
+{{% wrapper class="exercises" %}}
+Tehtävät 3
+==================================
+Palauta vastaukset tiedostona `tehtava-3.txt` tai `tehtava-3.odt`.
+
+1. Mitkä seuraavista tiedostopoluista ovat *absoluuttisia* ja mitkä *suhteellisia*?
+    - `/proc/cpuinfo`
+    - `etc/X11/rgb.txt`
+    - `/var/log/./messages`
+    - `/etc/cups/../../usr/share/doc/nano/`
+    - `doc/nano/../bash/README`
+2. Kirjoita seuraavat polut "sievempään" muotoon:
+    - `/etc/X11/../skel/./.bashrc`
+    - `/./././home/../`
+    - `/usr/lib/.././share/doc/`
+    - `/etc/X11/../cron.d/././anacron`
+3. Seuraavassa on annettu hakemisto, jossa olet sekä suhteellinen polku johonkin tiedostoon.
+   Muodosta tiedoston absoluuttinen polku.
+    - Olet hakemistossa: `/etc/apache2/` suhteellinen polku: `../cron.d/anacron`
+    - Olet hakemistossa: `/home/pekka/` suhteellinen polku: `../../media/pekka/MULTIBOOT/home-rw`
+    - Olet hakemistossa: `/home/paula/Documents/` suhteellinen polku: `../Music/./Juice/Marilyn.ogg`
+
+{{% /wrapper %}}

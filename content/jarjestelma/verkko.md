@@ -1,7 +1,8 @@
 +++
 date = "2016-09-08T20:48:53+03:00"
 title = "Verkko"
-weight = 10
+sectiontitle = "Järjestelmä"
+weight = 140
 +++
 
 Yhteys
@@ -108,10 +109,15 @@ Ssh-yhteyden yli voidaan kopioida tiedostoja myös kometoriviltä. Esimerkkejä:
 
 
 Tehtäviä
+========================
+
+{{% wrapper class="exercises" %}}
+
+Tehtävät 6
 ===============================
 
 Tehtävien tekemiseen tarvitset palvelimen, käyttäjätunnuksen ja salasanan. Viimeistä tehtävää varten
-palvelimella on oltava käynnissä (Apache) www-palvelin.
+palvelimella on oltava käynnissä (Apache) www-palvelin. Palauta vastauksena tiedosto `tehtava-6.zip`.
 
 1. Selaa graafisella käyttöliittymällä esiin annettu sftp-osoite ja kopioi käyttäjätunnuksesi
    oman kotihakemiston Pictures-alihakemistosta yksi kuva omalle koneellesi.
@@ -124,8 +130,9 @@ palvelimella on oltava käynnissä (Apache) www-palvelin.
     * Siirry Documents-hakemistoon.
     * Muuta `nimi.txt`-tiedoston oikeuksia niin, että käyttäjällä ja ryhmällä ovat luku- ja kirjoitusoikeudet,
       mutta muilla ei mitään oikeuksia.
-    * Ota kuvakaappaus, jossa näkyy terminaali-ikkunassa annettu komento.
-4. Paketoi ladattu kuvatiedosto ja otetut kuvakaappaukset zip-tiedostoon nimellä vastaus-8.zip.
+    * Listaa hakemiston sisältö pitkässä muodossa, jotta näet, että oikeudet ovat oikein.
+    * Ota kuvakaappaus, jossa näkyvät terminaali-ikkunassa annetut komennot.
+4. Paketoi ladattu kuvatiedosto ja otetut kuvakaappaukset zip-tiedostoon nimellä `tehtava-6.zip`.
 5. Kopioi alla oleva teksti johonkin tekstieditoriin (gedit, scratch, jokin muu) ja tallenna nimellä `index.html`.
    Voit tehdä hienommankin html-sivun. Kopioi tiedosto haluamallasi tavalla palvelimelle kotihakemistossasi olevaan
    `public_html`-hakemistoon. Mene www-selaimella osoitteeseen `http://<palvelimen_nimi>/~<käyttäjätunnus>`.
@@ -145,3 +152,4 @@ palvelimella on oltava käynnissä (Apache) www-palvelin.
     </body>
 </html>
 ```
+{{% /wrapper %}}

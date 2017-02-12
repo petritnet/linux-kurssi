@@ -1,33 +1,64 @@
 +++
 date = "2016-09-06T22:06:10+03:00"
 title = "Tiedosto-oikeudet"
+sectiontitle = "Järjestelmä"
 weight = 120
 +++
 
 Tiedostojen oikeudet
 ==================
 
-* Jokaisella tiedostolla (ja hakemistolla) omistaja ja ryhmä
-* Jokaisella tiedostolla kolmen tyypin oikeuksia kolmelle joukolle käyttäjiä
-* luku (**r**ead), kirjoitus (**w**rite), suoritus (e**x**ecute)
-* omistaja (**u**ser), ryhmä (**g**roup), muut (**o**thers)
-* hakemistoilla suoritusoikeuden sijasta viittausoikeus
+Unixeissa tiedostojärjestelmän kaikille hakemistoille ja tiedostoille on
+määritelty niiden käyttöoikeudet tiedoston omistajuuden ja ryhmän perusteella.
 
+Jokaiselle tiedostolla ja hakemistolla on yksi *omistaja* (käyttäjätunnus, uid) ja yksi
+*omistajaryhmä* (ryhmä, gid). Jokaiselle tiedostolle on määrätty kolmenlaisia käyttöoikeuksia
+kolmelle joukolle käyttäjiä.
+
+Käyttöoikeuksia ovat:
+
+|Lyhenne| Oikeus                          | Huom       |
+|-------|---------------------------------|------------|
+| *r*   | Lukuoikeus (**r**ead)           | Saa lukea tiedoston tai hakemiston sisällön. |
+| *w*   | Kirjoitusoikeus (**w**rite)     | Saa kirjoittaa tiedostoon tai luoda hakemustoon uusia tiedostoja.|
+| *x*   | Suoritusoikeus (e**x**ecute)    | Saa suorittaa tiedoston tai viitata hakemiston sisältöön. |
+
+Käyttäjäjoukkoja, joille näitä oikeuksia voidaan antaa, ovat:
+
+|Lyhenne| Käyttäjäjoukko                  |
+|-------|---------------------------------|
+| *u*   | Käyttäjä (**u**ser)             |
+| *g*   | Ryhmä (**g**roup)               |
+| *o*   | Muut (**o**thers)               |
+
+Kullekin kolmelle käyttäjäjoukolle ovat annettavissa kaikki kolme käyttöoikeutta.
 
 
 
 Tiedostojen oikeudet tiedostonhallinnalla
 =========================================
 
-1. Tiedostonhallinta esiin
-2. Valittu tiedosto hiiren oikealla nappulalla
-3. "Properties" / "Ominaisuudet"
-4. "Permissions" / "Oikeudet"
+{{< figure src="/images/ubuntu-accessrights.png" link="/images/ubuntu-accessrights.png" class="floatright floatimage" title="Tiedostojen oikeudet" caption="Ubuntun tiedostonhallinnalla voi muokata tiedoston oikeuksia." >}}
+
+{{< figure src="/images/ubuntu-listcolumns.png" link="/images/ubuntu-listcolumns.png" class="floatright floatimage" title="Oikeudet näkyviin" >}}
+
+{{< figure src="/images/ubuntu-listcolumns-quick.png" link="/images/ubuntu-listcolumns-quick.png" class="floatright floatimage" title="Oikeudet näkyviin" >}}
+
+Graafisella tiedostonhallintaohjelmalla voi Ubuntussa muokata tiedostojen oikeuksia seuraavasti:
+
+1. Otetaan tiedostonhallinta esiin.
+2. Klikataan valittua tiedostoa hiiren oikealla nappulalla.
+3. Valitaan "Properties" tai "Ominaisuudet", riippuen käytetystä kielestä.
+4. Välilehdeltä "Permissions" / "Oikeudet" ovat valittavissa seuraavat asetukset:
     - Omistaja voi vaihtaa tiedoston ryhmän johonkin ryhmistään.
     - Omistajan oikeuksille vaihtoehdot: "Read-only" ja "Read and write"
     - Ryhmän oikeuksille vaihtoehdot: "None", "Read-only" ja "Read and write"
     - Muiden oikeuksille vaihtoehdot: "None", "Read-only" ja "Read and write"
     - Lisäksi rastiruutu suoritusoikeuksille. (Laittaa suoritusoikeuden kaikille kolmelle.)
+
+Tällä graafisella työkalulla ei ole mahdollista saada aikaan kaikkia mahdollisia oikeuksien yhdistelmiä
+vaan vain tyypillisimmin tarvitut yhdistelmät. Erikoisemmat oikeuksien yhdistelmät pitää asettaa
+joko jollain muulla työkalulla tai komentoriviä käyttäen.
 
 
 
@@ -35,9 +66,16 @@ Tiedostojen oikeudet tiedostonhallinnalla
 Oikeudet näkyviin tiedostonhallinnalla
 =========================================
 
-* Tiedostonhallinta "lista"-näkymään (Ikkunan yläreunan kuvakkeesta)
-* Valitaan näytettävät sarakkeet (Valikosta: "Files" -> "Preferences" -> "List Columns"-välilehti)
-* Rastit kohtiin "Group", "Owner", "Permissions"
+Tiedostojen oikeudet on mahdollista saada näkyviin myös suoraan tiedostonhallintaikkunan
+listamuotoisessa näkymässä. Listanäkymän saa käyttöön ikkunan oikean yläreunan listakuvakkeella.
+
+Listänäkymässä näkyviä sarakkeita voi muokata valitsemalla valikosta
+*"Edit"* -> *"Preferences"* ja sieltä *"List Columns"*-välilehdeltä rastiruuduilla halutut
+sarakkeet, kuten **"Group"**, **"Owner"** ja **"Permissions"**.
+
+Tämä valinta muuttaa listanäkymässä oletuksena näytettäviä sarakkeita. Jos sarakkeet halutaan
+näkyviin vain yksittäisessä hakemistossa tai väliaikaisesti, ne voi valita myös klikkaamalla
+sarakkeiden otsikkoriviä hiiren oikealla napilla.
 
 
 
@@ -45,6 +83,8 @@ Oikeudet näkyviin tiedostonhallinnalla
 
 Tiedostojen oikeudet komentorivillä
 =========================================
+
+Tiedostojen oikeuksia voi komentorivillä tarkastella komennolla `ls`.
 
 1. Käynnistetään terminaali (Launcher: "terminal")
 2. Siirrytään hakemistoon (kansio), jossa tutkittava tiedosto: `cd Pictures`
@@ -65,19 +105,49 @@ drwxr-xr-x 36 pesasa pesasa   4096 Sep 12 21:45 ..
 pesasa@kurssibuntu:~/Pictures$
 ```
 
+Komennon tulostuksessa kullakin rivillä näytetään yhden tiedoston tiedot.
+Rivin ensimmäisenä merkkinä on `d`, jos kyseessä on hakemisto, muutoin rivi alkaa
+viivalla. Seuraavat yhdeksän merkkiä ovat käyttäjän, ryhmän ja muiden oikeudet
+kukin kolmella merkillä järjestyksessä `rwx`. Jos joltain käyttäjäjoukoista puuttuu
+jokin oikeus, on sen tilalla viiva `-`.
+
+Muita riviltä luettavia tietoja ovat tiedoston omistajan käyttäjätunnus, tiedoston
+omistava ryhmä, tiedoston koko tavuina, tiedoston muokkausaika sekä tiedoston nimi.
 
 
 
 Omistajan ja ryhmän muuttaminen komentorivillä
 =========================================
 
-* Komennolla `chown`
-* Omistajan vaihto: `sudo chown petri Screenshot-01.png`<br>
-    (Vain ylläpito-oikeuksilla voi vaihtaa omistajaa.)
-* Ryhmän vaihto: `chown :sudo Screenshot-01.png`<br>
-    (Käyttäjä voi vaihtaa ryhmän vain sellaiseen, johon itse kuuluu.)
-* Omistajan ja ryhmän vaihto samalla kertaa: `sudo chown petri:audio Screenshot-01.png`<br>
-    (Ylläpitäjä voi vaihtaa omistajan ja ryhmän miksi haluaa.)
+Tiedoston omistajan ja ryhmän voi vaihtaa komennolla `chown`.
+
+Tiedoston omistajan voi vaihtaa vain ylläpito-oikeuksilla, eli esimerkiksi
+komennolla:
+
+```no-highlight
+sudo chown petri Screenshot-01.png
+```
+
+Tiedoston ryhmän voi vaihtaa vain sellaiseksi ryhmäksi, johon käyttäjä itse kuuluu.
+Ylläpito-oikeuksilla voi kuitenkin ryhmäksi vaihtaa minkä tahansa ryhmän.
+
+Komennossa omistaja ja ryhmä annetaan kaksoispisteellä (`:`) tai pisteellä (`.`)
+eroteltuina. Pelkkä ryhmä vaihdetaan jättämällä käyttäjätunnuksen paikka tyhjäksi
+ja antamalla vain ryhmä kaksoispisteen jälkeen. Esimerkiksi:
+
+```no-highlight
+chown :sudo Screenshot-01.png
+```
+
+Tiedoston omistaja ja ryhmä voidaan vaihtaa samalla kertaa komennolla:
+
+```no-highlight
+sudo chown petri:audio Screenshot-01.png
+```
+
+Tähän tarvitaan kuitenkin ylläpito-oikeuksia.
+
+Muutosten jälkeen tiedostojen omistajuudet näyttävät tältä:
 
 ```bash
 pesasa@kurssibuntu:~/Pictures$ ls -la
@@ -95,18 +165,37 @@ pesasa@kurssibuntu:~/Pictures$
 Oikeuksien muuttaminen komentorivillä
 =========================================
 
-* Monipuolisemmat asetukset kuin graafisella työkalulla
-    * Esimerkiksi myös omistajalta voi ottaa lukuoikeuden pois ja suoritusoikeuden voi
-      laittaa erkseen omistajalle, ryhmälle ja muille.
-* Komennolla `chmod`
+Komentoriviltä käsin tiedostojen oikeuksia voi muokata graafista työkalua vapaammin
+komennolla `chmod`.
+
+Esimerkiksi myös omistajalta voi ottaa lukuoikeuden pois ja suoritusoikeuden voi
+laittaa erkseen omistajalle, ryhmälle tai muille.
+
 * Oikeuksia voi lisätä (**+**), poistaa (**-**) ja asettaa (**=**)
 * omistajalle (**u**), ryhmälle (**g**), muille (**o**) tai kaikille (**a**)
-* `chmod u=rwx Screenshot-02.png`
-* `chmod g+x Screenshot-02.png`
-* `chmod o-r Screenshot-02.png`
-* `chmod a+r Screenshot-02.png`
-* `chmod u=rx,g-x,o=r Screenshot-02.png`
 
+Asettamisessa kyseiselle käyttäjäjoukolle tulevat oikeuksiksi täsmälleen ne oikeudet,
+jotka komennossa sanotaan, ei muita.
+
+"Kaikki"-joukko on lyhennys, joka tarkoittaa sekä omistajaa, ryhmää että muita.
+
+Esimerkiksi:
+
+```no-highlight
+chmod u=rwx Screenshot-02.png
+chmod g+x Screenshot-02.png
+chmod o-r Screenshot-02.png
+chmod a+r Screenshot-02.png
+chmod u=rx,g-x,o=r Screenshot-02.png
+```
+
+Näissä esimerkeissä:
+
+- Asetetaan omistajalle (`u`) kaikki oikeudet (`rwx`).
+- Lisätään ryhmälle (`g`) suoritusoikeus (`x`).
+- Poistetaan muilta (`o`) lukuoikeus (`r`)
+- Lisätään kaikille (`a`) lukuoikeus (`r`)
+- Asetetaan käyttäjälle oikeudet `rx`, poistetaan ryhmältä oikeus `x` ja asetetaan muille oikeus `r`.
 
 
 
@@ -114,12 +203,12 @@ Tehtäviä
 =========================================
 
 {{% wrapper class="exercises" %}}
-Tehtävät 3
+Tehtävät 4
 ===========
 
 
 Käynnistä jokin live-levyn työpöytä-Linux ja tee tehtävät siinä.
-Palautus tiedostona `tehtava-3.odt`.
+Palautus tiedostona `tehtava-4.odt`.
 
 1. Selvitä tiedostosta `/proc/cpuinfo` käyttämäsi koneen prosessorin merkki/malli.
 2. Mikä on käyttäjätunnuksesi uid?

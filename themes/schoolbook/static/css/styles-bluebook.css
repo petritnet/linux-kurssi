@@ -448,6 +448,10 @@ article .exercises p {
     margin: 0.5em 0.5em;
 }
 
+article .exercises pre {
+    margin: 1em;
+}
+
 footer {
     background-color: #0084c8;
     padding: 0.1em 2em;

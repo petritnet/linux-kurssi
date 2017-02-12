@@ -1,6 +1,7 @@
 +++
 date = "2016-09-06T22:42:04+03:00"
 title = "Graafinen käyttöliittymä"
+sectiontitle = "Työpöytä"
 weight = 210
 +++
 

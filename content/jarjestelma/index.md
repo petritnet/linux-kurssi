@@ -1,6 +1,7 @@
 +++
 date = "2016-09-11T21:08:30+03:00"
 title = "Järjestelmä"
+sectiontitle = "Järjestelmä"
 weight = 100
 type = "index"
 menu = ["main"]

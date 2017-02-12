@@ -1,6 +1,7 @@
 +++
 date = "2016-09-05T23:03:37+03:00"
 title = "Paketinhallinta"
+sectiontitle = "Järjestelmä"
 weight = 130
 +++
 
@@ -291,12 +292,12 @@ Tehtäviä
 ========================
 
 {{% wrapper class="exercises" %}}
-Tehtävät 4
+Tehtävät 5
 ===========
 
 Käynnistä jokin työpöytä-Linux ja tee tehtävät siinä.
 Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä.
-Palautus tiedostona `tehtava-4.odt`.
+Palautus tiedostona `tehtava-5.odt`.
 
 1. Asenna peli nimeltä *Frozen-Bubble*, käynnistä se ja ota käynnissä olevasta pelistä kuvakaappaus.
 2. Löytyvätkö valitsemastasi jakelusta ohjelmat Geary, Marble, Clementine ja Hugin? Mitä ohjelmia ne ovat?
