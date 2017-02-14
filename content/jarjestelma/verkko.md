@@ -5,12 +5,12 @@ sectiontitle = "Järjestelmä"
 weight = 140
 +++
 
-Yhteys
-===============================
+Verkkoyhteydet ovat olennainen osa nykyaikaista tietojenkäsittelyä.
+Internet-yhteydet ovat olleet Unix-järjestelmien osana jo kauan ja Linuxissa alusta saakka
 
-* Internet-yhteydet ovat olleet Unix-järjestelmien osana jo kauan ja Linuxissa alusta saakka
-* TCP/IP on peräisin Unixeilta
-* Nyky-Linuxeissa yhteydet hoitaa NetworkManager, jonka käyttöliittymät antavat käyttäjän valita langattomat verkot yms.
+* AT&T julkaisi UNIX:in TCP/IP-toteutuksen public domainina 1989. Monet muut järjestelmät omaksuivat sen.
+* Nyky-Linuxeissa verkkoyhteydet hoitaa NetworkManager, jonka käyttöliittymät antavat käyttäjän
+  valita langattomat verkot yms.
 
 
 
@@ -18,11 +18,12 @@ Yhteys
 Avahi
 ===============================
 
-Mac-maailmassa tunnetaan nimellä Bonjour
+Avahi asettaa lähiverkkoasetusten automaattisesti [Zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)-toteutuksella. Mac-maailmassa vastaava tunnetaan nimellä Bonjour.
 
-* Kukin kone tietää oman nimensä ja osaa kertoa sen muille saman verkon koneille
+* Kukin kone tietää oman nimensä ja tarjoamansa palvelut sekä osaa kertoa ne muille saman verkon koneille
 * Voidaan käyttää nimeä `koneennimi.local` pelkän ip-numeron sijaan
-* Helpottaa, kun koneet saavat ip-osoitteensa dynaamisesti DHCP-palvelimelta eikä niillä siksi ole aina samaa ip-numeroa.
+* Helpottaa silloin, kun koneet saavat ip-osoitteensa dynaamisesti DHCP-palvelimelta
+  eikä niillä siksi ole aina samaa ip-numeroa.
 
 
 
@@ -60,15 +61,15 @@ Ssh on tekstipohjainen salattu komentoriviyhteys toiseen koneeseen.
 Tiedostonsiirto
 ===============================
 
-Tiedostoja voidaan siirtää koneiden välillä esimerkiksi Samba- ja Sftp-protokollilla
+Tiedostoja voidaan siirtää koneiden välillä esimerkiksi *Samba*- ja *Sftp*-protokollilla
 
-* Samba == Windows-verkko
+* Samba on Windows-verkon smb-protokolla.
     * Jaettuja levyjä ja tulostimia voidaan käyttää
     * Omien jakaminen vaatii palvelun asentamisen omalle koneelle
 * sftp toimii ssh-palvelimen kautta
     * Vaatii ssh-palvelimen asentamisen omalle koneelle, jotta sen tiedostoihin pääsee käsiksi.
     * Käyttäjä pääsee käsiksi kaikkiin tiedostoihin, joihin pääsisi paikallisesti kirjautumalla
-    * Korvaa usein salaamattoman ftp-yhteyden.
+    * Korvaa salaamattoman ftp-yhteyden.
 
 
 
@@ -97,14 +98,32 @@ Komentoriviltä
 
 Ssh-yhteyden yli voidaan kopioida tiedostoja myös kometoriviltä. Esimerkkejä:
 
-* `scp kayttajanimi@etakone:/polku/tiedostoon/nimi.txt /polku/tiedostoon/talla/koneella/` <br>
-   Kopioidaan tiedosto etäkoneelta paikalliseen hakemistoon.
-* `scp kayttajanimi@etakone:/polku/tiedostoon/nimi.txt uusinimi.txt` <br>
-   Kopioidaan tiedosto etäkoneelta paikalliselle koneelle nykyiseen työhakemistoon uudella tiedostonimellä.
-* `scp /polku/tiedostoon/talla/koneella/nimi.txt kayttajanimi@etakone:/polku/toisella/koneella/uusinimi.txt` <br>
-   Kopioidaan tiedosto paikalliselta koneelta etäkoneelle haluttuun hakemistoon uudella nimellä.
-* `scp /polku/tiedostoon/talla/koneella/nimi.txt kayttajanimi@etakone:hakemisto/kotihakemiston/alla/uusinimi.txt` <br>
-   Kopioidaan tiedosto paikalliselta koneelta etäkoneelle haluttuun hakemistoon uudella nimellä.
+Kopioidaan tiedosto etäkoneelta paikalliseen hakemistoon antamalla ensin etäosoitteessa
+olevan tiedoston nimi ja sitten pailallisen hakemiston nimi.
+```no-highlight
+scp kayttajanimi@etakone:/polku/tiedostoon/nimi.txt /polku/tiedostoon/talla/koneella/
+```
+
+Kopioidaan tiedosto etäkoneelta paikalliselle koneelle nykyiseen työhakemistoon uudella tiedostonimellä.
+
+```no-highlight
+scp kayttajanimi@etakone:/polku/tiedostoon/nimi.txt uusinimi.txt
+```
+
+Kopioidaan tiedosto paikalliselta koneelta etäkoneelle haluttuun hakemistoon uudella nimellä antamalla ensin
+paikallisen tiedoston nimi tarvittavan absoluuttisen tai suhteellisen polun avulla ja sitten
+uuden tiedoston etäosoite. (absoluuttinen polku)
+
+```no-highlight
+scp /polku/talla/koneella/nimi.txt kayttajanimi@etakone:/polku/toisella/koneella/uusinimi.txt
+```
+
+Kopioidaan tiedosto paikalliselta koneelta etäkoneelle haluttuun hakemistoon uudella nimellä. (suhteellinen polku)
+
+```no-highlight
+scp /polku/talla/koneella/nimi.txt kayttajanimi@etakone:hakemisto/kotihakemiston/alla/uusinimi.txt
+```
+
 
 
 

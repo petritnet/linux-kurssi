@@ -39,20 +39,28 @@ Pakettivarasto
 Pakettivarasto, eli repository, on jakelun tekijän palvelimilla (sekä peilipalvelimilla ympäri maailmaa)
 oleva kokoelma ohjelmapaketteja. Varastossa on lisäksi luettelo tarjolla olevista paketeista.
 
-* `deb http://fi.archive.ubuntu.com/ubuntu/ saucy main restricted`
-* http://fi.archive.ubuntu.com/ubuntu/
-* Pakettilista: http://fi.archive.ubuntu.com/ubuntu/dists/saucy/main/binary-amd64/
-* Paketit: http://fi.archive.ubuntu.com/ubuntu/pool/
-* Paketit on jaoteltu jakelun version mukaan (saucy) ja sen alla muutamaan "tärkeysluokkaan"
-  (main, universe, multiverse, restricted)
-    * main: jakelut itse ylläpitämät,
-    * universe: yhteisön ylläpitämät,
-    * restricted: suljettuja ajureita yms.,
-    * multiverse: tekijänoikeuksien, patenttien yms. takia rajoitettuja paketteja
-* Käyttäjien / kehittäjien omia repositoryja: Personal Package Archives - PPA
-    * https://launchpad.net/ubuntu/+ppas
-    * http://ppa.launchpad.net/
-* Pakettivarasto voi olla myös esim. asennus-cd:llä tai -usb:llä.
+Esimerkiksi:
+
+* Ubuntun pakettivaraston suomalainen peilipalvelin: <br> <http://fi.archive.ubuntu.com/ubuntu/>
+* Pakettilista:<br> <http://fi.archive.ubuntu.com/ubuntu/dists/xenial/main/binary-amd64/>
+* Paketit:<br> <http://fi.archive.ubuntu.com/ubuntu/pool/>
+* Pakettivaraston asetus tiedostossa `/etc/apt/sources.list`<br>
+  `deb http://fi.archive.ubuntu.com/ubuntu/ xenial main restricted`
+
+Paketit on jaoteltu jakelun version mukaan (saucy) ja sen alla muutamaan "tärkeysluokkaan"
+(main, universe, multiverse, restricted)
+
+* *main*: jakelut itse ylläpitämät,
+* *universe*: yhteisön ylläpitämät,
+* *restricted*: suljettuja ajureita yms.,
+* *multiverse*: tekijänoikeuksien, patenttien yms. takia rajoitettuja paketteja
+
+Lisäksi on tarjolla käyttäjien / kehittäjien omia repositoryja: Personal Package Archives - PPA
+
+* https://launchpad.net/ubuntu/+ppas   
+* http://ppa.launchpad.net/
+
+Pakettivarasto voi olla myös esim. asennus-cd:llä tai -usb:llä, jos tarvitsee toimittaa verkon ulottumattomiin.
 
 
 
@@ -244,25 +252,59 @@ sudo apt-get remove inkscape
 Sekä graafiset paketinhallintaohjelmat että komentoriviltä suoritettavat korkeamman tason paketinhallintaohjelmat
 ovat helppokäyttöisempiä käyttäliittymiä matalan tason paketinhallintaohjelmille.
 
+Ubuntun ja Debianin käyttämän apt-paketinhallinnan komentoja:
+
+| Tehtävä                         | Komento                                |
+|---------------------------------|----------------------------------------|
+| Asennus                         | `apt-get install <pakettien nimet>`    |
+| Poisto                          | `apt-get remove <pakettien nimet>`     |
+| Pakettilistan päivitys          | `apt-get update`                       |
+| Asennettujen pakettien päivitys | `apt-get upgrade`                      |
+| Haku                            | `apt-cache search <hakusanoja>`        |
+| Paketin tila                    | `apt-cache policy <paketin nimi>`      |
+| Paketin tiedot                  | `apt-cache show <paketin nimi>`        |
+
+Näistä järjestelmään muutoksia tekevät komennot, eli `apt-get` -komennot tarvitsevat
+ylläpito-oikeuksia, joten niiden eteen pitää lisätä komento `sudo`.
 
 Ero muihin käyttöjärjestelmiin
 ========================
 
 * Windows
-    * Ohjelmat asentuvat *c:\Program Files\\&lt;ohjelman nimi&gt;* -kansioon
+    * Ohjelmat asentuvat *c:\Program Files\\&lt;ohjelman nimi&gt;* -kansioon.
+    * Ohjelmapaketit sisältävät kaikki omat tarpeensa käyttöjärjestelmän tarjoamia palveluita
+      lukuun ottamatta.
     * Osa asennuspaketeista itse ajettavia .exe-tiedostoja, ei vain paketteja.
 * Mac OS X
     * Ohjelmapaketit levykuvina
     * Ohjelmat asentuvat hakemistoon */Applications/ohjelma.app/* tai käyttäjän kotihakemistossa
       olevaan vastaavaan hakemistoon.
+    * Ohjelmapaketit sisältävät kaikki omat tarpeensa käyttöjärjestelmän tarjoamia palveluita
+      lukuun ottamatta.
 * Linux
     * Paketin tiedostot asentuvat eri puolille tiedostojärjestelmää
     * Paketinhallinta pitää kirjaa paketeista ja niihin liittyvistä tiedostoista
     * Tiedostojen paikat eivät määräydy paketin vaan merkityksensä mukaan.
+    * Ohjelman asennus on pilkottu usein useampaan pakettiin, sillä osa tarvittavista kirjastoista
+      voi olla yhteisiä monen muun ohjelman kanssa.
 
-    
-    
-    
+Kun ohjelmien tarvitsemat osat on pilkottu useampaan pakettiin, voivat eri ohjelmat käyttää yhteisiä osia
+mainitsemalla ne omassa paketissaan riippuvuutena. Tämä on mahdollista avoimen lähdekoodin vuoksi.
+Tästä on **hyötyä**:
+
+- Ohjelmistot vievät levyltä vähemmän tilaa, kun kirjastot eivät ole moninkertaisesti eri ohjelmien mukana.
+- Päivitykset, myös tietoturvapäivitykset, ovat yksinkertaisempia, kun tarvitsee päivittää vain
+  rikkinäisen kirjaston paketti, ei kaikkia sitä käyttäviä paketteja. (Esimerkiksi Zlib-kirjaston
+  haavoittuvuus)
+
+**Haittoina** puolestaan voidaan mainita:
+
+- Ohjelmistopakettien ylläpito täytyy olla koordinoidumpaa, jotta ohjelmistot toimivat esimerkiksi kirjaston
+  saman version kanssa.
+- Virallisten pakettivarastojen ulkopuolisten pakettien ylläpito voi olla hankalampaa, ellei
+  tee niistä "itseriittoisia" ja samalla suurempia.
+
+
 Vertaus: Solukämppä
 ========================
 Pekka, Matti ja Jorma asuvat kolmen hengen opiskelijasolussa. Heillä on yhteinen keittiö. Miltä jääkaappi näyttää?
@@ -271,7 +313,9 @@ Pekka, Matti ja Jorma asuvat kolmen hengen opiskelijasolussa. Heillä on yhteine
 * Jokaisella hyllyllä purkki maitoa tai tuoremehua, rasiallinen leviterasvaa, juustoa ja/tai makkaraa, ketsuppia/sinappia + sekalaisia eineksiä
 * Jokainen käyttää aineksia omalta hyllyltään
 * Tilaa menee hukkaan, kun jokaisella on esim. oma leviterasia.
-Toimii samoin kuin ohjelmat Windows- ja Mac OS X -alustoilla.
+
+Toimii samoin kuin ohjelmat Windows- ja Mac OS X -alustoilla. Jokaisen ohjelman tarvitsemat
+tiedostot ja kirjastot yhdessä paikassa. (Lukuun ottamatta käyttöjärjestelmän tarjoamia.)
 
 
 
@@ -283,9 +327,11 @@ Isä, äiti ja teinitytär asuvat asunnossa. Miltä jääkaappi näyttää?
 
 * Ovessa juomat (maito, tuoremehu, Cola-pullo)
 * Hyllyllä yksi leviterasia, juustoa, kinkkurasia, rasiallinen tähteitä
-* Toisella hyllyllä hillopurkki, sinapp, ketsuppi
+* Toisella hyllyllä hillopurkki, sinappi, ketsuppi
 * Kolmannella hyllyllä leivontamargariinia, kananmunia, ...
-Kuten Linux-jakeluissa: Ainekset lajiteltu tyypin mukaan, ei omistajan/käyttäjän.
+
+Kuten Linux-jakeluissa: Ainekset lajiteltu niiden tyypin mukaan, ei omistajan/käyttäjän.
+Paljon yhteisiä aineksia.
 
 
 Tehtäviä
