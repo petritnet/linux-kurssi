@@ -12,27 +12,20 @@ Internet-yhteydet ovat olleet Unix-järjestelmien osana jo kauan ja Linuxissa al
 * Nyky-Linuxeissa verkkoyhteydet hoitaa NetworkManager, jonka käyttöliittymät antavat käyttäjän
   valita langattomat verkot yms.
 
-
-
-
-Avahi
-===============================
-
-Avahi asettaa lähiverkkoasetusten automaattisesti [Zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)-toteutuksella. Mac-maailmassa vastaava tunnetaan nimellä Bonjour.
-
-* Kukin kone tietää oman nimensä ja tarjoamansa palvelut sekä osaa kertoa ne muille saman verkon koneille
-* Voidaan käyttää nimeä `koneennimi.local` pelkän ip-numeron sijaan
-* Helpottaa silloin, kun koneet saavat ip-osoitteensa dynaamisesti DHCP-palvelimelta
-  eikä niillä siksi ole aina samaa ip-numeroa.
-
+TCP/IP-verkkoon kytketyillä koneilla on kullakin kyseisessä verkossa yksilöllinen ip-osoite.
+IPv4-verkossa osoite on muotoa `aaa.bbb.ccc.ddd`, jossa kukin pisteillä eroteltu osa on väliltä
+1-254. Pienemmät [sisäverkot](https://en.wikipedia.org/wiki/Private_network) ovat tyypillisesti
+`192.168.`-alkuisia ja suuremmat `10.`-alkuisia.
 
 
 
 Hosts-tiedosto
 ===============================
 
-Jos Avahi ei ole toiminnassa, nimet lähiverkon ip-osoitteille voi kertoa tiedostossa `/etc/hosts`
-Tiedosto muotoa:
+Koska verkon toisiin koneisiin on yleensä hankalaa viitata pelkällä ip-osoitteella,
+käytetään niistä yleensä nimiä. Tutussa lähiverkossa muiden koneiden nimien ja
+ip-osoitteiden vastaavuudet voidaan kertoa tiedostossa `/etc/hosts`, joka
+on muotoa muotoa:
 
 ```
  127.0.0.1       localhost
@@ -41,20 +34,116 @@ Tiedosto muotoa:
  192.168.0.53    hessu hopo
 ```
 
+Kullakin rivillä on lueteltu ensin koneen ip-osoite ja sen jälkeen nimet, joilla kyseisessä
+osoitteessa oleva tietokone tunnetaan.
+
+Komennolla `ping` voi huhuilla muita samassa verkossa olevia koneita tai konetta itseään.
+Komennon tuloste kertoo muun muassa sen, kuinka nopeasti paketit liikkuvat koneiden välillä.
+Komennon suoritus lopetetaan näppäinyhdistelmällä `ctrl-c`.
+
+Pingataan itseä (`localhost`):
+
+```
+$ ping localhost
+PING localhost (127.0.0.1) 56(84) bytes of data.
+64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.069 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=2 ttl=64 time=0.062 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=3 ttl=64 time=0.058 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=4 ttl=64 time=0.065 ms
+^C
+--- localhost ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 2997ms
+rtt min/avg/max/mdev = 0.058/0.063/0.069/0.008 ms
+```
+
+Pingataan `hessu`-nimistä konetta:
+
+```
+$ ping hessu
+PING hessu (192.168.0.29) 56(84) bytes of data.
+64 bytes from hessu (192.168.0.29): icmp_seq=1 ttl=64 time=1.08 ms
+64 bytes from hessu (192.168.0.29): icmp_seq=2 ttl=64 time=1.10 ms
+^C
+--- hessu ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 1.080/1.090/1.101/0.034 ms
+```
+
+Tiedoston `/etc/hosts` käytössä on kuitenkin se hankaluus, että kullakin koneella
+pitää ylläpitää erkseen luetteloa kaikista lähiverkon koneista. Pienessä lähiverkossa
+tämä vielä toimii, mutta jos koneita on vähänkin enemmän, jos ne vaihtuvat usein tai
+jos niiden ip-osoitteet eivät pysy samoina, tämä käy hankalaksi.
+
+
+
+
+Avahi
+===============================
+
+*Avahi* asettaa lähiverkkoasetukset automaattisesti [Zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)-toteutuksella. Mac-maailmassa vastaava tunnetaan nimellä Bonjour.
+
+* Kukin kone tietää oman nimensä ja tarjoamansa palvelut sekä osaa kertoa ne muille saman verkon koneille
+* Voidaan käyttää nimeä `koneennimi.local` pelkän ip-numeron sijaan
+* Helpottaa silloin, kun koneet saavat ip-osoitteensa dynaamisesti DHCP-palvelimelta
+  eikä niillä siksi ole aina samaa ip-numeroa.
+
+Avahia käytettäessä siis ei tarvitse pitää lähiverkon koneiden nimiä yllä `/etc/hosts`-tiedostossa,
+sillä kukin kone kertoo itse automaattisesti olemassaolostaan ja nimestään toisille koneille.
+
+Pingataan taas `hessu`-konetta, mutta tällä kertaa nimellä `hessu.local`, jonka sen Avahi on
+esitellyt meille:
+
+```
+$ ping hessu.local
+PING hessu.local (192.168.0.29) 56(84) bytes of data.
+64 bytes from hessu (192.168.0.29): icmp_seq=1 ttl=64 time=1.14 ms
+64 bytes from hessu (192.168.0.29): icmp_seq=2 ttl=64 time=1.03 ms
+^C
+--- hessu.local ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 1.037/1.091/1.145/0.054 ms
+```
 
 
 
 Ssh-yhteys
 ===============================
 
-Ssh on tekstipohjainen salattu komentoriviyhteys toiseen koneeseen.
+*Ssh* on tekstipohjainen salattu komentorivipohjainen yhteys toiseen koneeseen.
 
 * Kohdekoneella oltava ssh-palvelin päällä
-* `ssh kayttajatunnus@etakone`
+* Yhteys komennolla: `ssh kayttajatunnus@etakone`
 * Kysyy salasanan ja päästää komentoriville
-* Ssh korvasi salaamattoman ja turvattoman telnet-yhteyden.
+* Ssh korvasi salaamattoman ja turvattoman *telnet*-yhteyden.
 * Myös ssh on kehitetty alkujaan Suomessa. (Tatu Ylönen)
 
+Linux-jakeluissa ssh-asiakasohjelma on oletuksena asennettuna. Ssh-palvelimen voi
+asentaa paketinhallinnasta. Ubuntussa paketti nimeltä `openssh-server`.
+
+***Huomio!*** Palvelimen asentaminen on aina lisäriski, eli varmistathan, että
+salasanasi on kunnollinen.
+
+Kun koneelta *a* otetaan ensimmäistä kertaa ssh-yhteys koneelle *b*, ssh näyttää
+koneen *b* ssh-palvelimen *sormenjäljen*, eli merkkijonotunnisteen. Tämän avulla
+käyttäjä voi ensimmäisellä kerralla halutessaan varmistua siitä, että ollaan ottamassa
+yhteyttä oikeaan koneeseen. Kun sormenjälki on kerran hyväksytty oikeaksi, se muistetaan
+eikä siitä kysytä enää seuraavilla kerroilla.
+
+```no-highlight
+$ ssh ubuntu@hessu.local
+The authenticity of host 'hessu.local (192.168.0.29)' can't be established.
+ECDSA key fingerprint is SHA256:bNe0Yzd/iuDMZjlgvvVw3XCHzhDb+2abHNbOiaDA2sY.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'hessu.local' (ECDSA) to the list of known hosts.
+ubuntu@hessu.local's password: 
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ubuntu@hessu:~$ 
+```
 
 
 
@@ -63,13 +152,20 @@ Tiedostonsiirto
 
 Tiedostoja voidaan siirtää koneiden välillä esimerkiksi *Samba*- ja *Sftp*-protokollilla
 
-* Samba on Windows-verkon smb-protokolla.
-    * Jaettuja levyjä ja tulostimia voidaan käyttää
-    * Omien jakaminen vaatii palvelun asentamisen omalle koneelle
-* sftp toimii ssh-palvelimen kautta
-    * Vaatii ssh-palvelimen asentamisen omalle koneelle, jotta sen tiedostoihin pääsee käsiksi.
-    * Käyttäjä pääsee käsiksi kaikkiin tiedostoihin, joihin pääsisi paikallisesti kirjautumalla
-    * Korvaa salaamattoman ftp-yhteyden.
+Samba on Windows-verkosta tuttu smb-protokolla.
+
+* Jaettuja levyjä ja tulostimia voidaan käyttää
+* Omien jakaminen vaatii palvelun asentamisen omalle koneelle
+
+Sftp toimii ssh-palvelimen kautta
+
+* Vaatii ssh-palvelimen asentamisen kohdekoneelle, jotta sen tiedostoihin pääsee käsiksi.
+* Käyttäjä pääsee käsiksi kaikkiin tiedostoihin, joihin pääsisi paikallisesti kirjautumalla
+* Korvaa salaamattoman ftp-yhteyden esimerkiksi useissa webbihotelleissa keinona siirtää
+  tiedostoja palvelimelle.
+
+Windowsissa toimivia graafisia sftp-asiakasohjelmia ovat esimerkiksi [WinSCP](https://winscp.net/eng/index.php),
+[FileZilla](https://filezilla-project.org/) ja Firefoxin lisäosana toimiva [FireFTP](http://fireftp.net/)
 
 
 
@@ -77,14 +173,38 @@ Tiedostoja voidaan siirtää koneiden välillä esimerkiksi *Samba*- ja *Sftp*-p
 Graafisesti
 ===============================
 
-Samba- ja sftp-protokollia voi käyttää suoraan graafisilla tiedostonhallintaohjelmilla.
+{{< figure src="/images/ubuntu-samba-share.png" link="/images/ubuntu-samba-share.png" class="floatright floatimage" title="Samba-jako" caption="Windows-verkon jakoja voi selata tiedostohallinnan Network-osiosta." >}}
+{{< figure src="/images/ubuntu-samba-share2.png" link="/images/ubuntu-samba-share2.png" class="floatright floatimage" title="Samba-jako osoitteena" caption="Samba-osoitteen voi kirjoittaa suoraan osoiteriville." >}}
 
-* Useimmista tiedostonhallintaohjelmista löytyy "Network"-valinta, jonka alta löytyvät Windows-verkon palvelut.
-* Windows-jakoon voi viitata myös suoraan osoitteella `smb://koneennimi/jako`
-* Sftp-yhteyden voi muodostaa toiselle koneelle vastaavasti osoitteella `sftp://koneennimi` tai `fish://koneennimi`
+Samba- ja sftp-protokollia voi käyttää suoraan useimmilla Linuxissa tarjolla olevilla
+graafisilla tiedostonhallintaohjelmilla. Tiedostojakoon yhdistämisen jälkeen useimmat
+näistä näyttävät jaon ikkunan vasemmassa reunassa samaan tapaan kuin esimerkiksi
+koneeseen liitetyn usb-levyn.
 
-* scp: Kopioi tiedostoja ssh:n kautta suuntaan tai toiseen. Ei hakemistolistauksia, ei tiedostojen poistoa, yms.
-* sftp: Palvelinpuolella erillinen sftp-server-ohjelma, jonka kanssa juttelee ssh:n läpi.
+Samba
+------
+
+Useimmista tiedostonhallintaohjelmista löytyy "Network"-valinta, jonka alta löytyvät nykyisen
+(lähi)verkon Windows-verkon palvelut, kuten levyjaot.
+
+Windows-jakoon voi viitata myös suoraan osoitteella `smb://koneennimi/jako`. Osoitteen
+pääsee kirjoittamaan tiedostohallintaohjelman osoiteriville pikanäppäimellä `ctrl-l`, eli
+samalla, joka toimii www-selaimissakin.
+
+Kolmas tapa yhdistää palvelimeen on joissain tiedostohallintaohjelmissa tarjolla oleva
+valinta "Connect to Server", joka kysyy osoitteen, johon halutaan yhdistää.
+
+{{< figure src="/images/ubuntu-sftp-share.png" link="/images/ubuntu-sftp-share.png" class="floatright floatimage" title="Sftp-yhteys" caption="Sftp-yhteys 'Connect to Server' -valinnalla." >}}
+{{< figure src="/images/ubuntu-sftp-share2.png" link="/images/ubuntu-sftp-share2.png" class="floatright floatimage" title="Sftp-osoite" caption="Sftp-osoitteen voi kirjoittaa suoraan osoiteriville." >}}
+
+Sftp
+------
+
+Sftp-yhteyden voi muodostaa toiselle koneelle vastaavasti osoitteella `sftp://koneennimi`. Joissain
+ohjelmissa voidaan käyttää myös osoitetta `fish://koneennimi`. Sambaan yhdistämisen tavoin
+tämän osoitteen voi kirjoittaa joko ohjelman osoitekenttään tai "Connect to Server" -dialogiin.
+
+* sftp: Palvelinpuolella erillinen sftp-server-ohjelma, jonka kanssa asiakas juttelee ssh:n läpi.
   Ssh hoitaa tunnistautumisen ja kryptaamisen.
 * fish: Käyttää palvelinpuolella normaaleja komentorivityökaluja hakemistolistauksen näyttämiseen,
   tiedostojen poistamiseen yms. Toimii myös, kun ei ole sftp-server-ohjelmaa, mutta vaatii mahdollisuuden
@@ -96,10 +216,10 @@ Samba- ja sftp-protokollia voi käyttää suoraan graafisilla tiedostonhallintao
 Komentoriviltä
 ===============================
 
-Ssh-yhteyden yli voidaan kopioida tiedostoja myös kometoriviltä. Esimerkkejä:
+Ssh-yhteyden yli voidaan kopioida tiedostoja myös kometorivillä `scp`-komennolla. Esimerkkejä:
 
 Kopioidaan tiedosto etäkoneelta paikalliseen hakemistoon antamalla ensin etäosoitteessa
-olevan tiedoston nimi ja sitten pailallisen hakemiston nimi.
+olevan tiedoston nimi ja sitten paikallisen kohdehakemiston nimi.
 ```no-highlight
 scp kayttajanimi@etakone:/polku/tiedostoon/nimi.txt /polku/tiedostoon/talla/koneella/
 ```
@@ -135,10 +255,13 @@ Tehtäviä
 Tehtävät 6
 ===============================
 
-Tehtävien tekemiseen tarvitset palvelimen, käyttäjätunnuksen ja salasanan. Viimeistä tehtävää varten
+Tehtävien tekemiseen tarvitset palvelimen osoitteen, käyttäjätunnuksen ja salasanan.
+(Annetaan kurssilla.)
+
+Viimeistä tehtävää varten
 palvelimella on oltava käynnissä (Apache) www-palvelin. Palauta vastauksena tiedosto `tehtava-6.zip`.
 
-1. Selaa graafisella käyttöliittymällä esiin annettu sftp-osoite ja kopioi käyttäjätunnuksesi
+1. Selaa graafisella käyttöliittymällä esiin annettu sftp-osoite ja kopioi sieltä käyttäjätunnuksesi
    oman kotihakemiston Pictures-alihakemistosta yksi kuva omalle koneellesi.
 2. Luo omalla koneellasi uusi tiedosto nimeltä `nimi.txt` ja kirjoita siihen oma nimesi.
     * Avaa terminaali ja kopioi tämä tiedosto scp-komennolla käsketylle palvelimelle kotihakemiston
@@ -146,12 +269,13 @@ palvelimella on oltava käynnissä (Apache) www-palvelin. Palauta vastauksena ti
     * Selaa graafisella tiedostohallinnalla tuo palvelinkoneen Documents-hakemisto näkyviin.
     * Ota kuvakaappaus, jossa näkyy hakemiston sisältö tiedostohallintaikkunassa sekä terminaalissa tehty kopiointi.
 3. Ota terminaali-ikkunassa ssh-yhteys palvelimelle.
-    * Siirry Documents-hakemistoon.
-    * Muuta `nimi.txt`-tiedoston oikeuksia niin, että käyttäjällä ja ryhmällä ovat luku- ja kirjoitusoikeudet,
-      mutta muilla ei mitään oikeuksia.
-    * Listaa hakemiston sisältö pitkässä muodossa, jotta näet, että oikeudet ovat oikein.
+    * Siirry Documents-hakemistoon. (`cd Documents`)
+    * Muuta `nimi.txt`-tiedoston oikeuksia `chmod`-komennolla niin, että käyttäjällä ja ryhmällä ovat luku-
+      ja kirjoitusoikeudet, mutta muilla ei mitään oikeuksia.
+    * Listaa hakemiston sisältö pitkässä muodossa `ls`-komennolla, jotta näet, että oikeudet ovat oikein.
     * Ota kuvakaappaus, jossa näkyvät terminaali-ikkunassa annetut komennot.
-4. Paketoi ladattu kuvatiedosto ja otetut kuvakaappaukset zip-tiedostoon nimellä `tehtava-6.zip`.
+4. Paketoi ladattu kuvatiedosto ja otetut kuvakaappaukset zip-tiedostoon nimellä `tehtava-6.zip`.<br>
+   (Ubuntussa ohjelma nimeltä **Archive Manager**)
 5. Kopioi alla oleva teksti johonkin tekstieditoriin (gedit, scratch, jokin muu) ja tallenna nimellä `index.html`.
    Voit tehdä hienommankin html-sivun. Kopioi tiedosto haluamallasi tavalla palvelimelle kotihakemistossasi olevaan
    `public_html`-hakemistoon. Mene www-selaimella osoitteeseen `http://<palvelimen_nimi>/~<käyttäjätunnus>`.

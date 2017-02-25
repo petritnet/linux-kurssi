@@ -237,7 +237,7 @@ Nämä tulosteet tulevat virhetulostevirrasta ja niistä pääsee eroon mm. ohja
 Tehtäviä
 =========================
 
-Suorita tehtävät komentorivillä ja kirjoita vastaukset tiedostoon {{{vastaus-10.txt}}}. Kerro jokvaisessa kohdassa vastauksen lisäksi, millä komennolla tai komennoilla suoritit tehtävän. (Kopioi komennot ja tulosteet terminaali-ikkunasta tekstitiedostoon.) Palauta vastauksesi Moodleen tiedostona {{{vastaus-10.zip}}}, johon on paketoitu molemmat luomasi tekstitiedostot.
+Suorita tehtävät komentorivillä ja kirjoita vastaukset tiedostoon `vastaus-xxx.txt`. Kerro jokvaisessa kohdassa vastauksen lisäksi, millä komennolla tai komennoilla suoritit tehtävän. (Kopioi komennot ja tulosteet terminaali-ikkunasta tekstitiedostoon.) Palauta vastauksesi Moodleen tiedostona `vastaus-xxx.zip`, johon on paketoitu molemmat luomasi tekstitiedostot.
 
 1. Kuinka monta __erilaista__ riviä on komentohistoriassasi?
 2. Millä rivillä tiedostossa `http://petrit.net/Linux-kurssi/pg32536.txt` alkaa kuudes luku?

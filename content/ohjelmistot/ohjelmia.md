@@ -8,13 +8,18 @@ Ohjelmia Linuxiin
 ===============================
 
 Usein kuulee Windows-käyttäjien sanovan, että "Linuxille ei ole ohjelmia".
+Tämä ei kuitenkaan pidä paikkaansa. Ohjelmat vain ovat osittain eri ohjelmia kuin Windowsissa.
 
-* Tämä ei kuitenkaan pidä paikkaansa. Ohjelmat vain ovat osittain eri ohjelmia kuin Windowsissa.
-* Linuxiin tarjolla paljon vapaita ohjelmia, jotka ovat asennettavissa suoraan paketinhallinnasta.
-* Toisaalta osa Linuxissa käytettävistä ohjelmista on tarjolla myös Windowsiin.
-* Kaupallisten ei-vapaiden ohjelmien ja pelien tarjonta rajallisempaa.
-* Kaupallisten pelien tilannetta on jonkin verran muuttanut Linuxillekin tarjolla oleva Steam.
-* Html5-/web-sovellukset muuttavat myös tilannetta.
+Linuxiin on tarjolla paljon vapaita ohjelmia, jotka ovat asennettavissa suoraan paketinhallinnasta.
+Toisaalta osa Linuxissa käytettävistä ohjelmista on tarjolla myös Windowsiin.
+
+Kaupallisten ei-vapaiden ohjelmien ja pelien tarjonta rajallisempaa. Viime aikoina on kuitenkin
+esimerkiksi Steam-palvelun kautta ostettavien ja ladattavien pelien määrä lisääntynyt myös
+Linux-alustalle.
+
+HTML5 ja web-sovellukset muuttavat myös tilannetta, kun varsin suuri osa kuluttajien käyttämistä
+ohjelmista ei olekaan enää perinteisiä omalle koneelle asennettavia ohjelmia vaan pilvipalveluna
+selaimella käytettäviä.
 
 
 
@@ -22,8 +27,9 @@ Usein kuulee Windows-käyttäjien sanovan, että "Linuxille ei ole ohjelmia".
 Vapaita ohjelmia
 ===============================
 
-Suomenkielisiä esittelyitä: http://viikonvalo.fi
-Kaikki lueteltuina: http://viikonvalo.fi/kaikki_valot
+Suomenkielisiä esittelyitä Linuxillekin tarjolla olevista lukuisista
+vapaista avoimen lähdekoodin ohjelmista löytyy osoitteesta: <http://viikonvalo.fi>.
+Sivuston kaikki esittelyt on lueteltu osoitteessa: <http://viikonvalo.fi/kaikki_valot/>.
 
 
 
@@ -181,12 +187,14 @@ Muunnos
 
 
 
+Tehtäviä
+==============================
 
 {{% wrapper class="exercises" %}}
-Tehtäviä
+Tehtävät 8
 ===============================
 
-Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä.
+Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä. Tehtävien palautus tiedostona `tehtava-8.zip`.
 
 1. Luo uusi .txt-päätteinen tekstitiedosto ja kirjoita vastaukset siihen. Millä editorilla kirjoitat?
 2. Lataa jokin musiikkikappale Jamendosta (http://jamendo.com) ja kuuntele sitä musiikkisoittimella.
@@ -197,6 +205,6 @@ Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä.
 4. Lataa selaimella kuva osoitteesta
    http://www.flickr.com/photos/deerwooduk/579761138/sizes/o/ ja muuta se kuvankäsittelyohjelmalla
    negatiiviksi. Mitä selainta ja kuvankäsittelyohjelmaa käytit? Tallenna kuva.
-5. Paketoi tekstitiedosto ja nämä kolme kuvaa tiedostoon, jonka nimenä on vastaus-7.zip ja palauta.
+5. Paketoi tekstitiedosto ja nämä kolme kuvaa tiedostoon, jonka nimenä on `tehtava-8.zip` ja palauta se.
 
 {{% /wrapper %}}

@@ -26,6 +26,10 @@ komentorivillä.
 
 Lisäksi tutustutaan joihinkin Linuxin kanssa käytettäviin palvelinohjelmistoihin.
 
+Kurssilla käytävät asiat ja ohjelmistot käsitellään erityisesti [Ubuntu]-nimisen Linux-jakelun
+näkökulmasta, mutta ne ovat sovellettavissa joko suoraan tai hyvin pienin muutoksin suurimpaan
+osaan muistakin Linux-jakeluista.
+
 {{< figure src="/images/usb-memory.svg" class="floatright floatimage" title="USB-muistitikkuja" >}}
 
 Kurssin muuna materiaalina käytetään USB-tikkua, jolta on käynnistettävissä useampia eri Linux-jakeluita
@@ -39,7 +43,16 @@ Useimpien Linux-jakeluiden asennuslevyt ovat tällaisia Live-levyjä.
 Kurssin aikana tehtävät harjoitustehtävät on tarkoitus tehdä tällaisella Live-tikulla. Ne on luonnollisesti
 mahdollista tehdä myös pysyvästi asennetussa Linux-järjestelmässä.
 
+Lisää ohjeita
+==============
+
+Muita ohjeita ja luettavaa materiaalia löytyy esimerkiksi seuraavista osoitteista:
+
+- [Ubuntu tutuksi] -wikikirja
+
 
 
 [Kerttuli]: http://www.kerttulinlukio.fi/ (Kerttulin lukio)
 [CC-by-sa-lisenssi]: https://creativecommons.org/licenses/by-sa/4.0/deed.fi (CC-by-sa)
+[Ubuntu]: https://ubuntu.com (Ubuntu)
+[Ubuntu tutuksi]: https://fi.wikibooks.org/wiki/Ubuntu_tutuksi (Ubuntu tutuksi)

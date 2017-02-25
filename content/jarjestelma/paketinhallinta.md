@@ -36,18 +36,18 @@ sudo apt-get install glabels
 Pakettivarasto
 ========================
 
-Pakettivarasto, eli repository, on jakelun tekijän palvelimilla (sekä peilipalvelimilla ympäri maailmaa)
-oleva kokoelma ohjelmapaketteja. Varastossa on lisäksi luettelo tarjolla olevista paketeista.
+Pakettivarasto, eli pakettilähde, eli repository, on jakelun tekijän palvelimilla (sekä peilipalvelimilla
+ympäri maailmaa) oleva kokoelma ohjelmapaketteja. Varastossa on lisäksi luettelo tarjolla olevista paketeista.
 
 Esimerkiksi:
 
 * Ubuntun pakettivaraston suomalainen peilipalvelin: <br> <http://fi.archive.ubuntu.com/ubuntu/>
 * Pakettilista:<br> <http://fi.archive.ubuntu.com/ubuntu/dists/xenial/main/binary-amd64/>
 * Paketit:<br> <http://fi.archive.ubuntu.com/ubuntu/pool/>
-* Pakettivaraston asetus tiedostossa `/etc/apt/sources.list`<br>
+* Pakettivaraston asetus tiedostossa `/etc/apt/sources.list` riveillä, jotka ovat muotoa:<br>
   `deb http://fi.archive.ubuntu.com/ubuntu/ xenial main restricted`
 
-Paketit on jaoteltu jakelun version mukaan (saucy) ja sen alla muutamaan "tärkeysluokkaan"
+Paketit on jaoteltu jakelun version mukaan (xenial) ja sen alla muutamaan "tärkeysluokkaan"
 (main, universe, multiverse, restricted)
 
 * *main*: jakelut itse ylläpitämät,
@@ -57,7 +57,7 @@ Paketit on jaoteltu jakelun version mukaan (saucy) ja sen alla muutamaan "tärke
 
 Lisäksi on tarjolla käyttäjien / kehittäjien omia repositoryja: Personal Package Archives - PPA
 
-* https://launchpad.net/ubuntu/+ppas   
+* https://launchpad.net/ubuntu/+ppas
 * http://ppa.launchpad.net/
 
 Pakettivarasto voi olla myös esim. asennus-cd:llä tai -usb:llä, jos tarvitsee toimittaa verkon ulottumattomiin.
@@ -185,8 +185,14 @@ Graafinen paketinhallinta
 
 {{< figure src="/images/ubuntu-software.png" link="/images/ubuntu-software.png" class="floatright floatimage" title="Ohjelmistovalikoima" caption="Ubuntun Software centerillä voi selata ohjelmistotarjontaa." >}}
 
-Vaatii ylläpito-oikeudellisen käyttäjän salasanan ennen pakettien asentamista. Graafiset
-paketinhallintaohjelmat on tarkoitettu helppokäyttöisiksi ja niillä voidaan helpohkosti:
+Linux-jakeluissa on yleensä tarjolla jokin graafinen, eli ikkunoitu ja hiirellä käytettävä,
+työkalu ohjelmistojen asennukseen. Ubuntussa tämä on Ubuntun Sovellusvalikoima (Ubuntu Software),
+joka toimii mobiililaitteista tuttujen sovelluskauppojen tapaan. Siitä voi valita asennettavia
+ohjelmistoja ja se hoitaa niitä vastaavien ohjelmistopakettien noutamisen pakettivarastosta ja niiden
+asentamisen. Ohjelmien asentaminen vaatii ylläpito-oikeudellisen käyttäjän salasanan ennen pakettien
+asentamista.
+
+Graafiset paketinhallintaohjelmat on tarkoitettu helppokäyttöisiksi ja niillä voidaan helpohkosti: 
 
 * Selata ohjelmia *kategorioina*
 * Hakea *hakusanalla*
@@ -196,10 +202,20 @@ paketinhallintaohjelmat on tarkoitettu helppokäyttöisiksi ja niillä voidaan h
 * Hallita ohjelmalähteitä eli pakettivarastoja (repository)
 * Ubuntun *Software Center* sisältää myös joitain maksullisia ohjelmia ja lehtiä, jotka tulevat eri reittiä.
 
+{{< figure src="/images/ubuntu-pakettivarastot.png" link="/images/ubuntu-pakettivarastot.png" class="floatright floatimage" title="Pakettivarastojen aktivointi" caption="Ubuntun pakettivarastoja ja niiden osioita voi aktivoida ja deaktivoida Sovellusvalikoiman asetuksista. Kuvassa aktivoituina main-, universe- ja restricted-osiot." >}}
+
+Graafisissa paketinhallintaohjelmissa, kuten Ubuntun Sovellusvalikoimassa (Ubuntu Software) on yleensä
+keino lisätä uusia pakettivarastoja sekä aktivoida tai deaktivoida olemassa olevia.
+
+Ubuntun Sovellusvalikoima keskittyy tarjoamaan keinon ikkunoitujen suurelle yleisölle suunnattujen
+sovellusten asentamiseen ja postamiseen. Sovellusvalikoima on valikotu eikä se näytä luetteloissaan
+kaikkia saatavilla olevia paketteja.
+*Synaptic* on toisenlainen graafinen paketinhallintaohjelma, jolla käyttäjä pystyy selaamaan, asentamaan
+ja poistamaan kaikkia yksittäisiä paketteja, mukaan lukien komentoriviohjelmat ja kirjastot. 
 
 
 
-Matalan tason pakettien hallintaa komentorivillä
+Matalan tason pakettienhallintaa komentorivillä
 ========================
 
 "Matalan tason" paketinhallintaohjelma hoitaa ohjelmistopakettien todellisen
@@ -224,7 +240,7 @@ Näiden lisäksi paketista voidaan esimerkiksi luetteloida paketin sisältö ja 
 
 
 
-Korkean tason pakettien hallintaa komentorivillä
+Korkean tason pakettienhallintaa komentorivillä
 ========================
 
 "Korkeamman tason" paketinhallintaohjelmat osaavat käsitellä paketteja monipuolisemmin.
@@ -345,9 +361,15 @@ Käynnistä jokin työpöytä-Linux ja tee tehtävät siinä.
 Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä.
 Palautus tiedostona `tehtava-5.odt`.
 
-1. Asenna peli nimeltä *Frozen-Bubble*, käynnistä se ja ota käynnissä olevasta pelistä kuvakaappaus.
-2. Löytyvätkö valitsemastasi jakelusta ohjelmat Geary, Marble, Clementine ja Hugin? Mitä ohjelmia ne ovat?
-3. Selvitä pakettien dokumentaatiohakemistosta, montako tekijää (author) on merkitty ohjelmalle
+1. Asenna vektoripiirto-ohjelma Inkscape. (graafisesti tai komentoriviltä) Käynnistä se ja ota siitä kuvakaappaus.
+2. Tutki, löytyykö pakettivarastosta peli nimeltä *Frozen-Bubble*.
+    - Jos ei löydy, avaa sovellusvalikoiman (Ubuntu Software) valikosta kohta "Ohjelmistot ja päivitykset"
+      (Software & Updates) ja lisää sieltä *universe*-pakettivarasto. Tämän jälkeen sovellusvalikoima päivittää
+      pakettilistan ja voit etsiä uudelleen Frozen-Bubblea. (paketin nimi `frozen-bubble`)
+    - Asenna Frozen-Bubble, käynnistä se ja ota käynnissä olevasta pelistä kuvakaappaus.
+    - (Jos ohjelmaa ei vieläkään löydy sovellusvalikoimasta, käytä asentamiseen komentorityökaluja.)
+3. Löytyvätkö valitsemastasi jakelusta ohjelmat Geary, Marble, Clementine ja Hugin? Mitä ohjelmia ne ovat?
+4. Selvitä pakettien dokumentaatiohakemistosta, montako tekijää (author) on merkitty ohjelmalle
    *eog* (Eye of Gnome). Mistä löysit tiedon?
     Jos ohjelmaa *eog* ei ole asennettuna, tutki sen sijaan ohjelmaa *wget*.
 

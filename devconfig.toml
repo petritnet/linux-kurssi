@@ -1,0 +1,20 @@
+#baseurl = "http://petrit.net/Linux-kurssi"
+baseurl = "http://localhost:1313/"
+languageCode = "fi-fi"
+title = "Linux-kurssi"
+theme = "schoolbook"
+
+pluralizeListTitles = false
+#SectionPagesMenu = "main"
+canonifyurls = true
+[blackfriday]
+    sourceRelativeLinksEval = true
+    smartypants = false
+
+[Params]
+    description = "Linux-kurssi lukiolaisille"
+    author = "Petri Salmela"
+    email = "linux@petrit.net"
+    github = "https://github.com/pesasa/"
+    cssstyle = "bluebook"
+    logo = "/images/Awesome-Tux.svg"

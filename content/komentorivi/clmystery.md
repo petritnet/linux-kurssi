@@ -20,7 +20,7 @@ Tehtävänä on ratkaista Terminal Cityssä tapahtunut murha käyttämällä kom
   terminaaliin tiedosto nimeltä `crimescene`.
   Tässä tiedostossa kuvaillaan tapahtumien kulku rikospaikalla.
 * Vihjeitä ja faktoja löytyy muista tiedostoista, mutta niissä on tarkoituksella
-  niin paljonturhaa tietoa, että halutut tiedot pitää osata suodattaa niistä esiin
+  niin paljon turhaa tietoa, että halutut tiedot pitää osata suodattaa niistä esiin
   sopivilla komennoilla.
 * Vihjeitä voi matkan varrella pyytää tiedostoista `hint1`, `hint2`, ... , `hint8`.
 * Lopullinen ratkaisu on tiedostossa `solution`, mutta älä kurki sitä liian aikaisin!

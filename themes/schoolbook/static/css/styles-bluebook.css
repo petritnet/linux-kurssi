@@ -282,14 +282,21 @@ article h1.page-title {
     font-family: AveriaSans, helvetica, Arial, sans-serif;
 }
 
-article h1 {
+article h1, article h2, article h3, article h4, article h5, article h6 {
     color: #2d2d2d;
+    font-family: AveriaSans, helvetica, Arial, sans-serif;
+}
+
+article h1 {
     font-size: 150%;
     /*clear: right;*/
     margin-top: -60px;
     padding-top: 80px;
     border-bottom: 1px solid #0084c8;
-    font-family: AveriaSans, helvetica, Arial, sans-serif;
+}
+
+article h2 {
+    font-size: 130%;
 }
 
 article h1.page-title {
@@ -345,6 +352,14 @@ article figure figcaption h4 {
 
 article figure figcaption p {
     margin: 0.2em 0;
+}
+
+article figure.nonfloatimage {
+    max-width: 400px;
+    clear: both;
+    background-color: #eee;
+    padding: 0.5em;
+    margin: 1em auto;
 }
 
 article figure.floatimage {
