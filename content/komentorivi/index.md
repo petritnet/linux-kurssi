@@ -53,7 +53,7 @@ Muutama pikanäppäin
 ===============================
 
 Ennen komentorivikomentojen antamista on hyvä tutustua muutamaan pikanäppäimeen,
-jotka helpottavat sen käyttöä. Erityisesti on hyvä tietää, miten käynnisstetyt
+jotka helpottavat sen käyttöä. Erityisesti on hyvä tietää, miten käynnistetyt
 ohjelmat saa pysäytettyä.
 
 ctrl-c
