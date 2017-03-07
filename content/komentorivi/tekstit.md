@@ -417,7 +417,7 @@ suoritit tehtävän.
 
 1. Kuinka monta riviä on komentohistoriassasi?
 2. Mikä on komentorivillä muuttujan `$OSTYPE` arvo?
-3. Lataa verkosta tiedosto `http://petrit.net/Linux-kurssi/pg37885.txt`
+3. Lataa verkosta tiedosto `http://petrit.net/Linux-kurssi/files/pg37885.txt`
 4. Montako riviä tiedostossa on?
 5. Tulosta tiedostosta kuusi ensimmäistä ja neljä viimeistä riviä.
 6. Miten kuuluu kokonaisuudessaan rivi, jolla esiintyy teksti: *Kuningas vapisi ilosta*?

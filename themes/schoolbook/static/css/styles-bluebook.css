@@ -436,8 +436,8 @@ article table td {
 
 article .exercises {
     margin: 3em 0 1em 0;
-    border: 1px solid #999;
-    background-color: rgba(200,200,200,0.5);
+    border: 1px solid #92C7FF;
+    background-color: #ecf7fd;
     box-shadow: 3px 3px 5px rgba(150,150,150,0.5);
 }
 
@@ -445,8 +445,16 @@ article .exercises h1 {
     font-size: 130%;
     border-bottom: 1px solid #999;
     background-color: rgba(150,150,150,0.5);
+    background-color: #6dcbfc;
+    border-bottom: 1px solid #ecf7fd;
     margin: 0;
     padding: 0.5em;
+}
+
+article .exercises h2:first-child {
+    background-color: #6dcbfc;
+    margin: 0;
+    padding: 0.3em 0.5em 0.1em;
 }
 
 article .exercises h1,

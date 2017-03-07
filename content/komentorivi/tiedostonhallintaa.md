@@ -307,41 +307,41 @@ Tiedostoja verkosta: `wget`
 
 Komentorivillä tiedostoja voi noutaa verkosta ohjelmalla nimeltä `wget`.
 
-Haetaan kuva osoitteesta <http://petrit.net/Linux-kurssi/penguin2.png>
+Haetaan kuva osoitteesta <http://petrit.net/Linux-kurssi/images/penguin.png>
 komennolla:
 
-`wget http://petrit.net/Linux-kurssi/penguin2.png`
+`wget http://petrit.net/Linux-kurssi/images/penguin.png`
 
 ```no-highlight
-pesasa@box:~ $ wget http://petrit.net/Linux-kurssi/penguin2.png
---2016-09-11 19:31:03--  http://petrit.net/Linux-kurssi/penguin2.png
+pesasa@box:~ $ wget http://petrit.net/Linux-kurssi/images/penguin.png
+--2016-09-11 19:31:03--  http://petrit.net/Linux-kurssi/images/penguin.png
 Selvitetään osoitetta petrit.net (petrit.net)... 85.17.21.177
 Yhdistetään palvelimeen petrit.net (petrit.net)|85.17.21.177|:80... yhdistetty.
 HTTP-pyyntö lähetetty, odotetaan vastausta... 200 OK
 Pituus: 14493 (14K) [image/png]
-Tallennetaan kohteeseen ”penguin2.png”
+Tallennetaan kohteeseen ”penguin.png”
 
-penguin2.png              100%[==================================>]  14,15K  --.-KB/s    in 0,03s   
+penguin.png              100%[==================================>]  14,15K  --.-KB/s    in 0,03s   
 
-2016-09-11 19:31:03 (422 KB/s) - ”penguin2.png” tallennettu [14493/14493]
+2016-09-11 19:31:03 (422 KB/s) - ”penguin.png” tallennettu [14493/14493]
 ```
 
 Nimen, jolla tiedosto tallennetaan, voi valita valitsimella `-O` (iso O-kirjain).
 
-`wget -O Documents/linux.html http://petrit.net/Linux-kurssi/index.html`
+`wget -O Documents/Tux.svg http://petrit.net/Linux-kurssi/images/Awesome-Tux.svg`
 
 ```no-highlight
-pesasa@box:~ $ wget -O Documents/linux.html http://petrit.net/Linux-kurssi/index.html
---2016-09-11 19:35:34--  http://petrit.net/Linux-kurssi/index.html
+pesasa@box:~ $ wget -O Documents/linux.html http://petrit.net/Linux-kurssi/images/Awesome-Tux.svg
+--2016-09-11 19:35:34--  http://petrit.net/Linux-kurssi/images/Awesome-Tux.svg
 Selvitetään osoitetta petrit.net (petrit.net)... 85.17.21.177
 Yhdistetään palvelimeen petrit.net (petrit.net)|85.17.21.177|:80... yhdistetty.
 HTTP-pyyntö lähetetty, odotetaan vastausta... 200 OK
 Pituus: 1761180 (1,7M) [text/html]
-Tallennetaan kohteeseen ”Documents/linux.html”
+Tallennetaan kohteeseen ”Documents/Tux.svg”
 
-Documents/linux.html      100%[==================================>]   1,68M  2,89MB/s    in 0,6s    
+Documents/Tux.svg      100%[==================================>]   1,68M  2,89MB/s    in 0,6s    
 
-2016-09-11 19:35:37 (2,89 MB/s) - ”Documents/linux.html” tallennettu [1761180/1761180]
+2016-09-11 19:35:37 (2,89 MB/s) - ”Documents/Tux.svg” tallennettu [1761180/1761180]
 
 ```
 
