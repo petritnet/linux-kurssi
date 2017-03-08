@@ -9,20 +9,15 @@ Stdin, stdout, stderr
 
 Komentoriviohjelmilla on kolme niin kutsuttua standardivirtaa:
 
-stdin
-:    "standardi syötevirta", "standard input", eli reitti, jota ohjelmalle menee tekstimuotoista syötettä,
-     normaalisti näppäimistöltä. Käytetään myös numeroa 0.
+| Virta | Numero | Merkitys                                                                                                                                |
+|-------|--------|-----------------------------------------------------------------------------------------------------------------------------------------|
+|stdin  | 0      | "standardi **syötevirta**", "standard input", eli reitti, jota ohjelmalle menee tekstimuotoista syötettä, *normaalisti näppäimistöltä*. |
+|stdout | 1      | "standardi **tulostevirta**", "standard output", eli reitti, jota ohjelman tuloste tulee, *yleensä näytölle*.                           |
+|stderr | 2      | "standardi **virhevirta**", "standard error", eli reitti, jota ohjelman virheilmoitustulosteet tulevat, *yleensä myös näytölle*.        |
 
-stdout
-:    "standardi tulostevirta", "standard output", eli reitti, jota ohjelman tuloste tulee, yleensä näytölle.
-     Käytetään myös numeroa 1.
-
-stderr
-:    "standardi virhevirta", "standard error", eli reitti, jota ohjelman virheilmoitustulosteet tulevat,
-     yleensä myös näytölle.
 
 Näitä voi ohjailla uudelleen tulemaan jostain muualta, kun näppäimistöltä ja jonnekin muualle kuin näytölle.
-Esimerkiksi tiedostosta tai tiedostoon taikka toiselta ohjelmalta tai toiselle ohjelmalle. Käytetään myös numeroa 2.
+Esimerkiksi tiedostosta tai tiedostoon taikka toiselta ohjelmalta tai toiselle ohjelmalle.
 
 
 
@@ -40,13 +35,14 @@ Ohjelman tulostuksen voi ohjata haluamaansa tiedostoon lisäämällä komennon p
  echo "Petri" > nimi.txt
 ```
 
-Tällöin tulostus ei näy näytöllä lainkaan vaan menee suoraan käskettyyn tiedostoon.
+Tällöin tulostus ei näy näytöllä lainkaan vaan menee sen sijaan suoraan käskettyyn tiedostoon.
 Jos tiedostoa ei ole ennestään, se luodaan. Jos tiedosto on jo olemassa, se ylikirjoitetaan!
 
 
 
 
 
+{{% wrapper class="exercises" %}}
 Tulostus tiedostoon (kokeile)
 -----------------------------
 
@@ -56,20 +52,22 @@ Tulostus tiedostoon (kokeile)
  cat listaus.txt
 ```
 
-Jos `cat`-ohjelmalle ei anneta tulostettavaa tiedostoa, se ottaa syötteen vastaan näppäimistöltä
-ja tulostaa takaisin näytölle, kunnes käyttäjä antaa **ctrl-d**-näppäilyn. Kokeile!
+Jos `cat`-ohjelmalle ei anneta tulostettavaa tiedostoa, se ottaa syötteen vastaan näppäimistöltä (stdin)
+ja tulostaa takaisin näytölle (stdout), kunnes käyttäjä antaa **ctrl-d**-näppäilyn. Kokeile!
 
 ```
  cat
 ```
 
+{{% /wrapper %}}
 
 
 
 
 
+{{% wrapper class="exercises" %}}
 Tulostus tiedostoon (kokeile)
-=========================
+--------------------------
 
 `cat`-ohjelman tulosteen voi ohjata myös tiedostoon. Kokeile kirjoittaa seuraava:
 
@@ -90,6 +88,7 @@ Jatkoa varten anna luodulle tiedostolle suoritusoikeudet:
 ```
 
 
+{{% /wrapper %}}
 
 
 
@@ -124,7 +123,8 @@ Syöte tiedostosta
 Monet ohjelmat, kuten `less`, `wc` ja `sort`, osaavat lukea syötteen suoraan tiedostosta.
 Ohjelmille, jotka eivät osaa suoraan lukea tiedostosta, vaan lukevat näppäimistöä,
 voidaan tiedoston sisältö antaa syötteenä lisäämällä komennon perään: `< tiedosto`.
-Tämä tarkoittaa, että tiedoston sisältö ohjataan ohjelmalle sisään menevään standardiin syötevirtaan.
+Tämä tarkoittaa, että tiedoston sisältö ohjataan ohjelmalle sisään menevään standardiin syötevirtaan (stdin)
+korvaamaan normaalisti käytettävä näppäimistösyöte.
 
 Kokeile:
 
@@ -232,15 +232,19 @@ Nämä tulosteet tulevat virhetulostevirrasta ja niistä pääsee eroon mm. ohja
 ```
 
 
-
-{{% wrapper class="exercises" %}}
 Tehtäviä
 =========================
 
-Suorita tehtävät komentorivillä ja kirjoita vastaukset tiedostoon `vastaus-xxx.txt`. Kerro jokvaisessa kohdassa vastauksen lisäksi, millä komennolla tai komennoilla suoritit tehtävän. (Kopioi komennot ja tulosteet terminaali-ikkunasta tekstitiedostoon.) Palauta vastauksesi Moodleen tiedostona `vastaus-xxx.zip`, johon on paketoitu molemmat luomasi tekstitiedostot.
+{{% wrapper class="exercises" %}}
+Tehtävät 10
+=========================
+
+Suorita tehtävät komentorivillä ja kirjoita vastaukset tiedostoon `tehtava-10.txt`. Kerro jokaisessa kohdassa vastauksen lisäksi,
+millä komennolla tai komennoilla suoritit tehtävän. (Kopioi komennot ja tulosteet terminaali-ikkunasta tekstitiedostoon.)
+Palauta vastauksenasi tiedosto `tehtava-10.zip`, johon on paketoitu molemmat luomasi tekstitiedostot.
 
 1. Kuinka monta __erilaista__ riviä on komentohistoriassasi?
-2. Millä rivillä tiedostossa `http://petrit.net/Linux-kurssi/pg32536.txt` alkaa kuudes luku?
+2. Millä rivillä tiedostossa `http://petrit.net/Linux-kurssi/files/pg32536.txt` alkaa kuudes luku?
    * Vihje 1: `wget`, `grep`
    * Vihje 2: Kyseisellä rivillä lukee teksti *KUUDES LUKU*
    * Vihje 3: `grep` näyttää rivinumerot valitsimella `-n`
@@ -249,7 +253,7 @@ Suorita tehtävät komentorivillä ja kirjoita vastaukset tiedostoon `vastaus-xx
 4. Tutki hakemiston `/etc` sisältöä (ei sen alihakemistojen sisältöä).
    Monenko tiedoston tai hakemiston päiväys on vuodelta 2011?
    * Vihje: `ls`, `grep`
-5. Käytössäsi on tiedosto `http://petrit.net/Linux-kurssi/pg32536.txt` sekä ohjelmat
+5. Käytössäsi on tiedosto `http://petrit.net/Linux-kurssi/files/pg32536.txt` sekä ohjelmat
   `wget`, `cat`, `head` ja `tail`. Näitä käyttäen tee tiedosto `kooste.txt`, joka on seuraavanlainen:
    * Tiedosto alkaa annetun tiedoston riveillä 9-13.
    * Näiden jälkeen tiedostossa on rivi, jolla on kolme pistettä (...).

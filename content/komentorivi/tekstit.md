@@ -413,7 +413,7 @@ Tehtävät 9
 ===============================
 
 Kerro jokaisessa kohdassa vastauksen lisäksi, millä komennolla tai komennoilla
-suoritit tehtävän.
+suoritit tehtävän. Vastausten palautus tiedostona `tehtava-9.txt`.
 
 1. Kuinka monta riviä on komentohistoriassasi?
 2. Mikä on komentorivillä muuttujan `$OSTYPE` arvo?
