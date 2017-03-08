@@ -1,4 +1,4 @@
-baseurl = "http://linux-kurssi.dy.fi"
+baseurl = "/"
 publishDir = "pipublic"
 languageCode = "fi-fi"
 title = "Linux-kurssi"
@@ -17,4 +17,4 @@ canonifyurls = true
     email = "linux@petrit.net"
     github = "https://github.com/pesasa/"
     cssstyle = "bluebook"
-    logo = "/images/Awesome-Tux.svg"
+    logo = "images/Awesome-Tux.svg"

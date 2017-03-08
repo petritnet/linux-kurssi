@@ -1,4 +1,4 @@
-baseurl = "http://petrit.net/Linux-kurssi"
+baseurl = "//petrit.net/Linux-kurssi/"
 #baseurl = "http://localhost:1313/"
 languageCode = "fi-fi"
 title = "Linux-kurssi"
@@ -6,9 +6,10 @@ theme = "schoolbook"
 
 pluralizeListTitles = false
 #SectionPagesMenu = "main"
-canonifyurls = true
+canonifyurls = false
+relativeURLs = false
 [blackfriday]
-    sourceRelativeLinksEval = true
+#    sourceRelativeLinksEval = true
     smartypants = false
 
 [Params]
@@ -17,4 +18,4 @@ canonifyurls = true
     email = "linux@petrit.net"
     github = "https://github.com/pesasa/"
     cssstyle = "bluebook"
-    logo = "/images/Awesome-Tux.svg"
+    logo = "images/Awesome-Tux.svg"
