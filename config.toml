@@ -6,7 +6,7 @@ theme = "schoolbook"
 
 pluralizeListTitles = false
 #SectionPagesMenu = "main"
-canonifyurls = false
+canonifyurls = true
 relativeURLs = false
 [blackfriday]
 #    sourceRelativeLinksEval = true
