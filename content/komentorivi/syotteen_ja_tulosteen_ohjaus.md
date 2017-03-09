@@ -4,6 +4,48 @@ title = "Syötteen ja tulosteen ohjaus"
 weight = 420
 +++
 
+Komentoriviohjelmat saavat tyypillisesti syötteensä käyttäjältä näppäimistön kautta
+ja ne tulostavat tuottamansa tekstin näytölle, terminaaliin, jossa ohjelma on käynnissä.
+Näin ei kuitenkaan välttämättä tarvitse olla, sillä ojelma voidaan laittaa ottamaan syötteensä,
+eli sille syötteenä annettavan tekstin, esimerkiksi tiedostosta tai joltain toiselta ohjelmalta.
+Samoin ohjelman tulostama teksti voidaan näytön sijasta ohjata joko tiedostoon tai jollekin
+toiselle ohjelmalle.
+
+Tekstin lukeminen tiedostosta tai sen tulostaminen tiedostoon lisää mahdollisuutta
+automaatioon, sillä se vähentää ihmisen tarvetta syöttää tietoa interaktiivisesti
+näppäimistöltä.
+
+Ohjelman tulosteen ohjaaminen toisen ohjelman syötteeksi puolestaan mahdollistaa
+tekstille erilaisia operaatiota tekevien ohjelmien linkittämisen. Näin yksinkertaiset
+ohjelmat saadaan tekemään yhdessä monimutkaisempia kokonaisuuksia.
+
+
+{{% wrapper class="exercises" %}}
+Ohjelmien yhdisteleminen (kokeile)
+--------------------------
+
+Kirjoita terminaaliin seuraava komentorivi:
+
+```
+seq 39 | sort -R | head -n 7 | sort -n
+```
+
+Pohdi:
+
+1. Mistä yksittäisistä komennoista se koostuu ja mitä komennot tekevät?
+2. Miten komennon tulosteen ohjaaminen toiselle komennolle merkitään?
+3. Mitä käyttöä lopputuloksella voisi olla?
+
+
+{{% /wrapper %}}
+
+
+
+
+
+
+
+
 Stdin, stdout, stderr
 =========================
 
@@ -19,6 +61,28 @@ Komentoriviohjelmilla on kolme niin kutsuttua standardivirtaa:
 Näitä voi ohjailla uudelleen tulemaan jostain muualta, kun näppäimistöltä ja jonnekin muualle kuin näytölle.
 Esimerkiksi tiedostosta tai tiedostoon taikka toiselta ohjelmalta tai toiselle ohjelmalle.
 
+
+
+
+
+{{% wrapper class="exercises" %}}
+Standardi input (kokeile)
+-----------------------------
+
+`cat`-ohjelma tulostaa normaalisti pyydetyn tiedoston sisällön näytölle:
+
+```
+ cat Documents/nano-harjoitus.txt
+```
+
+Jos `cat`-ohjelmalle ei anneta tulostettavaa tiedostoa, se ottaa syötteen vastaan näppäimistöltä (stdin)
+ja tulostaa takaisin näytölle (stdout), kunnes käyttäjä antaa **ctrl-d**-näppäilyn. Kokeile!
+
+```
+ cat
+```
+
+{{% /wrapper %}}
 
 
 
@@ -38,28 +102,6 @@ Ohjelman tulostuksen voi ohjata haluamaansa tiedostoon lisäämällä komennon p
 Tällöin tulostus ei näy näytöllä lainkaan vaan menee sen sijaan suoraan käskettyyn tiedostoon.
 Jos tiedostoa ei ole ennestään, se luodaan. Jos tiedosto on jo olemassa, se ylikirjoitetaan!
 
-
-
-
-
-{{% wrapper class="exercises" %}}
-Tulostus tiedostoon (kokeile)
------------------------------
-
-`cat`-ohjelma tulostaa normaalisti pyydetyn tiedoston sisällön näytölle:
-
-```
- cat listaus.txt
-```
-
-Jos `cat`-ohjelmalle ei anneta tulostettavaa tiedostoa, se ottaa syötteen vastaan näppäimistöltä (stdin)
-ja tulostaa takaisin näytölle (stdout), kunnes käyttäjä antaa **ctrl-d**-näppäilyn. Kokeile!
-
-```
- cat
-```
-
-{{% /wrapper %}}
 
 
 
@@ -126,13 +168,23 @@ voidaan tiedoston sisältö antaa syötteenä lisäämällä komennon perään: 
 Tämä tarkoittaa, että tiedoston sisältö ohjataan ohjelmalle sisään menevään standardiin syötevirtaan (stdin)
 korvaamaan normaalisti käytettävä näppäimistösyöte.
 
-Kokeile:
+
+
+{{% wrapper class="exercises" %}}
+Syöte tiedostosta (kokeile)
+-----------------------------
+
+Suoritetaan ohjelma näin:
 
 ```
  ./nimi.sh < nimi.txt
 ```
 
 Ohjelma saa syötteen näppäimistön sijasta tiedostosta `nimi.txt`.
+
+{{% /wrapper %}}
+
+
 
 
 
@@ -143,7 +195,7 @@ Virheiden tulostus tiedostoon
 Jotkut ohjelmat tulostavat virheilmoitukset erilliseen virhetulostusten virtaan, "stderr",
 joka normaalisti tulostuu näytölle, kuten standardi tulostevirtakin.
 Virhetulosteet voidaan kuitenkin ohjata erikseen eri tiedostoon kuin tavallinen tulostus,
-lisäämällä komennon perään: `2> tiedosto`.
+lisäämällä komennon perään: `2> tiedosto`. Tämä tarkoittaa "ohjaa virran 2 teksti tiedostoon".
 
 Kokeile komentoa:
 
@@ -160,14 +212,14 @@ Kokeile seuraavaksi komentoa:
 ```
 
 Nyt virheilmoitukset ohjattiin tiedostoon `/dev/null`, joka on Unix-järjestelmissä oleva erikoistiedosto,
-musta-aukko, johon lähetetyt tekstit katoavat jälkiä jättämättä. Näytölle tulostuvat vain standardin
+"musta-aukko", johon lähetetyt tekstit katoavat jälkiä jättämättä. Näytölle tulostuvat vain standardin
 tulostusvirran tekstit, ei virheilmoituksia.
 
 
 
 
 
-Tulosteen putkitus
+Tulosteen putkitus toiselle ohjelmalle
 =========================
 
 Toisinaan ohjelman tuloste halutaan ohjata tiedoston sijaan toiselle ohjelmalle.
@@ -214,11 +266,13 @@ järjestetään ne aakkosjärjestykseen `sort`-ohjelmalla ja poistetaan useamman
 samanlaiset rivit `uniq`-ohjelmalla. Lopuksi lasketaan jäljelle jääneiden rivien määrä.
 
 Monissa komentoriviohjelmissa standardia tulostevirtaa tai syötevirtaa merkitään
-merkillä `-`. Esimerkiksi `wget`-ohjelmassa voidaan tulostus ohjata näytölle antamalla
-tallennustiedoston nimen paikalla merkki `-`.
+merkillä `-`. Esimerkiksi `wget`-ohjelmassa voidaan tulostus ohjata syötevirtaan antamalla
+tallennustiedoston nimen paikalla merkki `-`. Oletuksena tuloste menee siis näytölle, mutta
+halutessaan sen voi ohjata toiselle ohjelmalle tai tiedostoon.
+
 
 ```
- wget -O - http://petrit.net/Linux-kurssi/pg32536.txt | head -n 20
+ wget -O - http://petrit.net/Linux-kurssi/files/pg32536.txt | head -n 20
 ```
 
 Ladataan verkosta *Baskervillen koira* -romaani tekstitiedostona, tulostetaan se standardi tulostevirtaan
@@ -228,8 +282,17 @@ Mutta... Huomaamme, että tulostuksessa näkyy välissä `wget`-ohjelman muita t
 Nämä tulosteet tulevat virhetulostevirrasta ja niistä pääsee eroon mm. ohjaamalla virhetulosteet `/dev/null`:iin.
 
 ```
- wget -O - http://petrit.net/Linux-kurssi/pg32536.txt 2> /dev/null | head -n 20
+ wget -O - http://petrit.net/Linux-kurssi/files/pg32536.txt 2> /dev/null | head -n 20
 ```
+
+Pohdintaa
+=========
+
+Pohdi, mitä eroa on tulosteen ohjaamisessa tiedostoon tai toiselle ohjelmalle. Mikä ero on niihin
+käytetyssä merkinnässä?
+
+**Vastaus:** Tiedostoon (tai tiedostosta) ohjaamiseen käytetään `>`-merkkiä (ja `<`-merkkiä), kun taas
+ohjelmien väliseen ohjaamiseen, putkittamiseen, käytetään merkkiä `|`.
 
 
 Tehtäviä

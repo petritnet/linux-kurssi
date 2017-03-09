@@ -83,26 +83,28 @@ Nyt voit tehdä omia skriptejä tähän hakemistoon ja ne voi käynnistää suor
 ilman polkua.
 
 
-
-
 Harjoituksia
-======================
+=============
 
-Tee kolme harjoitustehtävistä 1-6 joko yksin taikka kahden tai kolmen ryhmissä.
+{{% wrapper class="exercises" %}}
+Harjoitustehtävät
+---------------
+
+Tee kolme kappaletta harjoitustehtävistä 1-6 joko yksin taikka kahden tai kolmen ryhmissä.
 Toteuta tehtävät joko Bash-skripteinä tai aliaksina.
 
-1. Skripti, joka hakee sivulta http://www.hs.fi päivän nimipäiväsankarien nimet ja
-   tulostaa ne.
-2. Skripti, joka tulostaa viisi satunnaista lottoriviä. Tulosta rivien numerot
+<!--1. Skripti, joka hakee sivulta http://www.hs.fi päivän nimipäiväsankarien nimet ja
+   tulostaa ne. -->
+<!--3. Hae Turun tämänhetkinen sää Yahoon palvelusta osoitteesta
+   <http://weather.yahooapis.com/forecastrss?w=574224&u=c> ja tulosta se. -->
+1. Skripti, joka tulostaa viisi satunnaista lottoriviä. Tulosta rivien numerot
    suuruusjärjestyksessä.
-3. Hae Turun tämänhetkinen sää Yahoon palvelusta osoitteesta
-   <http://weather.yahooapis.com/forecastrss?w=574224&u=c> ja tulosta se.
-4. Asenna paketit `fortune-mod`, `fortunes` sekä `cowsay`. Tee asetuksiisi
+2. Asenna paketit `fortune-mod`, `fortunes` sekä `cowsay`. Tee asetuksiisi
    sellainen muutos, että aina uuden terminaalin avatessa tulostetaan
    `fortune`-ohjelman tuottama teksti `cowsay`-ohjelman tekemässä puhekuplassa.
-5. Tee skripti, joka simuloi kahta nopanheittoa, eli tulostaa kaksi lukua väliltä 1-6,
+3. Tee skripti, joka simuloi kahta nopanheittoa, eli tulostaa kaksi lukua väliltä 1-6,
    sekä kysyy käyttäjältä niiden summan ja tarkistaa vastauksen.
-6. Kalenteri / TODO-lista
+4. Kalenteri / TODO-lista
    * Tee skripti `todo`, joka etsii kotihakemistossa olevasta tiedostosta `.todolist`
      muotoa `2012-11-01: Linux-kurssi` olevista riveistä ne, jotka koskevat senhetkistä
      päivää ja tulostaa ne ilman päivämäärää, kaksoispistettä ja välilyöntiä. Lisää tämä
@@ -114,7 +116,12 @@ Toteuta tehtävät joko Bash-skripteinä tai aliaksina.
    * _*_ Tee skripti `todoweek`, joka toimii muuten, kuten `todo`, mutta tulostaa
      seuraavan seitsemän päivän ajalta kaikki TODO-merkinnät sekä päivämäärät
      väliotsikkoina.
+5. Skripti, joka arpoo kolme kertaa sadan kolikonheiton sarjan ja tulostaa kunkin sarjan tuloksen. Esimerkiksi:<br>
+   `45 klaava`<br>
+   `55 kruuna`
+6. ...
 
+{{% /wrapper %}}
 
 
 

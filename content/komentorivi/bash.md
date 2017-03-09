@@ -540,11 +540,13 @@ Kirjoita seuraava tiedostoon `toisto.sh`, anna sille suoritusoikeudet ja aja se.
 
 
 
-{{% wrapper class="exercises" %}}
 Tehtäviä
 ============================
+{{% wrapper class="exercises" %}}
+Tehtävät 12
+============================
 
-Palautus tiedostona `vastaus-11.txt`.
+Palautus tiedostona `vastaus-12.txt`.
 Kerro jokaisessa kohdassa käyttämäsi komento tai komennot sekä niiden tulostukset.
 
 1. Luettele kaikki tiedostot, jotka ovat hakemistossa `/etc` ja jotka alkavat kirjaimella `h` tai kirjaimella `f` ja
