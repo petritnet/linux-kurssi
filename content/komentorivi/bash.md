@@ -4,21 +4,28 @@ title = "Bash-ohjelmointi"
 weight = 440
 +++
 
-Komentotulkit
-============================
+Sen lisäksi, että Bash on interaktiivinen tekstipohjainen käyttöliittymä,
+se on myös täysiverinen ohjelmointikieli, josta löytyvät muun muassa
+muuttujat, silmukat ja ehtolauseet. Sen ohjelmointiominaisuuksia voidaan
+käyttää sekä interaktiivisesti tehostamaan komentorivin käyttöä tai erikseen
+suoritettavien monimutkaisempien ohjelmien, skriptien, tekemiseen.
 
-Bash = *Bourne Again SHell*
+Yksinkertaisimpia tapoja käyttää ohjelmointia komentorivillä on jonkin
+toistuvan toiminnon suorittaminen useammalle tiedostolle silmukassa.
 
-* Ottaa vastaan käyttäjän komentoja ja suorittaa niitä
-* Tulkittu ohjelmointikieli (muuttujat, silmukat, ehtolauseet,...)
 
-Myös muita komentotulkkeja, eli shellejä, eli kuoria:
+{{% wrapper class="exercises" %}}
+Esimerkki
+-----------------------------
 
-* Sh = Bourne shell (Bashin edeltäjä)
-* Ksh = Korn shell
-* Zsh
-* Csh = C Shell, komentotulkki, jonka syntaksi muistuttaa C-kieltä
-* Tcsh = TENEX C Shell, kehittyneempi versio C Shellistä
+Pohdi, mitä seuraava komento tekee:
+
+```no-highlight
+for nimi in kuva1 kaavio2 kuvio3; do convert $nimi.png $nimi.jpg ; done
+```
+
+
+{{% /wrapper %}}
 
 
 
@@ -36,11 +43,15 @@ Bash-komentorivillä annetuissa komennoissa tiedostoihin voi viitata lyhennysmer
 Bash laajentaa jokerimerkkejä sisältävän merkkijonon listaksi tiedostoja, jotka sopivat merkkijonon esittämään kaavaan.
 Bash tekee laajennuksen lyhennysmerkinästä "täyteen kokoon" ennen kuin ne annetaan kutsutulle ohjelmalle.
 
+{{% wrapper class="exercises" %}}
+Kokeile
+-----------------------------
 ```
  echo *
  ls *.txt
 ```
 
+{{% /wrapper %}}
 
 
 
@@ -70,20 +81,23 @@ Tiedostonimien laajennus: esimerkkejä
 Tiedostonimien laajennus: kirjainjoukot
 ---------------------------------------
 
-Jokerimerkkien lisäksi voidaan käyttää myös muita lyhenteitä.
+Jokerimerkkien lisäksi voidaan käyttää myös muita lyhenteitä, kuten kirjainjoukkoja.
+Kirjainjoukko on kokoelma hakasulkeiden välissä lueteltuja merkkejä (tai "merkkiväli").
+Kirjainjoukko täsmää tarkalleen yhteen merkkiin, samoin kuin jokerimerkki `?`.
 
 `[abcd]`
-:   Mikä tahansa kirjaimista `abcd`. Esimerkiksi: `[THL]upu.txt` laajentuu tiedostonimiksi
+:   Mikä tahansa kirjaimista `abcd`.
+:   Esimerkiksi: `[THL]upu.txt` laajentuu tiedostonimiksi
     `Tupu.txt` `Hupu.txt` `Lupu.txt`, jos sen nimiset tiedostot löytyvät tästä hakemistosta.
 
 
 `[a-d]`
 :   Mikä tahansa kirjain kirjaimesta `a` kirjaimeen `d` (aakkosjärjestyksessä).
-    Esimerkiksi `[a-zA-Z0-9]upu.txt` täsmää vaikkapa tiedostoihin `Tupu.txt`, `tupu.txt`, `Aupu.txt`, `3upu.txt` jne.
+:   Esimerkiksi `[a-zA-Z0-9]upu.txt` täsmää vaikkapa tiedostoihin `Tupu.txt`, `tupu.txt`, `Aupu.txt`, `3upu.txt` jne.
 
 `[^abc]`
 :    Mikä tahansa muu merkki kuin `a`, `b` tai `c`.
-
+:    Esimerkiksi `[^THL]upu.txt` täsmää vaikkapa tiedostoihin, `Pupu.txt`, `3upu.txt` ja `tupu.txt`, mutta **EI** tiedostoihin `Tupu.txt`, `Hupu.txt` ja `Lupu.txt`.
 
 
 
@@ -91,6 +105,8 @@ Tiedostonimien laajennus: sanajoukot
 -------------------------------------
 
 Sanajoukot toimivat millä tahansa merkkijonoilla, ei vain kyseisessä hakemistossa olevilla tiedostonimillä.
+Sanajoukon käyttö ei siis edellytä vastaavan tiedoston olemassaoloa.
+Sanajoukko on aaltosulkujen väliin kirjoitettu pilkuilla eroteltu luettelo sanoja.
 
 `{Aku,Mikki,Hessu}`
 :   Pidempiä vaihtoehtoja voi luetella `{`- ja `}`-merkien välissä pilkulla erotettuna.
@@ -120,7 +136,7 @@ Bashissa voi käyttää myös merkkijonomuuttujia.
 ```
 
 * Jos muuttujaan sijoitettavassa tekstissä on välilyöntejä, on se ympäröitävä lainausmerkeillä.
-   (tai välilyönnistä käytettävä merkintää `\ `)
+   (tai kirjoitettava välilyönnin eteen merkki `\`)
 
 
 
@@ -207,14 +223,18 @@ Tekee täsmälleen saman kuin eri riveille kirjoitettuina.
  echo "Sillä selvä"
 ```
 
+Komentojen kirjoittaminen samalle riville `;`-merkillä eroteltuina on hyödyllistä
+yleensä esimerkiksi tilanteissa, joissa yksittäisten komentojen suoritus saattaa kestää
+kauan, esimerkiksi tunteja, eikä käyttäjä halua jäädä valvomaan niiden suoritusta.
+Tällöin ne voidaan vain käskeä suoritettavaksi peräkkäin.
 
 
 
 Komennot jonossa (&&)
 ============================
 
-* Ohjelmat kertovat paluuarvolla, onnistuiko sen suoritus. (0=onnistui, jotain muuta = ei onnistunut)
-* Paluuarvoa ei tulosteta, mutta sitä voidaan käyttää esimerkiksi seuraavasti:
+Ohjelmat kertovat niin kutsutulla paluuarvolla, onnistuiko sen suoritus. (0=onnistui, jotain muuta = ei onnistunut)
+Paluuarvoa ei tulosteta, mutta Bash saa sen ohjelman suorituksen loputtua ja sitä voidaan käyttää esimerkiksi seuraavasti:
 
 Jos komennot erotellaan merkeillä `&&`, seuraava komento suoritetaan vain, jos edellinen komento onnistui. (looginen "ja")
 
@@ -255,7 +275,7 @@ Testit
  test 5 -lt 10 && echo "Joo, 5 oli pienempi kuin 10"
 ```
 
-Testataan onko luku 5 pienempi kuin (lt=less than) luku 10. Koska on, paluuarvo on 0 (eli komento onnistui)
+Testataan onko luku 5 pienempi kuin (lt=less than) luku 10. Koska näin on, paluuarvona palautetaan 0 (eli komento onnistui)
 ja seuraava komento suoritetaan.
 
 ```
@@ -414,13 +434,13 @@ Tämä lisää kaikkien työhakemistossa olevien txt-päätteisten tiedostojen l
 
 `for`-silmukan yhteydessä eräs hyvin käytännöllinen aputyökalu on ohjelma nimeltä `seq`, joka tulostaa lukujonoja.
 
-* Yhdellä argumentilla tulostaa luvut alkaen yhdestä ja päättyen annettuun numeroon: `seq 7` tulostaa luvut 1-7. Kokeile!
-* Kahdella argumentilla tulostaa luvut ensimmäisestä toiseen: `seq 3 7` tulostaa luvut `3`, `4`, `5`, `6`, `7`. Kokeile!
-* Kolmella argumentilla tulostaa luvut ensimmäisestä toisen suuruisella askeleella kolmanteen: `seq 3 2 7` tulostaa
+* Yhdellä argumentilla tulostaa luvut alkaen yhdestä ja päättyen annettuun numeroon: <br> `seq 7` tulostaa luvut 1-7. Kokeile!
+* Kahdella argumentilla tulostaa luvut ensimmäisestä toiseen: <br> `seq 3 7` tulostaa luvut `3`, `4`, `5`, `6`, `7`. Kokeile!
+* Kolmella argumentilla tulostaa luvut ensimmäisestä toisen suuruisella askeleella kolmanteen: <br> `seq 3 2 7` tulostaa
   luvut `3`, `5`, `7`. Kokeile!
-* Askel voi olla myös negatiivinen tai desimaaliluku: `seq 2 -0.5 -1` tulostaa luvut `2`, `1.5`, `1`, `0.5`, `0`, `-0.5`, `-1`. Kokeile!
-* Lisävalitsin `-w` lisää eteen etunollia niin, että kaikki tulostettavat luvut ovat pisimmän pituisia: `seq -w 1 100`
-  tulostaa luvut `001`, `002`, `003`,..., `099`, `100`. Kokeile!
+* Askel voi olla myös negatiivinen tai desimaaliluku: <br> `seq 2 -0.5 -1` tulostaa luvut `2`, `1.5`, `1`, `0.5`, `0`, `-0.5`, `-1`. Kokeile!
+* Lisävalitsin `-w` lisää eteen etunollia niin, että kaikki tulostettavat luvut ovat kaikki yhtä pitkiä, eli pisimmän pituisia: <br>
+  `seq -w 1 100` tulostaa luvut `001`, `002`, `003`,..., `099`, `100`. Kokeile!
 
 
 
@@ -431,7 +451,7 @@ Toisto (`for` ja `seq`)
 `for`-silmukka ja `seq`-komento ovat joskus käytännöllistä yhdistää:
 
 ```
- for i in `seq 1 7`; do wget http://viikonvalo.fi/sites/default/files/images/clementine-$i.png; done
+ for i in `seq 1 7`; do wget http://viikonvalo.fi/images/clementine-$i.png; done
 ```
 
 * `` `seq 1 7` `` korvautuu komennon `seq 1 7` tulosteella, eli luvuilla `1 2 3 4 5 6 7`.
@@ -489,7 +509,8 @@ Toisto (`while` ja `read`)
  while read i; do echo $i; done
 ```
 
-Silmukka toistaa kaiken, mitä sille kirjoittaa. Silmukan saa lopettamaan antamalla sille syötteen lopetusmerkin: **ctrl-d**
+Tämä silmukka toistaa kaiken, mitä sille kirjoittaa. Silmukan saa lopettamaan antamalla sille syötteen lopetusmerkin: **ctrl-d**.
+
 Syötteen voi ohjata tälle silmukalle myös tiedostosta:
 
 ```
@@ -508,10 +529,12 @@ joka kertoo, että kyseessä on bash-skripi:
 ```
  #!/bin/bash
 ```
-Tämän jälkeen kirjoitetaan suoritettavat komennot ja tallennetaan tiedosto. Usein käytetään päätettä `.sh`
+Tämän jälkeen kirjoitetaan suoritettavat komennot ja tallennetaan tiedosto. Usein tiedostossa käytetään päätettä `.sh`, mutta tämä ei ole pakollista.
 Merkistä `#` alkaen rivin loppuun on kommenttia.
-Tiedostolle annetaan ajo-oikeus komennolla `chmod a+x tiedostonnimi.sh`
-Tiedosto suoritetaan komennolla `./tiedostonnimi.sh` (tai viittaamalla siihen jotenkin muuten absoluuttisella tai suhteellisella polulla)
+Käyttäjille annetaan tiedoston suoritusoikeus komennolla `chmod a+x tiedostonnimi.sh`.
+
+Jos tiedosto ei ole jossain `$PATH`-muuttujassa luetelluista poluista, pitää se suoritetaan komennolla `./tiedostonnimi.sh`
+tai viittaamalla siihen jotenkin muuten absoluuttisella tai suhteellisella polulla.
 
 
 
@@ -520,21 +543,45 @@ Tiedosto suoritetaan komennolla `./tiedostonnimi.sh` (tai viittaamalla siihen jo
 Bash-skripti
 ============================
 
-Kirjoita seuraava tiedostoon `toisto.sh`, anna sille suoritusoikeudet ja aja se.
+Kirjoita seuraava tiedostoon `toisto.sh`, anna siihen suoritusoikeudet ja aja se.
 
 ```
- #!/bin/bash
- nimi=$@
- if [ -z $nimi ]
- then
-   echo "Anna nimesi: "
-   read nimi
- fi
- for i in `seq -w 10`
- do
-   echo "$i: Terve, $nimi."
- done
+#!/bin/bash
+nimi=$@
+if [ -z $nimi ]
+then
+  echo "Anna nimesi: "
+  read nimi
+fi
+for i in `seq -w 10`
+do
+  echo "$i: Terve, $nimi."
+done
 ```
+
+{{% wrapper class="exercises" %}}
+Suoritus
+-----------------------------
+
+Suoritetaan `toisto.sh`.
+
+```no-highlight
+$ ./toisto.sh 
+Anna nimesi: 
+Petri
+01: Terve, Petri.
+02: Terve, Petri.
+03: Terve, Petri.
+04: Terve, Petri.
+05: Terve, Petri.
+06: Terve, Petri.
+07: Terve, Petri.
+08: Terve, Petri.
+09: Terve, Petri.
+10: Terve, Petri.
+```
+
+{{% /wrapper %}}
 
 
 

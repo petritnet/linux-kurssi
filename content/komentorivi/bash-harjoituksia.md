@@ -303,9 +303,11 @@ Käytettävissä olevat värit:
 
 
 
+Tehtäviä
+======================
 
 {{% wrapper class="exercises" %}}
-Tehtäviä
+Tehtävät 13
 ======================
 
 Tee edellä luetelluista harjoitustehtävistä ainakin kolme.

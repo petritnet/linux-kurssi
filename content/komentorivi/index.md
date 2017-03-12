@@ -15,6 +15,14 @@ eli komentotulkkia. Siitä käytetään myös nimitystä *shell* (kuori).
 * Komentotulkissa on käytettävissä sen sisäisiä komentoja sekä erillisiä ohjelmia.
   Käyttäjälle ne näyttävät samanlaisilta.
 
+Muita komentotulkkeja ovat esimerkiksi:
+
+* Ksh = Korn shell
+* Zsh
+* Csh = C Shell, komentotulkki, jonka syntaksi muistuttaa C-kieltä
+* Tcsh = TENEX C Shell, kehittyneempi versio C Shellistä
+
+
 Linuxissa komentorivin voi saada käyttöönsä useammalla tavalla. Helpoimmin sen saa
 esiin avaamalla (valikosta) jonkin tarjolla olevista niin sanotuista terminaaliohjelmista,
 jotka aukeavat omaan ikkunaansa.
