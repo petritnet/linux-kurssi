@@ -90,13 +90,9 @@ Harjoituksia
 Harjoitustehtävät
 ---------------
 
-Tee kolme kappaletta harjoitustehtävistä 1-6 joko yksin taikka kahden tai kolmen ryhmissä.
+Tee kaksi kappaletta harjoitustehtävistä 1-5 joko yksin taikka kahden tai kolmen ryhmissä.
 Toteuta tehtävät joko Bash-skripteinä tai aliaksina.
 
-<!--1. Skripti, joka hakee sivulta http://www.hs.fi päivän nimipäiväsankarien nimet ja
-   tulostaa ne. -->
-<!--3. Hae Turun tämänhetkinen sää Yahoon palvelusta osoitteesta
-   <http://weather.yahooapis.com/forecastrss?w=574224&u=c> ja tulosta se. -->
 1. Skripti, joka tulostaa viisi satunnaista lottoriviä. Tulosta rivien numerot
    suuruusjärjestyksessä.
 2. Asenna paketit `fortune-mod`, `fortunes` sekä `cowsay`. Tee asetuksiisi
@@ -119,7 +115,6 @@ Toteuta tehtävät joko Bash-skripteinä tai aliaksina.
 5. Skripti, joka arpoo kolme kertaa sadan kolikonheiton sarjan ja tulostaa kunkin sarjan tuloksen. Esimerkiksi:<br>
    `45 klaava`<br>
    `55 kruuna`
-6. ...
 
 {{% /wrapper %}}
 
@@ -310,7 +305,7 @@ Tehtäviä
 Tehtävät 13
 ======================
 
-Tee edellä luetelluista harjoitustehtävistä ainakin kolme.
+Tee edellä luetelluista harjoitustehtävistä ainakin kaksi.
 
 Tehtävät voi tehdä yksin taikka kahden tai kolmen opiskelijan ryhmissä.
 
