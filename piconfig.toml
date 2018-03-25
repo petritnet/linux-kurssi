@@ -15,6 +15,6 @@ canonifyurls = true
     description = "Linux-kurssi lukiolaisille"
     author = "Petri Salmela"
     email = "linux@petrit.net"
-    github = "https://github.com/pesasa/"
+    github = "https://github.com/petritnet/linux-kurssi/"
     cssstyle = "bluebook"
     logo = "images/Awesome-Tux.svg"
