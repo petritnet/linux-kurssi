@@ -1,0 +1,9 @@
+Lisenssi
+========
+
+Tämä "Linux-kurssi" -materiaali on käytettävissä
+CC-by-sa -lisenssin ehtojen mukaan.
+(https://creativecommons.org/licenses/by-sa/4.0/deed.fi)
+
+Tekijä:
+Petri Salmela <pesasa@iki.fi>
