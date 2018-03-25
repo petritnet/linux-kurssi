@@ -58,11 +58,58 @@ tiedostoihin.
 Käyttäjätunnuksesta ja ryhmistä saa tietoa komentorivillä komennolla `id`. Esimerkiksi:
 
 ```no-highlight
-$ id                                                                                                          
+$ id
 uid=1000(pesasa) gid=1000(pesasa) ryhmät=1000(pesasa),4(adm),7(lp),24(cdrom),27(sudo),30(dip),46(plugdev),115(lpadmin),130(sambashare)
 ```
 Tulosteessa kerrotaan käyttäjän uid ja käyttäjätunnus sekä ryhmät, jossa käyttäjä on, ryhmänumeroina ja -niminä.
 
+
+
+
+
+Pääkäyttäjä
+=============
+
+Unix-tyyppisissä järjestelmissä on ylin ylläpitovalta on pääkäyttäjällä, jonka käyttäjätunnus on
+`root` ja jonka käyttäjänumero on `0`. `root`-käyttäjällä on täysi oikeus tehdä järjestelmässä mitä tahansa.
+Normaalisti tavallinen järjestelmän käyttö tehdään tavallisella ei-`root`-tunnuksella ja `root`-tunnuksella tehdään
+vain välttämättömät ylläpitotoimet.
+Joissain Linux-jakeluissa on sisäänkirjautuminen `root`-tunnuksella estetty kokonaan ja ylläpitotehtävät
+suoritetaan tavallisena käyttäjänä, mutta erillistä `sudo`-komentoa käyttäen.
+
+
+
+Sudo
+======
+
+Monissa Linux-jakeluissa on käytettävissä `sudo`-komento, jolla tavallinen käyttäjä voi suorittaa
+ylläpitotoimia käyttäen väliaikaisesti `root`-käyttäjän oikeuksia. Komennon nimi tulee sanoista **s**uper
+**u**ser **do**, eli "tee pääkäyttäjän oikeuksilla". Tämän komennon käyttö edellyttää, että käyttäjälle on
+annettu oikeus sen käyttöön ja määritelty, mitä toimintoja sillä saa tehdä. Tyypillisesti `sudo`-komennon
+rajoittamaton käyttöoikeus on annettu niille käyttäjille, jotka ovat jossain ylläpitäjille tarkoitetussa ryhmässä.
+Ubuntussa ja sen johdannaisissa tämä ryhmä on tyypillisesti `sudo`, RedHatin ja Fedoran johdannaisissa puolestaan
+`wheel`.
+
+Ylläpitokomentoja annettaessa niiden eteen laitetaan `sudo`-komento, jolloin järjestelmä tietää, että
+ne pitää yrittää suorittaa `root`-käyttäjänä. Esimerkiksi ohjelman Inkscape asennus Ubuntussa tapahtuu
+seuraavalla komennolla:
+
+```no-highlight
+sudo apt-get install inkscape
+```
+
+Tämän jälkeen `sudo` varmistaa käyttäjän henkilöllisyyden kysymällä tämän omaa salasanaa. Jos salasanan
+kirjoittaa oikein ja käyttäjällä oli oikeus `sudo`-komennon käyttöön, suoritetaan käsketty toiminto `root`-käyttäjänä.
+Onnistuneen salasanatunnistautumisen `sudo` muistaa oletuksena seuraavat 15 minuuttia eikä kysy tänä aikana
+salasanaa uudelleen uusien `sudo`-komentojen yhteydessä.
+
+Yksi suurimmista hyödyistä `sudo`-komennon käytöstä verrattuna `root`-käyttäjänä kirjautumiseen on se, että
+ylläpito-oikeuksia voidaan antaa useammalle ylläpitäjälle niin, että he tekevät ylläpitotoimet kuitenkin omalla
+identiteetillään ja salasanallaan. Näin vältytään yhteisen `root`-tunnuksen ja salasanan käytöltä.
+Käytetyistä `sudo`-komennoista pidetään kirjaa, jolloin tiedetään, kuka on tehnyt mitäkin.
+Lisäksi `sudo`-komennolla voidaan käyttäjälle antaa oikeuksia hienovaraisemmin kuin vain
+"kaikki `root`-käyttäjän oikeudet". Käyttäjälle voidaan siis antaa vain rajoitetut ylläpito-oikeudet
+johonkin järjestelmän osaan.
 
 
 

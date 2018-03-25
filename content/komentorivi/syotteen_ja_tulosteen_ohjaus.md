@@ -314,7 +314,7 @@ Palauta vastauksenasi tiedosto `tehtava-10.zip`, johon on paketoitu molemmat luo
 3. Monellako rivillä nimi *Holmes* esiintyy edellisessä tiedostossa?
    * Vihje: `wget`, `wc`, `grep`
 4. Tutki hakemiston `/etc` sisältöä (ei sen alihakemistojen sisältöä).
-   Monenko tiedoston tai hakemiston päiväys on vuodelta 2011?
+   Monenko tiedoston tai hakemiston päiväys on viime vuodelta?
    * Vihje: `ls`, `grep`
 5. Käytössäsi on tiedosto `http://petrit.net/Linux-kurssi/files/pg32536.txt` sekä ohjelmat
   `wget`, `cat`, `head` ja `tail`. Näitä käyttäen tee tiedosto `kooste.txt`, joka on seuraavanlainen:

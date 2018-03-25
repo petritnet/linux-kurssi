@@ -7,7 +7,6 @@ weight = 450
 <!--
 [Harjoitusten esimerkkiratkaisut](/files/harjoitukset.tar.gz)
 -->
-
 Asetustiedostoja
 ======================
 

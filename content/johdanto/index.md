@@ -50,6 +50,14 @@ Muita ohjeita ja luettavaa materiaalia löytyy esimerkiksi seuraavista osoitteis
 
 - [Ubuntu tutuksi] -wikikirja
 
+Kurssin materiaaleja
+=====================
+
+- [Tehtävien malliratkaisuja](/files/vastaukset.pdf)
+- [Bash-harjoitusten malliratkaisut](/files/harjoitukset.tar.gz)
+- [Kertaustehtävät](/files/kertaustehtavat.pdf)
+- [Kertaustehtävien vastaukset](/files/kertausvastaukset.pdf)
+
 
 
 [Kerttuli]: http://www.kerttulinlukio.fi/ (Kerttulin lukio)
