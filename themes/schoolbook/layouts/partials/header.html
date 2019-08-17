@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles{{ if .Site.Params.cssstyle }}-{{ .Site.Params.cssstyle }}{{ end }}.css">
-    {{ if .RSSlink }}
-    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    <link href="{{ .RSSlink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ range .AlternativeOutputFormats }}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end }}
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/tomorrow-night.css" type="text/css" />
     <!--<script src="{{ .Site.BaseURL }}/scripts/vvalo.js"></script>-->
@@ -19,7 +18,7 @@
 <body id="{{ .Title | urlize }}">
     <header id="header">
         <h1 class="sitetitle"><a href="{{ .Site.BaseURL }}"><span>{{ .Site.Title }}</span></a></h1>
-        
+
         {{ $sectiontitle := (or .Params.sectiontitle .Section) }}
         {{ $currentNode := . }}
         <ul class="section-menu">
