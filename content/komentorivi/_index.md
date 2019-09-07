@@ -1,10 +1,12 @@
-+++
-date = "2016-09-11T17:24:38+03:00"
-title = "Komentorivi"
-weight = 400
-type = "index"
-menu = ["main"]
-+++
+---
+date: "2016-09-11T17:24:38+03:00"
+title: "Komentorivi"
+weight: 400
+type: "index"
+menu:
+    main:
+        weight: 400
+---
 
 Komentorivi on tehokas tapa laittaa kone töihin tekemään automaattisesti
 rutiininomaisia tehtäviä. Komentoriviksi sanotaan tekstipohjaista käyttöliittymä,
@@ -18,7 +20,7 @@ eli komentotulkkia. Siitä käytetään myös nimitystä *shell* (kuori).
 Muita komentotulkkeja ovat esimerkiksi:
 
 * Ksh = Korn shell
-* Zsh
+* Zsh = Z Shell, komentotulkki, joka on muun muassa MacOS:ssä.
 * Csh = C Shell, komentotulkki, jonka syntaksi muistuttaa C-kieltä
 * Tcsh = TENEX C Shell, kehittyneempi versio C Shellistä
 
@@ -206,6 +208,3 @@ Info-sivua voi selata ylös ja alas sekä valita tähdellä merkittyjä "linkkej
 enteriä. Sivulta toiselle pääsee liikkumaan myös pikanäppäimillä **n** (next, seuraava),
 **p** (previous, edellinen), **u** (up, ylempi taso). Jos info-sivua ei ole,
 Info näyttää pyydetyn komennon man-sivun.
-
-
-

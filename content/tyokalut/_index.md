@@ -1,10 +1,12 @@
-+++
-date = "2017-03-19T22:24:38+03:00"
-title = "Työkalut"
-weight = 600
-type = "index"
-menu = ["main"]
-+++
+---
+date: "2017-03-19T22:24:38+03:00"
+title: "Työkalut"
+weight: 600
+type: "index"
+menu:
+    main:
+        weight: 600
+---
 
 Linux-järjestelmiin löytyy paljon erilaisia järjestelmien ja verkon
 ylläpitoon, analysointiin ja pelastamiseen soveltuvia työkaluja.
@@ -235,4 +237,3 @@ jonka tarkoituksena on suojata yksityisyyttä ja anonymiteettiä.
 - Live-levynä se ei jätä jälkiä käytetylle tietokoneelle, ellei erikseen ole tarkoitus.
 - Se tarkoaa käyttöön viimeisimmät kryptografiset työkalut tiedostojen, sähköpostin ja pikaviestinnän
   salaamiseen.
-

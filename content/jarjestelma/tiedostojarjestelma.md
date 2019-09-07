@@ -1,9 +1,9 @@
-+++
-date = "2016-09-05T23:03:48+03:00"
-title = "Tiedostojärjestelmä"
-sectiontitle = "Järjestelmä"
-weight = 105
-+++
+---
+date: "2016-09-05T23:03:48+03:00"
+title: "Tiedostojärjestelmä"
+sectiontitle: "Järjestelmä"
+weight: 105
+---
 
 Linuxissa, kuten muissakin UNIX-tyyppisissä käyttöjärjestelmissä, tiedostojärjestelmä on toteutettu yhtenä
 puurakenteena, jolla on yksi *juuri*. Juuresta käytetään merkintää `/`.
@@ -56,7 +56,7 @@ muistitikun sisältö saatetaan liittää vaikka hakemiston `/media/pesasa/6365-
 * Joku levyosio on tiedostojärjestelmän juurena `/`
 * Muut osiot ja mediat, kuten usb-levyt ja optiset levyt *liitetään*, eli *mountataan*, johonkin hakemistoon puussa.
 * Ennen, ja joskus nykyäänkin, esimerkiksi `/home` ja `/usr` olivat omilla levyosioillaan tai jopa toisella koneella.
-* Hakemistot `/bin`, `/sbin` ja `/lib` ovat siksi juuressa, että ne olisivat järjestelmä käytettävissä vaikka `/usr` 
+* Hakemistot `/bin`, `/sbin` ja `/lib` ovat siksi juuressa, että ne olisivat järjestelmän käytettävissä vaikka `/usr`
   ei jostain syystä olisikaan liitettynä.
 
 
@@ -66,57 +66,33 @@ Vakiohakemistot
 
 Järjestelmässä ovat tietyt vakiohakemistot, joilla ovat omat merkityksensä:
 
-```
-/
-/bin
-/boot
-/cdrom
-/dev
-/etc
-/home
-/lib
-/lost+found
-/media
-/mnt
-/opt
-/proc
-/root
-/run
-/sbin
-/sys
-/tmp
-/usr
-/var
-```
-
-
 | Hakemisto | Merkitys |
 |-----------|----------|
-| `/`     |  Juurihakemisto. Hakemistopuun juuri. Kaikki tiedostot ja levyt ovat samassa puussa. |
-|`bin`    |  Järjestelmän oleellisimmat ajettavat tiedostot. Varmasti käytettävissä. |
+| `/`     |  **Juurihakemisto, eli tiedostojärjestelmän hakemistopuun juuri.** Kaikki tiedostot ja levyt ovat samassa puussa. |
+|`/bin`   |  Järjestelmän oleellisimmat ajettavat tiedostot. Varmasti käytettävissä. |
 |`/boot`  |  Käynnistykseen tarvittavia tiedostoja |
 |`/cdrom` |  Paikka johon optinen levy liitetään.  |
-|`/dev`   |  Kaikki laitteet ovat tässä hakemistossa edustettuina tiedostoina. Eivät oikeasti levyllä. Esim. /dev/sda on kiintolevy ja /dev/sda1 sen ensimmäinen osio. |
-|`/etc`   |  Ohjelmien järjestelmänlaajuiset asetukset. |
-|`/home`  |  Käyttäjien kotihakemistot. Esimerkiksi: `/home/pesasa/`, `/home/matti/` |
+|`/dev`   |  **Kaikki laitteet ovat tässä hakemistossa edustettuina tiedostoina.** Tiedostot eivät ole oikeasti levyllä vaan ovat virtuaalisia. Esim. `/dev/sda` on kiintolevy ja `/dev/sda1` sen ensimmäinen osio. |
+|`/etc`   |  **Ohjelmien järjestelmänlaajuiset asetukset**. |
+|`/home`  |  **Käyttäjien kotihakemistot**. Esimerkiksi: `/home/pesasa/`, `/home/matti/` |
 |`/lib`   |  Oleellisimpia ohjelmakirjastoja, joita ohjelmat hyödyntävät. Varmasti käytettävissä. |
 |`/lost+found` | Levyntarkistuksessa löydetyt vaurioituneet tiedostot, joiden oikeaa paikkaa ei tiedetä.|
-|`/media` |  Hakemisto, jonka alle siirrettävät levyt, esim. muistitikut liitetään. |
+|`/media` |  **Hakemisto, jonka alle siirrettävät levyt, esim. muistitikut liitetään.** |
 |`/mnt`   |  Satunnaisia hakemistopuuhun liitettäviä tiedostojärjestelmiä varten. |
-|`/opt`   |  Paketinhallinnan ulkopuolelta asennettuja ohjelmia. |
+|`/opt`   |  **Paketinhallinnan ulkopuolelta asennettuja ohjelmia.** |
 |`/proc`  |  Virtuaalisia tiedostoja, jotka edustavat käynnissä olevaa järjestelmää. Esim. /proc/cpuinfo sisältää tietoa prosessorista. |
 |`/root`  |  root-käyttäjän kotihakemisto |
 |`/run`   |  Käynnissä olevien ohjelmien ja palveluiden tietoja. Esim. palvelinprosessien prosessi-id:itä. |
 |`/sbin`  |  Järjestelmän oleellisimmat ajettavat järjestelmätiedostot. Varmasti käytettävissä. |
 |`/sys`   |  Virtuaalisia tiedostoja liittyen järjestelmään. |
 |`/tmp`   |  Tilapäistiedostoille |
-|`/usr`   |  Ohjelmat asentuvan tämän hakemiston alle. |
+|`/usr`   |  **Ohjelmat asentuvan tämän hakemiston alle.** |
 |`/usr/bin/` | Ajettavat tiedostot |
 |`/usr/sbin/`| Ajettavat järjestelmän ylläpidon tiedostot|
 |`/usr/lib/` | Kirjastoja |
-|`/usr/local/` | Paketinhallinnan ulkopuolelta asennettuja ohjelmia |
+|`/usr/local/` | **Paketinhallinnan ulkopuolelta asennettuja ohjelmia** |
 |`/usr/share/` | Mm. ohjelmien tiedostot omissa hakemistoissaan  |
-|`/usr/share/doc/` | Pakettien dokumentaatioita |
+|`/usr/share/doc/` | **Pakettien dokumentaatioita** |
 |`/var`   |  Järjestelmän muuttuvia tiedostoja. Esim. www-palvelimen tarjoilemat tiedostot hakemiston `/var/www/` tai `/var/www/html/` alla ja logitiedostot hakemiston `/var/log/` alla. |
 
 
@@ -135,13 +111,23 @@ on olemassa myös vähemmän kullattu selitys hakemistorakenteelle:
 * Jälkikäteen keksittiin selitykset, että `/bin`, `/lib`, `/sbin` jne. sisältävät ensin tarvittavat osat ja `/usr`:n alla ovat vähemmän kriittiset jutut.
 
 
+Tiedostojen hallinta
+======================
+
+{{< figure src="/images/ubuntu-files.png" link="/images/ubuntu-files.png" class="floatright floatimage" title="Ubuntun tiedostonhallintaohjelma" caption="Ubuntun tiedostonhallinta aukeaa vasemman reunan palkin kuvakkeesta." >}}
+
+Ubuntun tiedostonhallinta aukeaa vasemman reunan palkin kuvakkeesta,
+sillä voi selata hakemistoja ja avata, siirtää sekä kopioida tiedostoja.
+
+Tutki, mitä tiedostoja ja hakemistoja löydät sillä.
+
 Tehtäviä
 ==================================
 
 {{% wrapper class="exercises" %}}
 Tehtävät 3
 ==================================
-Palauta vastaukset tiedostona `tehtava-3.txt` tai `tehtava-3.odt`.
+Kirjoita vastaukset tiedostoon `tehtava-3.txt` tai `tehtava-3.odt`.
 
 1. Mitkä seuraavista tiedostopoluista ovat *absoluuttisia* ja mitkä *suhteellisia*?
     - `/proc/cpuinfo`

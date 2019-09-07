@@ -1,10 +1,12 @@
-+++
-date = "2017-03-16T22:24:38+03:00"
-title = "Palvelimet"
-weight = 500
-type = "index"
-menu = ["main"]
-+++
+---
+date: "2017-03-16T22:24:38+03:00"
+title: "Palvelimet"
+weight: 500
+type: "index"
+menu:
+    main:
+        weight: 500
+---
 
 Mikä on palvelin? Usein palvelimesta puhuttaessa ensimmäiseksi ajatellaan tehokasta laitetta.
 Varsinaisesti palvelimessa on kuitenkin kyse käynnissä olevasta palvelinohjelmasta.

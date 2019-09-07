@@ -1,9 +1,9 @@
-+++
-date = "2016-09-06T21:59:51+03:00"
-title = "Käyttäjätunnukset"
-sectiontitle = "Järjestelmä"
-weight = 110
-+++
+---
+date: "2016-09-06T21:59:51+03:00"
+title: "Käyttäjätunnukset"
+sectiontitle: "Järjestelmä"
+weight: 110
+---
 
 Linuxissa, kuten Unixeissa yleensä, on käyttäjähallinta toteutettu käyttäjätunnuksilla
 ja käyttäjäryhmillä.
@@ -11,13 +11,13 @@ ja käyttäjäryhmillä.
 Käyttäjätunnukset
 ==================
 
-Käyttäjätunnus on tekstimuotoinen "lempinimi" käyttäjälle. Käyttäjä kirjautuu järjestelmään
+Käyttäjätunnus on käyttäjän tekstimuotoinen "lempinimi". Käyttäjä kirjautuu järjestelmään
 käyttäjätunnuksella ja salasanalla.
 
-Järjestelmän sisäisesti käyttäjät tunnistetaan käyttäjänumerolla (uid, User id) ja kukin
-ihmisten luettavaksi tarkoitettu käyttäjätunnus on kytketty johonkin käyttäjänumeroon.
+Järjestelmän sisäisesti käyttäjät tunnistetaan käyttäjänumerolla (`uid`, user id) ja kukin
+ihmisten luettavaksi tarkoitettu käyttäjätunnus vastaa jotakin käyttäjänumeroa.
 Tiedostossa `/etc/passwd` on lueteltu vastaavuus käyttäjänimien ja -numeroiden välillä.
-Lisäksi tiedostossa on muun muassa tieto käyttäjän koko nimestä, kotihakemistosta ja
+Tiedostossa on lisäksi muun muassa tieto käyttäjän koko nimestä, kotihakemistosta ja
 käyttäjän oletus komentotulkki.
 Kunkin käyttäjän tiedot ovat tiedostossa yhdellä rivillä.
 Tiedoston rivit ovat muotoa:
@@ -43,9 +43,9 @@ joilla on kyseinen oikeus. Esimerkiksi Ubuntu-pohjaisissa järjestelmissä yllä
 ryhmässä nimeltä `sudo`.
 
 Käyttäjä voi olla yhtä aikaa useammassa ryhmässä. Järjestelmä tunnistaa käyttäjäryhmän
-sisäisesti ryhmän numerolla (gid, Group id). Ryhmän nimen ja numeron välinen
-kytkentä löytyy tiedostosta `/etc/group`. Tiedostossa on yksi rivi per ryhmä ja samalla
-rivillä luetellaan lisäksi kaikki kyseiseen ryhmään kuuluvat käyttäjät.
+sisäisesti ryhmän numerolla (`gid`, group id). Ryhmän nimen ja numeron välinen
+kytkentä löytyy tiedostosta `/etc/group`. Tiedostossa on yksi rivi per ryhmä. Samalla
+rivillä luetellaan kaikki kyseiseen ryhmään kuuluvat käyttäjät.
 
 Tiedoston rivit ovat muotoa:
 ```no-highlight
@@ -70,46 +70,56 @@ Tulosteessa kerrotaan käyttäjän uid ja käyttäjätunnus sekä ryhmät, jossa
 Pääkäyttäjä
 =============
 
-Unix-tyyppisissä järjestelmissä on ylin ylläpitovalta on pääkäyttäjällä, jonka käyttäjätunnus on
-`root` ja jonka käyttäjänumero on `0`. `root`-käyttäjällä on täysi oikeus tehdä järjestelmässä mitä tahansa.
-Normaalisti tavallinen järjestelmän käyttö tehdään tavallisella ei-`root`-tunnuksella ja `root`-tunnuksella tehdään
-vain välttämättömät ylläpitotoimet.
-Joissain Linux-jakeluissa on sisäänkirjautuminen `root`-tunnuksella estetty kokonaan ja ylläpitotehtävät
-suoritetaan tavallisena käyttäjänä, mutta erillistä `sudo`-komentoa käyttäen.
+Unix-tyyppisissä järjestelmissä on ylin ylläpitovalta on pääkäyttäjällä, jonka
+käyttäjätunnus on `root` ja jonka käyttäjänumero on `0`. `root`-käyttäjällä on
+täysi oikeus tehdä järjestelmässä mitä tahansa. Normaalisti tavallinen järjestelmän
+käyttö tehdään tavallisella ei-`root`-tunnuksella ja `root`-tunnuksella tehdään
+vain välttämättömät ylläpitotoimet. Joissain Linux-jakeluissa, kuten Ubuntussa,
+on sisäänkirjautuminen `root`-tunnuksella estetty oletuksena kokonaan ja
+ylläpitotehtävät suoritetaan tavallisena käyttäjänä, mutta erillistä `sudo`-komentoa
+käyttäen.
 
 
 
 Sudo
 ======
 
-Monissa Linux-jakeluissa on käytettävissä `sudo`-komento, jolla tavallinen käyttäjä voi suorittaa
-ylläpitotoimia käyttäen väliaikaisesti `root`-käyttäjän oikeuksia. Komennon nimi tulee sanoista **s**uper
-**u**ser **do**, eli "tee pääkäyttäjän oikeuksilla". Tämän komennon käyttö edellyttää, että käyttäjälle on
-annettu oikeus sen käyttöön ja määritelty, mitä toimintoja sillä saa tehdä. Tyypillisesti `sudo`-komennon
-rajoittamaton käyttöoikeus on annettu niille käyttäjille, jotka ovat jossain ylläpitäjille tarkoitetussa ryhmässä.
-Ubuntussa ja sen johdannaisissa tämä ryhmä on tyypillisesti `sudo`, RedHatin ja Fedoran johdannaisissa puolestaan
+Monissa Linux-jakeluissa on käytettävissä `sudo`-komento, jolla tavallinen käyttäjä
+voi suorittaa ylläpitotoimia käyttäen väliaikaisesti `root`-käyttäjän oikeuksia.
+Komennon nimi tulee sanoista **s**uper **u**ser **do**, eli "tee pääkäyttäjän
+oikeuksilla". Tämän komennon käyttö edellyttää, että käyttäjälle on annettu oikeus
+sen käyttöön ja määritelty, mitä toimintoja sillä saa tehdä. Tyypillisesti
+`sudo`-komennon rajoittamaton käyttöoikeus on annettu niille käyttäjille, jotka
+ovat jossain ylläpitäjille tarkoitetussa ryhmässä. Ubuntussa ja sen johdannaisissa
+tämä ryhmä on tyypillisesti `sudo`, RedHatin ja Fedoran johdannaisissa puolestaan
 `wheel`.
 
-Ylläpitokomentoja annettaessa niiden eteen laitetaan `sudo`-komento, jolloin järjestelmä tietää, että
-ne pitää yrittää suorittaa `root`-käyttäjänä. Esimerkiksi ohjelman Inkscape asennus Ubuntussa tapahtuu
-seuraavalla komennolla:
+Ylläpitokomentoja annettaessa niiden eteen laitetaan `sudo`-komento, jolloin
+järjestelmä tietää, että ne pitää suorittaa `root`-käyttäjänä. Tällainen ylläpitotehtävä
+on esimerkiksi sovelluksen asentaminen. Esimerkiksi ohjelman **Inkscape** asennus
+Ubuntussa tapahtuu seuraavalla komennolla:
 
 ```no-highlight
 sudo apt-get install inkscape
 ```
 
-Tämän jälkeen `sudo` varmistaa käyttäjän henkilöllisyyden kysymällä tämän omaa salasanaa. Jos salasanan
-kirjoittaa oikein ja käyttäjällä oli oikeus `sudo`-komennon käyttöön, suoritetaan käsketty toiminto `root`-käyttäjänä.
-Onnistuneen salasanatunnistautumisen `sudo` muistaa oletuksena seuraavat 15 minuuttia eikä kysy tänä aikana
-salasanaa uudelleen uusien `sudo`-komentojen yhteydessä.
+Tämän jälkeen `sudo` varmistaa käyttäjän henkilöllisyyden kysymällä tämän omaa
+salasanaa. Jos salasanan kirjoittaa oikein ja käyttäjällä oli oikeus `sudo`-komennon
+käyttöön, suoritetaan käsketty toiminto `root`-käyttäjänä. Onnistuneen
+salasanatunnistautumisen `sudo` muistaa oletuksena seuraavat 15 minuuttia eikä
+kysy tänä aikana salasanaa uudelleen uusien `sudo`-komentojen yhteydessä.
 
-Yksi suurimmista hyödyistä `sudo`-komennon käytöstä verrattuna `root`-käyttäjänä kirjautumiseen on se, että
-ylläpito-oikeuksia voidaan antaa useammalle ylläpitäjälle niin, että he tekevät ylläpitotoimet kuitenkin omalla
-identiteetillään ja salasanallaan. Näin vältytään yhteisen `root`-tunnuksen ja salasanan käytöltä.
+Tärkeimpiä hyötyjä `sudo`-komennon käytöstä verrattuna `root`-käyttäjänä
+kirjautumiseen on se, että vain ehdottomasti ylläpito-oikeuksia tarvitseviin tehtäviin
+käytetään pääkäyttäjän oikeuksia. Toinen hyöty tulee siitä, että
+ylläpito-oikeuksia voidaan antaa useammalle ylläpitäjälle niin, että he tekevät
+ylläpitotoimet kuitenkin omalla identiteetillään ja salasanallaan vahvistaen.
+Näin vältytään yhteisen `root`-tunnuksen ja salasanan käytöltä. Esimerkiksi ylläpitäjän
+vaihtaessa työpaikkaa, riittää hänen tunnuksensa poistaminen käytöstä.
 Käytetyistä `sudo`-komennoista pidetään kirjaa, jolloin tiedetään, kuka on tehnyt mitäkin.
 Lisäksi `sudo`-komennolla voidaan käyttäjälle antaa oikeuksia hienovaraisemmin kuin vain
-"kaikki `root`-käyttäjän oikeudet". Käyttäjälle voidaan siis antaa vain rajoitetut ylläpito-oikeudet
-johonkin järjestelmän osaan.
+"kaikki `root`-käyttäjän oikeudet". Käyttäjälle voidaan siis antaa vain rajoitetut
+ylläpito-oikeudet johonkin järjestelmän osaan.
 
 
 

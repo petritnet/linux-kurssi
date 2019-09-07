@@ -1,8 +1,8 @@
-+++
-date = "2017-03-05T16:32:00+03:00"
-title = "Tekstien käsittely komentorivillä"
-weight = 420
-+++
+---
+date: "2017-03-05T16:32:00+03:00"
+title: "Tekstien käsittely komentorivillä"
+weight: 420
+---
 
 Tekstitiedostojen tarkasteluun ja muokkaamiseen löytyy useita komentoja ja ohjelmia.
 Tutustutaan tyypillisimpiin.
@@ -262,7 +262,7 @@ Tekstitiedoston koon voi tarkistaa komennolla `wc`. (word count)
   rivien (`-l`) määrän.
 * Jos kysytään useamman tiedoston kokoja, ne kerrotaan omilla riveillään sekä lisäksi
   kokonaiskoko.
-  
+
 ```no-highlight
 pesasa@box:~ $ wc /var/log/syslog
 555  6339 42655 /var/log/syslog
@@ -380,7 +380,7 @@ The Free Software Foundation has exempted Bash from the requirement of
 Valitsin `-v` muuntaa valinnan käänteiseksi. Se etsii kaikki rivit, joilla hakulauseke
 __ei__ esiinnyt.
 ```no-highlight
-pesasa@swan:~ $ grep -v ank Documents/nano-harjoitus.txt 
+pesasa@swan:~ $ grep -v ank Documents/nano-harjoitus.txt
 Aku Ankka
 Mikki Hiiri
 2 litraa mansikoita

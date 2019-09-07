@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles{{ if .Site.Params.cssstyle }}-{{ .Site.Params.cssstyle }}{{ end }}.css">
-    {{ range .AlternativeOutputFormats }}
+    {{ range .AlternativeOutputFormats -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end }}
+    {{ end -}}
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/tomorrow-night.css" type="text/css" />
     <!--<script src="{{ .Site.BaseURL }}/scripts/vvalo.js"></script>-->
-    <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
+    <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
 </head>
 <body id="{{ .Title | urlize }}">
     <header id="header">
@@ -23,7 +23,7 @@
         {{ $currentNode := . }}
         <ul class="section-menu">
         {{ range .Site.Menus.main }}
-            <li class="section-menu-item{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) (eq ($sectiontitle | lower) (.Name | lower)) }} active{{end}}"><a href="{{.URL}}">{{ .Name }}</a></li>
+            <li class="section-menu-item{{if (eq $currentNode.Section .Page.Section) }} active{{end}}"><a href="{{.URL}}">{{ .Name }}</a></li>
         {{ end }}
         </ul>
         {{ if .Site.Params.logo }}

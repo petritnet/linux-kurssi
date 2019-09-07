@@ -1,9 +1,9 @@
-+++
-date = "2016-09-06T22:06:10+03:00"
-title = "Tiedosto-oikeudet"
-sectiontitle = "Järjestelmä"
-weight = 120
-+++
+---
+date: "2016-09-06T22:06:10+03:00"
+title: "Tiedosto-oikeudet"
+sectiontitle: "Järjestelmä"
+weight: 120
+---
 
 Tiedostojen oikeudet
 ==================
@@ -11,8 +11,8 @@ Tiedostojen oikeudet
 Unixeissa tiedostojärjestelmän kaikille hakemistoille ja tiedostoille on
 määritelty niiden käyttöoikeudet tiedoston omistajuuden ja ryhmän perusteella.
 
-Jokaiselle tiedostolla ja hakemistolla on yksi *omistaja* (käyttäjätunnus, uid) ja yksi
-*omistajaryhmä* (ryhmä, gid). Jokaiselle tiedostolle on määrätty kolmenlaisia käyttöoikeuksia
+Jokaiselle tiedostolla ja hakemistolla on yksi *omistaja* (käyttäjätunnus, `uid`) ja yksi
+*omistajaryhmä* (ryhmä, `gid`). Jokaiselle tiedostolle on määrätty kolmenlaisia käyttöoikeuksia
 kolmelle joukolle käyttäjiä.
 
 Käyttöoikeuksia ovat:
@@ -20,7 +20,7 @@ Käyttöoikeuksia ovat:
 |Lyhenne| Oikeus                          | Huom       |
 |-------|---------------------------------|------------|
 | *r*   | Lukuoikeus (**r**ead)           | Saa lukea tiedoston tai hakemiston sisällön. |
-| *w*   | Kirjoitusoikeus (**w**rite)     | Saa kirjoittaa tiedostoon tai luoda hakemustoon uusia tiedostoja.|
+| *w*   | Kirjoitusoikeus (**w**rite)     | Saa kirjoittaa tiedostoon tai luoda hakemIstoon uusia tiedostoja.|
 | *x*   | Suoritusoikeus (e**x**ecute)    | Saa suorittaa tiedoston tai viitata hakemiston sisältöön. |
 
 Käyttäjäjoukkoja, joille näitä oikeuksia voidaan antaa, ovat:
@@ -47,14 +47,14 @@ Tiedostojen oikeudet tiedostonhallinnalla
 Graafisella tiedostonhallintaohjelmalla voi Ubuntussa muokata tiedostojen oikeuksia seuraavasti:
 
 1. Otetaan tiedostonhallinta esiin.
-2. Klikataan valittua tiedostoa hiiren oikealla nappulalla.
+2. Klikataan valittua tiedostoa hiiren oikealla napilalla.
 3. Valitaan "Properties" tai "Ominaisuudet", riippuen käytetystä kielestä.
 4. Välilehdeltä "Permissions" / "Oikeudet" ovat valittavissa seuraavat asetukset:
-    - Omistaja voi vaihtaa tiedoston ryhmän johonkin ryhmistään.
+    - Omistaja voi vaihtaa tiedoston ryhmän johonkin omista ryhmistään.
     - Omistajan oikeuksille vaihtoehdot: "Read-only" ja "Read and write"
     - Ryhmän oikeuksille vaihtoehdot: "None", "Read-only" ja "Read and write"
     - Muiden oikeuksille vaihtoehdot: "None", "Read-only" ja "Read and write"
-    - Lisäksi rastiruutu suoritusoikeuksille. (Laittaa suoritusoikeuden kaikille kolmelle.)
+    - Lisäksi on rastiruutu suoritusoikeuksille. (Laittaa suoritusoikeuden kaikille kolmelle.)
 
 Tällä graafisella työkalulla ei ole mahdollista saada aikaan kaikkia mahdollisia oikeuksien yhdistelmiä
 vaan vain tyypillisimmin tarvitut yhdistelmät. Erikoisemmat oikeuksien yhdistelmät pitää asettaa
@@ -69,8 +69,8 @@ Oikeudet näkyviin tiedostonhallinnalla
 Tiedostojen oikeudet on mahdollista saada näkyviin myös suoraan tiedostonhallintaikkunan
 listamuotoisessa näkymässä. Listanäkymän saa käyttöön ikkunan oikean yläreunan listakuvakkeella.
 
-Listänäkymässä näkyviä sarakkeita voi muokata valitsemalla valikosta
-*"Edit"* -> *"Preferences"* ja sieltä *"List Columns"*-välilehdeltä rastiruuduilla halutut
+Listänäkymässä näkyviä sarakkeita voi muokata valitsemalla työpöydän yläreunan valikosta
+*"Files"* -> *"Preferences"* ja sieltä *"List Columns"*-välilehdeltä rastiruuduilla halutut
 sarakkeet, kuten **"Group"**, **"Owner"** ja **"Permissions"**.
 
 Tämä valinta muuttaa listanäkymässä oletuksena näytettäviä sarakkeita. Jos sarakkeet halutaan
@@ -88,6 +88,7 @@ Tiedostojen oikeuksia voi komentorivillä tarkastella komennolla `ls`.
 
 1. Käynnistetään terminaali (Launcher: "terminal")
 2. Siirrytään hakemistoon (kansio), jossa tutkittava tiedosto: `cd Pictures`
+   (tai `cd Kuvat`)
 3. Luetellaan tiedostot tietoineen: `ls -la`
     - `ls`: luetellaan hakemistossa olevat tiedostot ("list")
     - `-la`: tarkennetaan ohjelman toimintaa <br>
@@ -109,7 +110,7 @@ Komennon tulostuksessa kullakin rivillä näytetään yhden tiedoston tiedot.
 Rivin ensimmäisenä merkkinä on `d`, jos kyseessä on hakemisto, muutoin rivi alkaa
 viivalla. Seuraavat yhdeksän merkkiä ovat käyttäjän, ryhmän ja muiden oikeudet
 kukin kolmella merkillä järjestyksessä `rwx`. Jos joltain käyttäjäjoukoista puuttuu
-jokin oikeus, on sen tilalla viiva `-`.
+jokin oikeus, on sen kohdalla viiva `-`.
 
 Muita riviltä luettavia tietoja ovat tiedoston omistajan käyttäjätunnus, tiedoston
 omistava ryhmä, tiedoston koko tavuina, tiedoston muokkausaika sekä tiedoston nimi.
@@ -208,7 +209,7 @@ Tehtävät 4
 
 
 Käynnistä jokin live-levyn työpöytä-Linux ja tee tehtävät siinä.
-Palautus tiedostona `tehtava-4.odt`.
+Kirjoita vastaukset LibreOfficen Writer-ohjelmalla tiedostoon `tehtava-4.odt`.
 
 1. Selvitä tiedostosta `/proc/cpuinfo` käyttämäsi koneen prosessorin merkki/malli.
 2. Mikä on käyttäjätunnuksesi uid?

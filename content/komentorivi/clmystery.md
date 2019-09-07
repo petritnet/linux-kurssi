@@ -1,8 +1,8 @@
-+++
-date = "2016-09-09T20:31:21+03:00"
-title = "Clmystery"
-weight = 430
-+++
+---
+date: "2016-09-09T20:31:21+03:00"
+title: "Clmystery"
+weight: 430
+---
 
 [Clmystery] on komentorivin käytön harjoitteluun tarkoitettu murhamysteeri.
 
@@ -71,7 +71,7 @@ the cheatsheet, and hints.
 Tehtävänä on ratkaista Terminal Cityssä tapahtunut murha käyttämällä komentorivityökaluja (`cat`, `head`, `tail`, `grep`,...).
 Älä avaa tiedostoja tekstieditorissa.
 
-* Murhan ratkominen aloitetaan siirtymällä `mystery`-hakemistoon ja tutkimalla 
+* Murhan ratkominen aloitetaan siirtymällä `mystery`-hakemistoon ja tutkimalla
   siellä olevaa tiedosto `crimescene`.
   Tässä tiedostossa kuvaillaan tapahtumien kulku rikospaikalla.
 * Tämä tiedosto on valitettavasti aika pitkä, mutta onneksi rivit, jolla on tärkeitä johtolankoja,

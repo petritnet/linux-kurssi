@@ -1,8 +1,8 @@
-+++
-date = "2016-09-08T21:08:16+03:00"
-title = "Tiedostonhallintaa"
-weight = 410
-+++
+---
+date: "2016-09-08T21:08:16+03:00"
+title: "Tiedostonhallintaa"
+weight: 410
+---
 
 Seuraavassa luetellaan joitakin usein tarvittuja komentoja. Yhteistä näille on,
 että kukin niistä pyrkii tekemään jonkin rajatun asian ja tekemään sen hyvin.
@@ -64,7 +64,7 @@ Tiedostojen listaus: `ls`
 Pyydetyn hakemiston sisällön voi tulostaa`ls` -komennolla.
 Oletuksena, ellei muuta määrätä, tulostetaan nykyisen työhakemiston sisältö.
 
-`ls Documents` 
+`ls Documents`
 :    *Documents* -hakemiston sisältö
 
 `ls -l`
@@ -245,7 +245,7 @@ pesasa@box:~ $ rmdir Documents/toinenhakemisto
 ```
 
 Hakemiston voi poistaa myös `rm`-komennolla käyttämällä lisävalitsinta `-r` (recursive).
-Tämä poistaa hakemiston **ja kaiken sen sisällön**. ***Varo!*** 
+Tämä poistaa hakemiston **ja kaiken sen sisällön**. ***Varo!***
 
 ```no-highlight
 pesasa@box:~ $ rm -r Documents/uusihakemisto
@@ -344,8 +344,3 @@ Documents/Tux.svg      100%[==================================>]   1,68M  2,89MB
 2016-09-11 19:35:37 (2,89 MB/s) - ”Documents/Tux.svg” tallennettu [1761180/1761180]
 
 ```
-
-
-
-
-

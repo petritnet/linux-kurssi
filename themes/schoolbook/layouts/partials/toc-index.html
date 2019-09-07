@@ -1,6 +1,6 @@
     <nav class="toc">
         {{ $permalink := .Permalink }}
-        <h2 class="toc-section">{{ .Title }}</h2>
+        <h2 class="toc-section">{{ .Site.Title }}</h2>
         <ul class="toc-section-list">
             {{ range .Site.Pages.ByWeight }}
                 {{ if eq "" .Section }}<li class="{{ if eq .Permalink $permalink }}active{{ end }}"><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}

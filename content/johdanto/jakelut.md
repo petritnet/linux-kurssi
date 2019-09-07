@@ -13,21 +13,21 @@ Ne koostuvat Linux-ytimestä, järjestelmälle oleellisista ohjelmista, jostain 
 
 Tunnettuja jakeluita ovat esimerkiksi:
 
-- Red Hat Enterprise Linux
-- Debian
-- Ubuntu
-- Fedora
-- CentOS
-- OpenSUSE
-- Linux Mint
-- Elementary OS
+- [Red Hat Enterprise Linux][RHEL]
+- [Debian]
+- [Ubuntu]
+- [Fedora]
+- [CentOS]
+- [OpenSUSE]
+- [Linux Mint]
+- [Elementary OS]
 
-Jakeluista muodostuu sukupuita, koska ne ovat yleensä muunnoksia jostain aiemmasta jakelusta.
+Jakeluista muodostuu sukupuita, koska ne ovat yleensä muunnoksia jostain
+aiemmasta jakelusta. Esimerkiksi:
 
 * Debianista periytyy mm. Ubuntu.
 * Ubuntusta useita versioita (Kubuntu, Xubuntu, Lubuntu,...).
 * Ubuntusta periytyy mm. Linux Mint ja ElementaryOS
-* RedHatista periytyviä OpenSUSE, Fedora, CentOS, Mandriva,...
 
 
 
@@ -37,9 +37,10 @@ Live-CD / Live-DVD / Live-USB
 
 * CD- tai DVD-levy, jolta voi käynnistää toimivan Linux-järjestelmän
 * Käytettävissä kuin kiintolevyltä paitsi:
-    * Tallennukset eivät säily, ellei erikseen siirrä esim. usb-tikulle
-    * Asennetut ohjelmat eivät säily
-* Voidaan tehdä myös live-usb-tikkuja
+    * CD-/DVD-levyillä tallennukset eivät säily, ellei erikseen siirrä esim. usb-tikulle.
+    * Asennetut ohjelmat eivät säily.
+* Voidaan tehdä myös live-USB-tikkuja
+    * USB-tikulla voi olla käytössä "permanent-osio", jolle tiedostot ja asetukset tallentuvat.
 
 Linux-jakeluiden asennusmediat ovat yleensä ladattavissa kunkin jakelun verkkosivujen kautta
 `.iso`-päätteisenä levykuvatiedostona. Levykuva on suora kopio CD- tai DVD-levyn tiedostojärjestelmästä
@@ -66,16 +67,19 @@ Live-levyltä järjestelmä on käytettävissä kuin kiintolevyltä paitsi:
 Kurssin Live-USB -levyltä löytyvät jakelut
 ==================================
 
+Kurssin yhteydessä saattaa olla käytössä Live-USB-tikku, jolta löytyvät
+esimerkiksi seuraavat jakelut.
+
 {{< figure src="/images/usb-memory.svg" class="floatright floatimage" >}}
 
-* Ubuntu 16.04 (Unity-käyttöliittymä)
-* Kubuntu 16.10 (KDE-työpöytä)
-* Xubuntu 16.10 (XFCE-työpöytä)
-* Lubuntu 16.10 (LXDE-työpöytä)
+* Ubuntu (Gnome-työpöytä)
+* Kubuntu (Plasma-työpöytä)
+* Xubuntu (XFCE-työpöytä)
+* Lubuntu (LXDE/LXQT-työpöytä)
 * Linux Mint (Cinnamon-työpöytä)
 * Linux Mint (Mate-työpöytä)
 * ElementaryOS (Pantheon-työpöytä)
-* Fedora 25 (Gnome-työpöytä)
+* Fedora (Gnome-työpöytä)
 * System Rescue CD
 * Clonezilla
 
@@ -92,39 +96,43 @@ joidenkin mielestä "tarpeeksi vapaa".
 
 Työpöydän ominaisuuksia:
 
-* Ohjelmia, joilla yhtenäinen ulkoasu
+* Ohjelmia, joilla yhtenäinen samaa tyyliä oleva ulkoasu
    * Ikonit, ikkunat, työkalupalkit, paneelit, "widgetit" eli sovelmat
 * Työpöytä-metafora, taustakuva
 * Drag-n-drop (raahaa ja pudota) ohjelmien välillä
-* Erinäisiä muita yhteisiä palveluita, joita ohjelat voivat käyttää. Esimerkiksi ilmoitukset (notifikaatiot).
+* Erinäisiä muita yhteisiä palveluita, joita ohjelmat voivat käyttää.
+  Esimerkiksi ilmoitukset (notifikaatiot).
 
-KDE:n ja Gnomen rinnalle tuli tarjolle kevyempi vaihtoehto, *Xfce*, joka käyttää Gnomen tapaan myös GTK-kirjastoa.
+KDE:n ja Gnomen rinnalle tuli tarjolle kevyempi vaihtoehto, *Xfce*, joka käyttää
+Gnomen tapaan myös GTK-kirjastoa.
 
-Moni alkoi kysyä, miksi kehitetään useampaa työpöytäympäristöä. Miksi ei yhdistetä voimia yhden tekemiseen?
+Moni alkoi kysyä, miksi kehitetään useampaa työpöytäympäristöä.
+Miksi ei yhdistetä voimia yhden tekemiseen?
 
 Vastauksena työpöytäympäristöjen määrä moninkertaistui:
 
-* **KDE 5** (Plasma-työpöytä)
-* **Gnome 3**
+* **KDE Plasma**
+* **Gnome**
 * **Xfce** (kevyempi vaihtoehto Gnomelle)
-* **Unity** (Ubuntun oma vaihtoehto Gnomen oletuskäyttöliittymälle)
 * **Cinnamon** (Linux Mintin vaihtoehto Gnomelle)
 * **LXDE** (kevyt työpöytävaihtoehto)
 * **MATE** (edelleen kehitetty versio vanhemmasta Gnome 2 -työpöydästä)
 * **Pantheon desktop** (Elementary OS:n työpöytä)
 * **Trinity desktop** (KDE:n 3.x-versioihin perustuva vaihtoehto)
-* **Razor-qt** / **LXQt** (kevyempi vaihtoehto KDE:lle)
+* **Razor-qt** / **LXQt** (kevyempi vaihtoehto Plasmalle)
 * **Enlightenment**
 
 Nyt työpöytävaihtoehtoja on jo paljon.
-Moni niistä syntyi, kun KDE ja Gnome siirtyivät seuraavaan versioonsa ja osa käyttäjistä/kehittäjistä ei tykännyt uudesta suunnata/tyylistä.
+Moni niistä syntyi, kun KDE ja Gnome siirtyivät seuraavaan versioonsa ja osa
+käyttäjistä/kehittäjistä ei tykännyt uudesta suunnata/tyylistä.
 
 
 
 Hajaannus vai integrointi
 ==================================
 
-Monen mielestä ei ole hyvä, että pirstaloidutaan useaan erilaiseen työpöytäymäristöön, jotka toteuttavat samoja asioita.
+Monen mielestä ei ole hyvä, että pirstaloidutaan useaan erilaiseen työpöytäymäristöön,
+jotka toteuttavat samoja asioita.
 
 > "Menee resursseja hukkaan, kun rakennetaan samaa pyörää uudelleen ja uudelleen"
 
@@ -132,7 +140,8 @@ Toisaalta, on hyvä, että kehitys tapahtuu tutkivasti moneen eri suuntaan yhtä
 
 * "Veitsenteräkehityksen" takana tapahtuu kokoajan myös standardointia
 * Parhaimmat toiminnallisuudet ja ideat jäävät eloon ja kopioituvat muihinkin työpöytiin
-* Tehdään yhteisiä taustatoiminnallisuuksia, joihin työpöytäympäristöt toteuttavat vain käyttöliittymän oman tyylinsä mukaisesti.
+* Tehdään yhteisiä taustatoiminnallisuuksia, joihin työpöytäympäristöt toteuttavat
+  vain käyttöliittymän oman tyylinsä mukaisesti.
 
 
 Esimerkkejä
@@ -147,7 +156,8 @@ Salasanasäilöt:
 * Gnomella oma keyring, KDE:llä wallet
 * Osa ohjelmista käyttää toista, osa toista
 * Toinen integroituu käytettyyn työpöytään, toinen ei
-* Kehitteillä yhteinen backend, johon työpöytäympäristöt toteuttavat käyttöliittymän. Tämä ei valitettavasti ole mainittavasti edennyt.
+* Kehitteillä yhteinen backend, johon työpöytäympäristöt toteuttavat käyttöliittymän.
+  Tämä ei valitettavasti ole mainittavasti edennyt.
 
 Tiedostohallinnat:
 
@@ -159,19 +169,24 @@ Tiedostohallinnat:
 
 Virtuaalityöpöydät
 ==================================
-Virtuaalityöpöydät tai workspacet olivat käytössä ikkunamanagereissa jo ennen työpöytäympäristöjä
+Virtuaalityöpöydät tai workspacet olivat käytössä ikkunamanagereissa jo ennen
+työpöytäympäristöjä
 
-* Nykyään käytännössä kaikissa (Unix-tyyppisissä) työpöytäympäristöissä mukaan lukien MacOS.
-* Osassa kiinteä käyttäjän valitsema määrä työpöytiä, osassa dynaamisesti kasvava ja pienenevä määrä
+* Nykyään käytettävissä kaikissa (Unix-tyyppisissä) työpöytäympäristöissä mukaan
+  lukien MacOS.
+* Osassa kiinteä käyttäjän valitsema määrä työpöytiä, osassa määrä kasvaa ja
+  pienenee dynaamisesti käytön mukaan.
 * Rivissä tai ruudukkona
 * Erilaisia visualisointeja:
-    * Kun 3D-efektit tulivat käyttöön, oli jonkin aikaa muotia laittaa työpöydät kuution sivuille
+    * Kun 3D-efektit tulivat käyttöön, oli jonkin aikaa muotia laittaa työpöydät
+      kuution sivuille ja animoida työpöydän vaihto kuutiota kääntämällä.
 
 
 
 Kaikki avoimet ikkunat näyttävä näkymä
 ==================================
-Mac OS X esitteli Exposén, eli näkymän, jossa kaikki avoimet ikkunat skaalataan näkymään rinnakkain ikkunan valintaa varten.
+Mac OS X esitteli Exposén, eli näkymän, jossa kaikki avoimet ikkunat skaalataan
+näkymään rinnakkain ikkunan valintaa varten.
 
 * Toiminto ilmestyi myös suureen osaan vapaita työpöytäympäristöjä.
 * Useita versioita:
@@ -184,13 +199,16 @@ Mac OS X esitteli Exposén, eli näkymän, jossa kaikki avoimet ikkunat skaalata
 Kokeile!
 ==================================
 Kokeile eri jakeluita käynnistämällä kone USB-levyltä.
-Käynnistäminen vaatii, että valitaan tietokoneen käynnistäminen kiintolevyn sijaan ulkoiselta levyltä.
-ICT1-luokan koneissa:
+Käynnistäminen vaatii, että valitaan tietokoneen käynnistäminen kiintolevyn
+sijaan ulkoiselta levyltä.
+
+Esimerkiksi Lenovo ThinkCentre -koneissa:
 
 * Paina *Enter*, kun näkyy Lenovon logo ja teksti "ThinkCentre"
 * Valitse *F12* eli "valitse väliaikainen käynnistysmedia"
 * Valitse USB-levy
 * Seuraavasta valikosta valitse käynnistettäväksi haluamasi järjestelmä
+* **Älä asenna koulun koneelle!**
 
 Huom! SystemRescueCD ja Clonezilla ovat ylläpito- ja pelastustyökaluja, joita tarkastellaan myöhemmin kurssilla
 
@@ -202,9 +220,11 @@ Tehtäviä
 Tehtävät 2
 ==================================
 
-Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä. Tiedostot voit tallentaa/kopioida erilliselle USB-tikulle tai lähettää ne itsellesi sähköpostilla.
+Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä. Tiedostot voit tallentaa/kopioida
+erilliselle USB-tikulle tai lähettää ne itsellesi sähköpostilla.
 
-Palauta tekstinkäsittelyohjelmalla tehty tiedosto `tehtava-2.odt`, jossa ovat seuraavat vastaukset ja kuva.
+Kirjoita tekstinkäsittelyohjelmalla tiedosto `tehtava-2.odt`, jossa
+ovat seuraavat vastaukset ja kuva.
 
 1. Nimesi ja päivämäärä
 2. Mikä ero on Mintin Cinnamonin ja Elementary OS:n tavoilla käsitellä virtuaalityöpöytiä?
@@ -223,3 +243,12 @@ Palauta tekstinkäsittelyohjelmalla tehty tiedosto `tehtava-2.odt`, jossa ovat s
     6. Palauta tämä kolmas kuvakaappaus, jossa näkyvät kaikki kolme työpöytää.
 
 {{% /wrapper %}}
+
+[RHEL]: https://redhat.com/rhel "Red Hat Enterprise Linux"
+[Fedora]: https://getfedora.org/ "Fedora"
+[CentOS]: https://www.centos.org/ "CentOS"
+[Debian]: https://www.debian.org/ "Debian"
+[Ubuntu]: https://ubuntu.com/ "Ubuntu"
+[Linux Mint]: https://www.linuxmint.com/ "Linux Mint"
+[Elementary OS]: https://elementary.io/ "Elementary OS"
+[openSUSE]: https://www.opensuse.org/ "openSUSE"

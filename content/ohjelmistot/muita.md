@@ -1,8 +1,8 @@
-+++
-date = "2017-03-02T20:38:27+03:00"
-title = "Muita"
-weight = 360
-+++
+---
+date: "2017-03-02T20:38:27+03:00"
+title: "Muita"
+weight: 360
+---
 
 
 Muita mainittavia ohjelmistoja ja ohjelmistotyyppejä ovat esimerkiksi seuraavat.
@@ -20,7 +20,7 @@ Lisäksi käytettävissä ovat komentoriviohjelmat pakettien purkamiseen ja pakk
 * Ark (KDE)
 * Komentorivi: zip/unzip, tar, rar/unrar, 7z, gzip, bzip2, lha, zoo, ar
 
-Graafiset ohjelmat toisinaan vain käyttöliittymiä komentoriviohjelmille.
+Graafiset pakkausohjelmat ovat toisinaan vain käyttöliittymiä komentoriviohjelmille.
 
 
 
@@ -44,8 +44,8 @@ Vapaita ohjelmia
 ===============================
 
 Suomenkielisiä esittelyitä Linuxillekin tarjolla olevista lukuisista
-vapaista avoimen lähdekoodin ohjelmista löytyy osoitteesta: <http://viikonvalo.fi>.
-Sivuston kaikki esittelyt on lueteltu osoitteessa: <http://viikonvalo.fi/kaikki_valot/>.
+vapaista avoimen lähdekoodin ohjelmista löytyy osoitteesta: <https://viikonvalo.fi>.
+Sivuston kaikki esittelyt on lueteltu osoitteessa: <https://viikonvalo.fi/kaikki_valot/>.
 
 
 

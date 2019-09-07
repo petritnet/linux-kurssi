@@ -13,21 +13,21 @@
 
 @font-face {
     font-family: 'Josefin Sans';
-    font-style: normal; 
+    font-style: normal;
     font-weight: bold;
     src: url('fonts/JosefinSans-Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Josefin Sans';
-    font-style: italic; 
+    font-style: italic;
     font-weight: normal;
     src: url('fonts/JosefinSans-Italic.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Josefin Sans';
-    font-style: italic; 
+    font-style: italic;
     font-weight: bold;
     src: url('fonts/JosefinSans-BoldItalic.ttf') format('truetype');
 }
@@ -196,8 +196,15 @@ nav#TableOfContents {
     background-color: white;
     border: 1px solid #0084c8;
     padding: 0.5em;
-    max-width: 250px;
+    max-width: 230px;
     margin-right: -240px;
+    background-color: rgba(230,250,256,0.5);
+    background-color: #f2fcff;
+}
+
+nav#TableOfContents > ul {
+    margin: 0;
+    padding: 0 1em;
 }
 
 nav.toc {
@@ -220,6 +227,10 @@ nav.toc h2.toc-section {
     /*color: #2d2d2d;*/
     border-bottom: 3px solid #0084C8;
     font-family: AveriaSans, helvetica, Arial, sans-serif;
+}
+
+nav.toc h2.toc-section a {
+    text-decoration: none;
 }
 
 nav.toc .toc-section-list {
@@ -344,6 +355,7 @@ article figure img {
 
 article figure figcaption {
     font-size: 80%;
+    text-align: left;
 }
 
 article figure figcaption h4 {
@@ -372,6 +384,11 @@ article figure.floatimage {
 article figure.floatimage img[src$=".svg"] {
     width: 250px;
     height: auto;
+}
+
+article figure.mediumimage img {
+    width: auto;
+    height: 200px;
 }
 
 article .floatright {
@@ -435,7 +452,7 @@ article table td {
 }
 
 article .exercises {
-    margin: 3em 0 1em 0;
+    margin: 3em 3em 1em 0;
     border: 1px solid #92C7FF;
     background-color: #ecf7fd;
     box-shadow: 3px 3px 5px rgba(150,150,150,0.5);
@@ -448,7 +465,7 @@ article .exercises h1 {
     background-color: #6dcbfc;
     border-bottom: 1px solid #ecf7fd;
     margin: 0;
-    padding: 0.5em;
+    padding: 0.2em;
 }
 
 article .exercises h2:first-child {
@@ -475,6 +492,169 @@ article .exercises pre {
     margin: 1em;
 }
 
+article .exercises a[href$="svg"]::before {
+    content: "";
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    margin-right: 0.5em;
+    background: transparent url(../images/SVG-icon.svg) center center no-repeat;
+    background-size: contain;
+}
+
+article .examplebox {
+    margin: 3em 3em 1em 0;
+    border: 1px solid #92C7FF;
+    background-color: #ecf7fd;
+    box-shadow: 3px 3px 5px rgba(150,150,150,0.5);
+}
+
+article .examplebox h1 {
+    font-size: 120%;
+    border-bottom: 1px solid #999;
+    background-color: rgba(150,150,150,0.5);
+    background-color: #1b4e6e;
+    border-bottom: 1px solid #ecf7fd;
+    margin: 0;
+    padding: 0.2em;
+    color: #eee;
+}
+
+article .examplebox h2:first-child {
+    background-color: #1b4e6e;
+    margin: 0;
+    padding: 0.3em 0.5em 0.1em;
+}
+
+article .examplebox h1,
+article .examplebox h2,
+article .examplebox h3,
+article .examplebox h4,
+article .examplebox h5,
+article .examplebox h6 {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+article .examplebox p {
+    margin: 0.5em 0.5em;
+}
+
+article .examplebox pre {
+    margin: 1em;
+}
+
+article .examplebox pre:hover {
+    margin-right: -250px;
+    margin-bottom: 2.35em;
+}
+
+article .theorybox {
+    margin: 3em 3em 1em 0;
+    border: 1px solid #92C7FF;
+    border-left: 6px solid #c34a07;;
+    border-radius: 6px 0 0 6px;
+    background-color: #ecf7fd;
+    box-shadow: 3px 3px 5px rgba(150,150,150,0.5);
+}
+
+article .theorybox h1 {
+    font-size: 130%;
+    border-bottom: 1px solid #999;
+    background-color: rgba(150,150,150,0.5);
+    background-color: #6dcbfc;
+    border-bottom: 1px solid #ecf7fd;
+    margin: 0;
+    padding: 0.5em;
+}
+
+article .theorybox h2:first-child {
+    background-color: #6dcbfc;
+    margin: 0;
+    padding: 0.3em 0.5em 0.1em;
+}
+
+article .theorybox h1,
+article .theorybox h2,
+article .theorybox h3,
+article .theorybox h4,
+article .theorybox h5,
+article .theorybox h6 {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+article .theorybox p {
+    margin: 0.5em 0.5em;
+}
+
+article .theorybox pre {
+    margin: 1em;
+}
+
+article .topicsbox {
+    margin: 3em 3em 1em 0;
+    border: 1px solid #92C7FF;
+    background-color: #ecf7fd;
+    box-shadow: 3px 3px 5px rgba(150,150,150,0.5);
+}
+
+article .topicsbox h1 {
+    font-size: 120%;
+    border-bottom: none;
+    margin: 0;
+    padding: 0.2em;
+}
+
+article .topicsbox h2:first-child {
+    margin: 0;
+    padding: 0.3em 0.5em 0.1em;
+}
+
+article .topicsbox h1,
+article .topicsbox h2,
+article .topicsbox h3,
+article .topicsbox h4,
+article .topicsbox h5,
+article .topicsbox h6 {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+article .topicsbox p {
+    margin: 0.5em 0.5em;
+}
+
+article .topicsbox ul {
+    list-style: none;
+}
+
+article .topicsbox ul li::before {
+    content: "– ";
+}
+
+
+article .butterflybox1 {
+    background-image: url(../images/butterfly-wireframe-transparent.svg);
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+}
+
+article .butterflybox2 {
+    background-image: url(../images/butterfly-wireframe2-transparent.svg);
+    background-size: 180px;
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+}
+
+article .butterflybox3 {
+    background-image: url(../images/butterfly-wireframe3-transparent.svg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+}
+
 footer {
     background-color: #0084c8;
     padding: 0.1em 2em;
@@ -492,7 +672,7 @@ footer a {
 
 
 /*******************************************
- * Mobile devices 
+ * Mobile devices
  *******************************************/
 /* #### Mobile Phones Portrait #### */
 
@@ -501,7 +681,7 @@ footer a {
 
 /* #### Mobile Phones Landscape #### */
 @media screen and (max-device-width:640px) and (orientation:landscape){
-  
+
 }
 
 /* #### Mobile Phones Portrait or Landscape #### */
@@ -510,35 +690,35 @@ footer a {
         position: relative;
         padding: 0 0.5em;
     }
-    
+
     header h1.sitetitle {
         font-size: 180%;
         max-width: none;
     }
-    
+
     header .section-menu {
         flex-flow: row wrap;
     }
-    
+
     header .section-menu .section-menu-item {
         padding: 0.2em 0.5em;
     }
-    
+
     header .sitelogo {
         left: 5px;
     }
-    
+
     .main {
         padding: 0.1em 0.2em;
     }
-    
+
     nav.toc {
         position: relative;
         float: none;
         width: auto;
         margin: 0 0 0 120px;
     }
-    
+
     nav#TableOfContents {
         float: none;
         max-width: none;
@@ -546,40 +726,47 @@ footer a {
         margin-top: 0.8em;
         padding: 0.2em;
         background-color: rgba(230,250,256,0.5);
+        background-color: #f2fcff;
     }
-    
+
     nav#TableOfContents ul {
         margin: 0.2em;
         padding: 0;
         padding-left: 2em;
     }
-    
+
     .content {
         margin: 0;
         min-width: 0;
     }
-    
+
     article {
         padding: 0 0.5em;
     }
-    
+
     article h1 {
         margin-top: 0;
         padding-top: 20px;
     }
-    
+
     article .floatright,
     article .floatleft {
         float: none;
         margin: 0.1em auto;
         text-align: center;
     }
-    
+
+    article .exercises,
+    article .examplebox,
+    article .theorybox {
+        margin: 3em 0 1em 0;
+    }
+
     article .floatright figcaption,
     article .floatleft figcaption {
         text-align: left;
     }
-    
+
     footer {
         position: relative;
     }

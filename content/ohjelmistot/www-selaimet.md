@@ -1,11 +1,12 @@
-+++
-date = "2017-03-02T20:38:27+03:00"
-title = "Www-selaimet"
-weight = 350
-+++
+---
+date: "2017-03-02T20:38:27+03:00"
+title: "Www-selaimet"
+weight: 350
+---
 
-Www-selaimia Linux-jakeluissa on moneen lähtöön. Tunnetuimpien selainten, Firefoxin ja Chromen, lisäksi
-tarjolla on useita pienempiä selaimia, jotka usein käyttävät www-sivujen näyttämiseen WebKit-selainmoottoria.
+Www-selaimia Linux-jakeluissa on moneen lähtöön. Tunnetuimpien selainten, Firefoxin
+ja Chromen, lisäksi tarjolla on useita pienempiä selaimia, jotka usein käyttävät
+www-sivujen näyttämiseen WebKit-selainmoottoria.
 
 Tunnetut selaimet:
 
@@ -13,9 +14,12 @@ Tunnetut selaimet:
 * Chromium / Chrome
 
 Näistä Firefox on useimmiten valmiiksi asennettuna ja Chromium helposti asennettavissa
-paketinhallinnasta. Chromium on Googlen avoimen lähdekoodin selain, johon Googlen Chrome-selain perustuu.
-Erona on lähinnä jotkin suljetut komponentit, kuten multimediakoodekit ja pdf-tiedostojen sisäänrakennettu tuki,
-jotka ovat vain Chrome-selaimessa. Chromen saa ladattua ja asennettua Googlen [Chrome]-sivuilta.
+paketinhallinnasta. Chromium on Googlen avoimen lähdekoodin selain, johon Googlen
+Chrome-selain perustuu. Erona on lähinnä jotkin suljetut komponentit, kuten
+multimediakoodekit ja pdf-tiedostojen sisäänrakennettu tuki, jotka ovat vain
+Chrome-selaimessa. Chromen saa ladattua ja asennettua Googlen [Chrome]-sivuilta.
+Asentamisen yhteydessä Chrome lisää Ubuntuun oman pakettivarastonsa ja tämän
+jälkeen se saa päivitykset paketinhallinnan kautta samoin kuin muutkin ohjelmat.
 
 WebKit-pohjaisia pienempiä selaimia:
 
@@ -23,9 +27,9 @@ WebKit-pohjaisia pienempiä selaimia:
 * Konqueror
 * Rekonq
 * Arora
-* Qupzilla
+* Falkon
 
-Tekstipohjaiset selaimet:
+Komentoriviltä voi käyttää myös tekstipohjaisia selaimia:
 
 * Lynx
 * Links

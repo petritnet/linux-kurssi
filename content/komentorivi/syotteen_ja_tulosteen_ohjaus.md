@@ -1,8 +1,8 @@
-+++
-date = "2016-09-08T22:23:11+03:00"
-title = "Syötteen ja tulosteen ohjaus"
-weight = 420
-+++
+---
+date: "2016-09-08T22:23:11+03:00"
+title: "Syötteen ja tulosteen ohjaus"
+weight: 420
+---
 
 Komentoriviohjelmat saavat tyypillisesti syötteensä käyttäjältä näppäimistön kautta
 ja ne tulostavat tuottamansa tekstin näytölle, terminaaliin, jossa ohjelma on käynnissä.

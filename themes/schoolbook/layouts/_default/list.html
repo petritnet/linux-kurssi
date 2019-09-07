@@ -11,6 +11,11 @@
                 <h1 class="page-title">{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}</h1>
                 {{ .Content }}
             {{ end }}
+            <ul class="section-pages">
+            {{ range .CurrentSection.Pages }}
+                <li>{{ .Title }}</li>
+            {{ end }}
+            </ul>
             </article>
         </div>
     </div>

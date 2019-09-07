@@ -1,8 +1,8 @@
-+++
-date = "2017-03-02T20:38:27+03:00"
-title = "Kuvien katselu ja käsittely"
-weight = 330
-+++
+---
+date: "2017-03-02T20:38:27+03:00"
+title: "Kuvien katselu ja käsittely"
+weight: 330
+---
 
 
 Kuvat ja niiden katselu sekä muokkaus ovat tärkeä osa nykyaikaista tietokoneen käyttöä.
@@ -42,15 +42,16 @@ GIMP
 
 {{< figure src="/images/Gimp-3.png" link="/images/Gimp-3.png" class="floatimage floatright" title="Gimp" >}}
 
-[GIMP], eli GNU Image Manipulation Program, on Linux-alustojen perinteinen kuvankäsittelyohjelma.
-Monipuolinen ja toimiva, joskin käyttöliittymä saattaa erityisesti Photoshopiin tottuneille tuntua
-paikoittain vieraalta. GIMP on tehty erityisesti kuvien mukaamiseen ja se tukee erilaisia filttereitä
+[GIMP], eli GNU Image Manipulation Program, on Linux-alustojen perinteinen
+kuvankäsittelyohjelma. Se on monipuolinen ja toimiva, joskin käyttöliittymä
+saattaa erityisesti Photoshopiin tottuneille tuntua paikoittain vieraalta.
+GIMP on tehty erityisesti kuvien mukaamiseen ja se tukee erilaisia filttereitä
 sekä omien toimintojen ohjelmointia.
 
-Käyttää Gnomen pohjana olevaa GTK-käyttöliittymäkirjastoa. GTK onkin alkujaan saanut nimensä GIMPiltä.
-(GIMP Toolkit)
+GIMP käyttää Gnomen pohjana olevaa GTK-käyttöliittymäkirjastoa. GTK onkin alkujaan
+luotu tätä varten ja se on saanut nimensä GIMPiltä. (GIMP Toolkit)
 
-GIMP on asennettavissa myös Windows-käyttöjärjestelmään. 
+GIMP on asennettavissa myös Windows-käyttöjärjestelmään.
 
 Krita
 ------
@@ -76,7 +77,8 @@ MyPaint
 
 [MyPaint] on digitaalisen maalarin ja piirtäjän työkalu. Siinä ei ole varsinaisia
 kuvankäsittelytoimintoja vaan siinä on käytettävissä suuri määrä erilaisia siveltimiä
-ja kynien teriä piirtämiseen ja maalaamiseen.
+ja kynien teriä digitaaliseen piirtämiseen ja maalaamiseen. Sen kanssa kannattaa
+käyttää piirtopöytää ja kynää.
 
 
 Valokuvien jälkikäsittelyyn
@@ -102,7 +104,7 @@ Vektorigrafiikkaohjelmilla voidaan piirtää tarkkoja skaalautuvia piirroskuvia 
 vektoripiirrosten tekemiseen on useimmiten [Inkscape], jonka tallennusmuoto on standardi svg.
 (Scalable Vector graphics)
 
-Muita vektorigrafiikkaa tuottavia ohjelmia on LibreOfficne Draw sekä diagrammien ja kaavioiden piirtämiseen
+Muita vektorigrafiikkaa tuottavia ohjelmia ovat LibreOfficne Draw sekä diagrammien ja kaavioiden piirtämiseen
 soveltuva [Dia].
 
 

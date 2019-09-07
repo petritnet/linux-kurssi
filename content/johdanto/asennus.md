@@ -6,6 +6,8 @@ weight = 30
 
 Asennetaan Linux. Käytetään esimerkkinä Ubuntua.
 
+**Huomio! Asenna vain koneelle, jolle sinulla on lupa asentaa!**
+
 Linux-jakelun asentaminen
 ==========================
 
@@ -18,7 +20,9 @@ monien markettien lehtihyllyillä myytävät [Linux Format] ja [Linux Magazine].
 
 Jos asennusmedia on hankittu levykuvana, pitää se seuraavaksi polttaa (koosta riippuen) CD- tai DVD-levylle taikka
 kirjoittaa USB-tikulle siihen käyttöön tarkoitetulla ohjelmalla. Esimerkiksi Ubuntu ohjeistaa Windows-käyttäjiä
-käyttämään [Rufus USB Installer] -ohjelmaa.
+käyttämään [Rufus USB Installer] -ohjelmaa. Mac-koneilla kirjoittaminen tapahtuu
+Macin omalla [Disk Utility][Mac usb live] -ohjelmalla. Levyn voi kirjoittaa
+myös [Ubuntussa][Ubuntu live creator].
 
 Tämän jälkeen laitetaan levy tietokoneen DVD-asemaan tai USB-tikku USB-porttiin ja käynnistetään tietokone tältä
 levyltä. Jotta tietokoneen saa käynnistettyä ulkoiselta medialta, voi joutua vaihtamaan käynnistysjärjestystä,
@@ -60,9 +64,9 @@ vapaista ohjelmista monia omaan käyttöönsä ja mieltymyksiinsä sopivia koost
 tai useamman työpöytäympäristön sekä varsin laajan koosteen erilaisia sovellusohjelmia toimisto-ohjelmista
 ja webbiselaimista ohjelmointiympäristöihin.
 
-{{< figure src="/images/ubuntu-desktop.png" link="/images/ubuntu-desktop.png" class="floatright floatimage" title="Ubuntun Unity-työpöytä" >}}
-{{< figure src="/images/kde-plasma-desktop.png" link="/images/kde-plasma-desktop.png" class="floatright floatimage" title="Kbuntun KDE Plasma -työpöytä" >}}
-{{< figure src="/images/elementary-desktop.png" link="/images/elementary-desktop.png" class="floatright floatimage" title="ElementaryOS ja Pantheon-työpöytä" >}}
+{{< figure src="/images/Gnome-Ubuntu-desktop.png" link="/images/Gnome-Ubuntu-desktop.png" class="floatright floatimage" title="Ubuntun Gnome-työpöytä" >}}
+{{< figure src="/images/Plasma-Kubuntu-desktop.png" link="/images/Plasma-Kubuntu-desktop.png" class="floatright floatimage" title="Kbuntun KDE Plasma -työpöytä" >}}
+{{< figure src="/images/Pantheon-Elementaryos-desktop.png" link="/images/Pantheon-Elementaryos-desktop.png" class="floatright floatimage" title="Elementary OS ja Pantheon-työpöytä" >}}
 
 Tunnettuja Linux-jakeluita ovat muun muassa:
 
@@ -107,17 +111,19 @@ Kahden vuoden välein julkaistaan pidempään tuettu niin kutsuttu LTS-versio (L
 parillisen vuoden keväällä julkaistavien, versioiden tuki on viisi vuotta.
 LTS-versioita suositellaan tavallisille käyttäjille ja yrityksille. Tiheämmin julkaistavat "väliversiot" on suunnattu lähinnä harrastajille ja kehittäjille.
 
-Ubuntun versiot numeroidaan julkaisuvuoden ja kuukauden mukaan, esimerkiksi vuoden 2016 huhtikuussa julkaistu LTS-versio on
-numeroltaan 16.04. Numeron lisäksi kullakin versiolla on kaksiosainen eläinaiheinen lempinimi, jonka alkukirjain etenee aakkosissa aina jokaisen
-uuden version myötä. Esimerkiksi versio 16.10 on lempinimeltään "Yakkety Yak" ja keväällä 2017 julkaistava 17.04 tulee olemaan nimeltään "Zesty Zapus".
+Ubuntun versiot numeroidaan julkaisuvuoden ja kuukauden mukaan, esimerkiksi vuoden 2018 huhtikuussa julkaistu LTS-versio on
+numeroltaan 18.04. Numeron lisäksi kullakin versiolla on kaksiosainen eläinaiheinen lempinimi, jonka alkukirjain etenee aakkosissa aina jokaisen
+uuden version myötä. Esimerkiksi versio 18.04 on lempinimeltään "Bionic Beaver" ja keväällä 2019 julkaistu 19.04 on "Disco Dingo".
 
 
 Asennuslevy
 ==========================
 
 Kuten monen muunkin jakelun, myös Ubuntu asennuslevy on niin kutsuttu Live-levy.
-Se on ladattavissa iso-levykuvana [Ubuntun kotisivuilta](http://ubuntu.com) tai vaikka [Ubuntu Suomen](http://ubuntu-fi.org) sivuilta.
-Ubuntu käynnistyy Live-levyltä suoraan työpöydälle ja se on siis kokeiltavissa näin suoraan ilman asentamista.
+Se on ladattavissa iso-levykuvana [Ubuntun kotisivuilta](http://ubuntu.com) tai
+vaikka [Ubuntu Suomen](http://ubuntu-fi.org) sivuilta.
+Ubuntu käynnistyy Live-levyltä suoraan työpöydälle ja se on siis kokeiltavissa
+näin suoraan ilman asentamista.
 
 
 
@@ -127,15 +133,17 @@ CD:n / DVD:n poltto ja USB-tikun teko
 
 Cd- tai dvd-levyä poltettaessa huomioitavaa:
 
-* iso-tiedostoa ei polteta levylle tiedostona vaan valitaan poltto-ohjelmasta *"polta levykuva"* tai *"burn image"*.
+* iso-tiedostoa ei polteta levylle tiedostona vaan valitaan poltto-ohjelmasta
+*"polta levykuva"* tai *"burn image"*.
 
-USB-tikkua tehtäessä voidaan käyttää esimerkiksi UNetbootin-työkalua
+USB-tikkua tehtäessä voidaan seurata vaikka Ubuntun vaiheittaisia ohjeita:
 
-* http://unetbootin.net
-* [UNetbootin-esittely suomeksi](http://viikonvalo.fi/UNetbootin)
-* UNetbootinilla voidaan joko valita Linux-jakelu suoraan valikosta, jolloin työkalu lataa iso-imagen, tai käyttää erikseen ladattua levykuvaa.
-* [Ubuntu Suomen ohjeet](https://wiki.ubuntu-fi.org/Ubuntu_USB-tikulle) USB-tikun kirjoittamiseen
+* [Windowsille][Rufus USB Installer]
+* [Macille][Mac usb live]
+* [Ubuntulle][Ubuntu live creator]
 
+Tikun kirjoittamiseen voi käyttää myös [balenaEtcher]-ohjelmaa, joka voi olla
+tuttu esimerkiksi Abitti-tikkujen kirjoittamisesta.
 
 
 Virtuaalikone
@@ -219,23 +227,24 @@ järjestelmän asetuksiin. Tavallinen käyttäjä voi muokata vain omia tiedosto
 
 
 
-Unity-työpöytä
+Gnome-työpöytä
 ==========================
 
-Ubuntu käyttää omaa muista Linux-jakeluista poikkeavaa Unity-työpöytää. Sille on tyypillistä:
+Ubuntu käyttää monessa muussakin Linux-jakelussa käytössä olevaa
+Gnome-työpöytää. Ubuntussa sen ulkoasu näyttää seuraavalta:
 
 * Vasemmalla panelissa:
     * käynnistyskuvakkeet,
     * käynnissä olevat ohjelmat
-    * virtuaalityöpöydät (jos käytössä)
-* Yläpalkin oikeassa reunassa:
-    * valikko sammutukselle ja henkilökohtaisille asetuksille,
-    * kello,
-    * äänenvoimakkuus,
+* Yläpalkissa:
+    * valikko sammutukselle ja henkilökohtaisille asetuksille
+    * kello
+    * äänenvoimakkuus
     * wifi-valinnat
-* Vasemmasta yläkulmasta löytyy *Dash*, jolla pääsee hakemaan ja käynnistämään ohjelmia sekä tiedostoja.
+* Vasemmasta alakulmasta löytyy valikko, jolla pääsee hakemaan ja käynnistämään ohjelmia sekä tiedostoja.
 * Ohjelmien valikot tulevat yläpalkkiin, kun hiiren vie sen päälle. (Tämä ominaisuus on säädettävissä.)
-* Mac OS X -vaikutteita, kuten ikkunoiden sulkunappi vasemmassa yläkulmassa.
+
+{{< figure src="/images/Gnome-Ubuntu-desktop.png" attr="The Gnome Project and Ubuntu" attrlink="https://www.gnome.org/" title="Gnome-työpöytä Ubuntussa" >}}
 
 
 
@@ -245,6 +254,9 @@ Ubuntu käyttää omaa muista Linux-jakeluista poikkeavaa Unity-työpöytää. S
 
 [Ubuntu Download]: https://www.ubuntu.com/download/desktop (Ubuntun lataus)
 [Rufus USB Installer]: https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows (Rufus)
+[Mac usb live]: https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos (Disk Utility)
+[Ubuntu live creator]: https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu (Ubuntu)
 [Linux Format]: http://www.linuxformat.com/ (Linux Format)
 [Linux Magazine]: http://www.linux-magazine.com/ (Linux Magazine)
 [VirtualBox]: https://www.virtualbox.org/ "VirtualBox"
+[balenaEtcher]: https://www.balena.io/etcher/ (balenaEtcher)

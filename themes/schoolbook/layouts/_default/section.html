@@ -2,11 +2,12 @@
 
     <div class="main">
 
-{{ partial "toc-index.html" . }}
+{{ partial "toc-sections.html" . }}
 
         <div class="content">
             <article>
                 <h1 class="page-title">{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}</h1>
+                {{ .TableOfContents }}
                 {{ .Content }}
             </article>
         </div>

@@ -1,8 +1,8 @@
-+++
-date = "2016-09-11T20:16:20+03:00"
-title = "Bash-harjoituksia"
-weight = 450
-+++
+---
+date: "2016-09-11T20:16:20+03:00"
+title: "Bash-harjoituksia"
+weight: 450
+---
 
 <!--
 [Harjoitusten esimerkkiratkaisut](/files/harjoitukset.tar.gz)

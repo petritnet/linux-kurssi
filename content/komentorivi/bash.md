@@ -1,8 +1,8 @@
-+++
-date = "2016-09-09T20:38:14+03:00"
-title = "Bash-ohjelmointi"
-weight = 440
-+++
+---
+date: "2016-09-09T20:38:14+03:00"
+title: "Bash-ohjelmointi"
+weight: 440
+---
 
 Sen lisäksi, että Bash on interaktiivinen tekstipohjainen käyttöliittymä,
 se on myös täysiverinen ohjelmointikieli, josta löytyvät muun muassa
@@ -323,7 +323,7 @@ Merkkijonotestit
 |-z *s1* |Merkkijono *s1* on tyhjä|
 |-n *s1* |Merkkijono *s1* on epätyhjä|
 
- 
+
 Lukutestit
 
 | Lukutesti | Testin merkitys  |
@@ -566,8 +566,8 @@ Suoritus
 Suoritetaan `toisto.sh`.
 
 ```no-highlight
-$ ./toisto.sh 
-Anna nimesi: 
+$ ./toisto.sh
+Anna nimesi:
 Petri
 01: Terve, Petri.
 02: Terve, Petri.

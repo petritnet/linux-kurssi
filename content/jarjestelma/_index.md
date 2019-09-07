@@ -1,11 +1,13 @@
-+++
-date = "2016-09-11T21:08:30+03:00"
-title = "Järjestelmä"
-sectiontitle = "Järjestelmä"
-weight = 100
-type = "index"
-menu = ["main"]
-+++
+---
+date: "2016-09-11T21:08:30+03:00"
+title: "Järjestelmä"
+sectiontitle: "Järjestelmä"
+weight: 100
+type: "index"
+menu:
+    main:
+        weight: 100
+---
 
 Linux-järjestelmien toiminta on hyvin samanlaista muiden UNIX-tyyppisten käyttöjärjestelmien
 kanssa.

@@ -1,8 +1,8 @@
-+++
-date = "2017-03-02T20:38:27+03:00"
-title = "Toimisto-ohjelmat"
-weight = 320
-+++
+---
+date: "2017-03-02T20:38:27+03:00"
+title: "Toimisto-ohjelmat"
+weight: 320
+---
 
 Linux-järjestelmiin on olemassa useampia toimisto-ohjelmistoja, joista
 [LibreOffice] on monipuolisin ja tunnetuin. Se on tuttu myös Windows-käyttäjille.
@@ -52,7 +52,7 @@ Gnome-office
 [Gnome-office] on Gnome-työpöydän kanssa käytetyillä käyttöliittymäkirjastoilla tehtyjen toimisto-ohjelmien
 kokoelma. Tämä kokoelma on LibreOfficea löyhempi siinä mielessä, että ne eivät ole saman projektin tuottamia
 ohjelmistoja vaan erillisten projektien tuotteita, jotka usein vaan mainitaan yhdessä. Gnome-officen ohjelmat
-ovat tyypillisesti LibreOfficen vastaavia kevyempiä, mutta osa niistä on toiminnoiltaan myös suppeampia.
+ovat tyypillisesti LibreOfficen vastaavia kevyempiä, mutta osa niistä on samalla toiminnoiltaan suppeampia.
 
 Kokoelmaan kuuluvat:
 
@@ -75,9 +75,9 @@ Calligra Suite
 
 {{< figure src="/images/calligrawords.jpg" link="/images/calligrawords.jpg" class="floatimage floatright" title="Calligra Suite" caption="Calligra Suiten Words-tekstinkäsittelyohjelma" >}}
 
-KDE-työpöydälle suunniteltu [KOffice]-ohjelmisto jakautui vuonna 2010 projekti jakautui sisäisten konfliktien
+KDE-työpöydälle suunniteltu [KOffice]-ohjelmisto jakautui vuonna 2010 sisäisten konfliktien
 takia kahtia ja suurin osa kehittäjistä jatkoi toimisto-ohjelmistopaketin kehittämistä
-nimellä  [Calligra Suite]. Ohjelmistopakettiin kuuluvat:
+nimellä [Calligra Suite]. Ohjelmistopakettiin kuuluvat:
 
 * Words (tekstinkäsittely)
 * Sheets (taulukkolaskenta)

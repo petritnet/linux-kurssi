@@ -1,35 +1,28 @@
-+++
-date = "2016-09-05T23:03:37+03:00"
-title = "Paketinhallinta"
-sectiontitle = "Järjestelmä"
-weight = 130
-+++
+---
+date: "2016-09-05T23:03:37+03:00"
+title: "Pakettien asentaminen"
+sectiontitle: "Järjestelmä"
+weight: 140
+---
 
-Linuxeissa on tyypillisesti käytössä paketinhallinta, jonka kautta ohjelmat asennetaan ja poistetaan kätevästi.
+Linuxeissa paketinhallinnan kautta ohjelmat asennetaan ja poistetaan kätevästi.
 
-Koska Linux-jakelut koostuvat pääasiassa vapaista avoimen lähdekoodin ohjelmista, voidaan niitä jaella
-keskitetysti jakelun tekijän palvelimelta *pakettivarastosta*, eli niin kutsutusta *"repositorysta"*.
-
-Asennuspakettien välillä voi olla *riippuvuuksia*, mikä tarkoittaa sitä, että yhden paketin
-asentaminen voi vaatia jonkin toisen paketin asentamisen riippuvuuden takia. Näin on esimerkiksi
-silloin, jos ohjelma tarvitsee toimiakseen jotain jaettua kirjastoa, eli jotain ohjelmistokomponenttia,
-joka on yhteinen muiden ohjelmien kanssa. Riippuvuutena olevan kirjaston poistaminen poistaa myös
-siitä riippuvan ohjelmiston. Pakettien joukossa voi olla myös *meta-paketteja*, eli sellaisia
-paketteja, jotka eivät itse sisällä mitään tiedostoja vaan ainoastaan riippuvuuksia muihin paketteihin.
-Tällaisen asentamalla voi asentaa suurempia ohjelmistokokonaisuuksia kerralla.
-Tällainen on esimerkiksi `kubuntu-desktop`-paketti, jonka asentamalla Ubuntuun voi asentaa kaikki
-KDE-työpöytäympäristön käyttämiseen tarvittavat paketit.
-
-Paketinhallintaan käytettävät graafiset ohjelmat ovat tyypillisesti kuin joistain muista järjestelmistä
-tutut sovelluskaupat, joista voi valita asennettavat ohjelmat. Paketinhallinta on käytettävissä myös
-komentoriviltä komennoilla *apt-get* (Debian-johdannaiset), *yum* (RedHat-/Fedora-johdannaiset) ja
-*zypper* (OpenSUSE).
+Paketinhallintaan käytettävät graafiset ohjelmat toimivat vastaavasti kuin monista
+muista järjestelmistä tutut sovelluskaupat, joista voi valita asennettavia ohjelmia.
+Paketinhallinta on käytettävissä myös komentoriviltä komennoilla *apt-get* (Debian-johdannaiset),
+*yum* (RedHat-/Fedora-johdannaiset) tai *zypper* (OpenSUSE).
 
 Asennetaan esimerkiksi komentoriviltä tarralappujen tai käyntikorttien suunnitteluun sopiva Glabels-ohjelma:
 ```bash
 sudo apt-get install glabels
 ```
 
+Snap-pakettien asentaminen tapahtuu komentoriviltä ohelmalla nimeltä *snap*.
+
+Esimerkiksi Spotify-ohjelman asentaminen snap-pakettina tapahtuu seuraavasti:
+```bash
+sudo snap install spotify
+```
 
 
 
@@ -37,20 +30,20 @@ Pakettivarasto
 ========================
 
 Pakettivarasto, eli pakettilähde, eli repository, on jakelun tekijän palvelimilla (sekä peilipalvelimilla
-ympäri maailmaa) oleva kokoelma ohjelmapaketteja. Varastossa on lisäksi luettelo tarjolla olevista paketeista.
+ympäri maailmaa) oleva kokoelma ohjelmapaketteja.
 
 Esimerkiksi:
 
 * Ubuntun pakettivaraston suomalainen peilipalvelin: <br> <http://fi.archive.ubuntu.com/ubuntu/>
-* Pakettilista:<br> <http://fi.archive.ubuntu.com/ubuntu/dists/xenial/main/binary-amd64/>
+* Version 18.04 pakettilista:<br> <http://fi.archive.ubuntu.com/ubuntu/dists/bionic/main/binary-amd64/>
 * Paketit:<br> <http://fi.archive.ubuntu.com/ubuntu/pool/>
 * Pakettivaraston asetus tiedostossa `/etc/apt/sources.list` riveillä, jotka ovat muotoa:<br>
-  `deb http://fi.archive.ubuntu.com/ubuntu/ xenial main restricted`
+  `deb http://fi.archive.ubuntu.com/ubuntu/ bionic main restricted`
 
-Paketit on jaoteltu jakelun version mukaan (xenial) ja sen alla muutamaan "tärkeysluokkaan"
+Paketit on jaoteltu jakelun version mukaan (bionic) ja sen alla muutamaan "tärkeysluokkaan"
 (main, universe, multiverse, restricted)
 
-* *main*: jakelut itse ylläpitämät,
+* *main*: jakelun itse ylläpitämät,
 * *universe*: yhteisön ylläpitämät,
 * *restricted*: suljettuja ajureita yms.,
 * *multiverse*: tekijänoikeuksien, patenttien yms. takia rajoitettuja paketteja
@@ -60,7 +53,8 @@ Lisäksi on tarjolla käyttäjien / kehittäjien omia repositoryja: Personal Pac
 * https://launchpad.net/ubuntu/+ppas
 * http://ppa.launchpad.net/
 
-Pakettivarasto voi olla myös esim. asennus-cd:llä tai -usb:llä, jos tarvitsee toimittaa verkon ulottumattomiin.
+Pakettivarasto voi olla myös esim. asennus-cd:llä tai -usb:llä, jos se
+tarvitsee toimittaa verkon ulottumattomiin.
 
 
 
@@ -171,10 +165,9 @@ Eri Linux-järjestelmissä käytetään elilaisessa muodossa olevia paketteja. T
 paketointimuodot ovat:
 
 |Tiedoston pääte |    |
-|--------------|----|
-|.deb |    Peräisin Debianista. (Debian, Ubuntu, Mint, ...) |
-|.rpm |    Peräisin Red Hat Linuxista. (Red Hat/Fedora, Mandriva, openSUSE,...)|
-|.tar.gz / .tgz |   Pelkkä paketti ilman paketinhallinnan rakenteita. (kuten zip)|
+|----------------|----|
+|.deb            |    Peräisin Debianista. (Debian, Ubuntu, Mint, ...) |
+|.rpm            |    Peräisin Red Hat Linuxista. (Red Hat/Fedora, Mandriva, openSUSE,...)|
 
 
 
@@ -183,7 +176,7 @@ paketointimuodot ovat:
 Graafinen paketinhallinta
 ========================
 
-{{< figure src="/images/ubuntu-software.png" link="/images/ubuntu-software.png" class="floatright floatimage" title="Ohjelmistovalikoima" caption="Ubuntun Software centerillä voi selata ohjelmistotarjontaa." >}}
+{{< figure src="/images/ubuntu-software-center.png" link="/images/ubuntu-software-center.png" class="floatright floatimage" title="Ohjelmistovalikoima" caption="Ubuntun Software centerillä voi selata ohjelmistotarjontaa ja asentaa ohjelmia." >}}
 
 Linux-jakeluissa on yleensä tarjolla jokin graafinen, eli ikkunoitu ja hiirellä käytettävä,
 työkalu ohjelmistojen asennukseen. Ubuntussa tämä on Ubuntun Sovellusvalikoima (Ubuntu Software),
@@ -192,7 +185,7 @@ ohjelmistoja ja se hoitaa niitä vastaavien ohjelmistopakettien noutamisen paket
 asentamisen. Ohjelmien asentaminen vaatii ylläpito-oikeudellisen käyttäjän salasanan ennen pakettien
 asentamista.
 
-Graafiset paketinhallintaohjelmat on tarkoitettu helppokäyttöisiksi ja niillä voidaan helpohkosti: 
+Graafiset paketinhallintaohjelmat on tarkoitettu helppokäyttöisiksi ja niillä voidaan helpohkosti:
 
 * Selata ohjelmia *kategorioina*
 * Hakea *hakusanalla*
@@ -211,7 +204,7 @@ Ubuntun Sovellusvalikoima keskittyy tarjoamaan keinon ikkunoitujen suurelle ylei
 sovellusten asentamiseen ja postamiseen. Sovellusvalikoima on valikotu eikä se näytä luetteloissaan
 kaikkia saatavilla olevia paketteja.
 *Synaptic* on toisenlainen graafinen paketinhallintaohjelma, jolla käyttäjä pystyy selaamaan, asentamaan
-ja poistamaan kaikkia yksittäisiä paketteja, mukaan lukien komentoriviohjelmat ja kirjastot. 
+ja poistamaan kaikkia yksittäisiä paketteja, mukaan lukien komentoriviohjelmat ja kirjastot.
 
 
 
@@ -245,24 +238,24 @@ Korkean tason pakettienhallintaa komentorivillä
 
 "Korkeamman tason" paketinhallintaohjelmat osaavat käsitellä paketteja monipuolisemmin.
 
-* .deb-paketeille `apt-get` ja `aptitude`
+* .deb-paketeille `apt` ja `aptitude`
 * .rpm-paketeille `yum` ja `zypper`
-* esim. `apt-get install inkscape`
+* esim. `apt install inkscape`
 * Tunnistavat paketin sen nimellä, ei tiedostonimellä
 * Osaavat hakea paketin pakettivarastosta verkosta.
 * Osaa selvittää tarvittavat riippuvuudet ja riippuvuuksien riippuvuudet, eli mitä muita
   paketteja on asennettava ja missä järjestyksessä.
 * Osaavat ratkoa konflikteja, jos esimerkiksi paketin asentaminen vaatii toisen paketin poistamisen.
 * Lisäksi: pakettien poistaminen, tietojen ja statuksen selaaminen, päivittäminen
-    * Pakettilistan päivitys: `apt-get update`
-    * Haetaan ja asennetaan paketit, joista on pakettivarastossa pakettilistan mukaan uudempi versio: `apt-get upgrade`
-    * Pakettien etsiminen hakusanoilla: `apt-cache search music player`
-    * Paketin tilan tarkistaminen: `apt-cache policy inkscape`
+    * Pakettilistan päivitys: `apt update`
+    * Haetaan ja asennetaan paketit, joista on pakettivarastossa pakettilistan mukaan uudempi versio: `apt upgrade`
+    * Pakettien etsiminen hakusanoilla: `apt search music player`
+    * Paketin tilan tarkistaminen: `apt policy inkscape`
 Myös näillä välineillä asentaminen (ja poistaminen) vaatii ylläpito-oikeudet, eli *sudo*-komennon käytön:
 
 ```bash
-sudo apt-get install inkscape
-sudo apt-get remove inkscape
+sudo apt install inkscape
+sudo apt remove inkscape
 ```
 
 Sekä graafiset paketinhallintaohjelmat että komentoriviltä suoritettavat korkeamman tason paketinhallintaohjelmat
@@ -272,16 +265,43 @@ Ubuntun ja Debianin käyttämän apt-paketinhallinnan komentoja:
 
 | Tehtävä                         | Komento                                |
 |---------------------------------|----------------------------------------|
-| Asennus                         | `apt-get install <pakettien nimet>`    |
-| Poisto                          | `apt-get remove <pakettien nimet>`     |
-| Pakettilistan päivitys          | `apt-get update`                       |
-| Asennettujen pakettien päivitys | `apt-get upgrade`                      |
-| Haku                            | `apt-cache search <hakusanoja>`        |
-| Paketin tila                    | `apt-cache policy <paketin nimi>`      |
-| Paketin tiedot                  | `apt-cache show <paketin nimi>`        |
+| Asennus                         | `sudo apt install <pakettien nimet>`    |
+| Poisto                          | `sudo apt remove <pakettien nimet>`     |
+| Pakettilistan päivitys          | `sudo apt update`                       |
+| Asennettujen pakettien päivitys | `sudo apt upgrade`                      |
+| Haku                            | `apt search <hakusanoja>`        |
+| Paketin tila                    | `apt policy <paketin nimi>`      |
+| Paketin tiedot                  | `apt show <paketin nimi>`        |
 
-Näistä järjestelmään muutoksia tekevät komennot, eli `apt-get` -komennot tarvitsevat
-ylläpito-oikeuksia, joten niiden eteen pitää lisätä komento `sudo`.
+Näistä järjestelmään muutoksia tekevät komennot tarvitsevat
+ylläpito-oikeuksia, joten niiden edessä pitää olla komento `sudo`.
+
+Snap
+=====
+
+Snap-paketoidut ohjelmat asennetaan `snap`-työkalulla. Se toimii hyvin samalla
+tavalla kuin `apt`-komento.
+
+| Tehtävä                         | Komento                               |
+|---------------------------------|---------------------------------------|
+| Haku                            | `snap find <hakusanoja>`              |
+| Asennus                         | `sudo snap install <paketin nimi>`    |
+| Poisto                          | `sudo snap remove <paketin nimi>`     |
+| Paketin tiedot                  | `snap info <paketin nimi>`            |
+| Luettele asennetut              | `snap list`                           |
+| Päivitä valittu tai kaikki      | `sudo snap refresh [paketin nimi]`    |
+
+AppImage
+=========
+
+AppImage-paketteina jaettavat ohjelmat eivät vaadi varsinaista asentamista.
+Paketti vain ladataan omalle koneelle, siihen annetaan käyttäjälle suoritusoikeus
+ja sen jälkeen sen voi käynnistää.
+
+Esimerkki tällä tavalla ladattavasta ohjelmast on avoimen lähdekoodin
+videoeditointiohjelma [OpenShot](https://www.openshot.org/).
+OpenShot löytyy myös esimerkiksi Ubuntun omasta pakettivarastosta, mutta
+AppImagena ladattavissa on usein uudempi versio.
 
 Ero muihin käyttöjärjestelmiin
 ========================
@@ -291,18 +311,31 @@ Ero muihin käyttöjärjestelmiin
     * Ohjelmapaketit sisältävät kaikki omat tarpeensa käyttöjärjestelmän tarjoamia palveluita
       lukuun ottamatta.
     * Osa asennuspaketeista itse ajettavia .exe-tiedostoja, ei vain paketteja.
-* Mac OS X
+* MacOS
     * Ohjelmapaketit levykuvina
     * Ohjelmat asentuvat hakemistoon */Applications/ohjelma.app/* tai käyttäjän kotihakemistossa
       olevaan vastaavaan hakemistoon.
     * Ohjelmapaketit sisältävät kaikki omat tarpeensa käyttöjärjestelmän tarjoamia palveluita
       lukuun ottamatta.
-* Linux
+    * Ohjelmia suoritetaan "hiekkalaatikossa".
+* Linux (paketinhallinta)
     * Paketin tiedostot asentuvat eri puolille tiedostojärjestelmää
     * Paketinhallinta pitää kirjaa paketeista ja niihin liittyvistä tiedostoista
     * Tiedostojen paikat eivät määräydy paketin vaan merkityksensä mukaan.
     * Ohjelman asennus on pilkottu usein useampaan pakettiin, sillä osa tarvittavista kirjastoista
       voi olla yhteisiä monen muun ohjelman kanssa.
+* Linux (snap)
+    * Ohjelmapaketit levykuvina ja asentuu levyllä yhteen paikkaan.
+    * Ohjelmat asentuvat keskitetystä [Snapcraft](https://snapcraft.io)-ohjelmavarastosta.
+    * Ohjelmapaketit sisältävät kaikki omat tarpeensa käyttöjärjestelmän tarjoamia peruspalveluita
+      lukuun ottamatta.
+    * Ohjelmat suoritetaan oletuksena "hiekkalaatikossa".
+* Linux (AppImage)
+    * Ohjelmapaketit levykuvina
+    * Käyttäjä voi kopioida mihin haluaa
+    * Ohjelmapaketit sisältävät kaikki omat tarpeensa käyttöjärjestelmän tarjoamia peruspalveluita
+      lukuun ottamatta.
+    * Voi olla useampia versioita (tiedostoja) yhtä aikaa.
 
 Kun ohjelmien tarvitsemat osat on pilkottu useampaan pakettiin, voivat eri ohjelmat käyttää yhteisiä osia
 mainitsemalla ne omassa paketissaan riippuvuutena. Tämä on mahdollista avoimen lähdekoodin vuoksi.
@@ -321,34 +354,6 @@ Tästä on **hyötyä**:
   tee niistä "itseriittoisia" ja samalla suurempia.
 
 
-Vertaus: Solukämppä
-========================
-Pekka, Matti ja Jorma asuvat kolmen hengen opiskelijasolussa. Heillä on yhteinen keittiö. Miltä jääkaappi näyttää?
-
-* Pekalla ylähylly, Matilla keskihylly ja Jormalla alahylly
-* Jokaisella hyllyllä purkki maitoa tai tuoremehua, rasiallinen leviterasvaa, juustoa ja/tai makkaraa, ketsuppia/sinappia + sekalaisia eineksiä
-* Jokainen käyttää aineksia omalta hyllyltään
-* Tilaa menee hukkaan, kun jokaisella on esim. oma leviterasia.
-
-Toimii samoin kuin ohjelmat Windows- ja Mac OS X -alustoilla. Jokaisen ohjelman tarvitsemat
-tiedostot ja kirjastot yhdessä paikassa. (Lukuun ottamatta käyttöjärjestelmän tarjoamia.)
-
-
-
-
-Vertaus: Kolmen hengen perhe
-========================
-
-Isä, äiti ja teinitytär asuvat asunnossa. Miltä jääkaappi näyttää?
-
-* Ovessa juomat (maito, tuoremehu, Cola-pullo)
-* Hyllyllä yksi leviterasia, juustoa, kinkkurasia, rasiallinen tähteitä
-* Toisella hyllyllä hillopurkki, sinappi, ketsuppi
-* Kolmannella hyllyllä leivontamargariinia, kananmunia, ...
-
-Kuten Linux-jakeluissa: Ainekset lajiteltu niiden tyypin mukaan, ei omistajan/käyttäjän.
-Paljon yhteisiä aineksia.
-
 
 Tehtäviä
 ========================
@@ -359,7 +364,7 @@ Tehtävät 5
 
 Käynnistä jokin työpöytä-Linux ja tee tehtävät siinä.
 Kuvakaappauksen voi ottaa *PrintScreen*-näppäimellä.
-Palautus tiedostona `tehtava-5.odt`.
+Vastaa tiedostoon `tehtava-5.odt`.
 
 1. Asenna vektoripiirto-ohjelma Inkscape. (graafisesti tai komentoriviltä) Käynnistä se ja ota siitä kuvakaappaus.
 2. Tutki, löytyykö pakettivarastosta peli nimeltä *Frozen-Bubble*.
@@ -372,6 +377,6 @@ Palautus tiedostona `tehtava-5.odt`.
 4. Selvitä pakettien dokumentaatiohakemistosta, montako tekijää (author) on merkitty ohjelmalle
    *eog* (Eye of Gnome). Mistä löysit tiedon?
     Jos ohjelmaa *eog* ei ole asennettuna, tutki sen sijaan ohjelmaa *wget*.
+5. Etsi `snap`-työkalulla laivanupotuspeli (hakusana: "battleship") ja asenna se. Käynnistä ja ota kuvakaappaus.
 
 {{% /wrapper %}}
-
